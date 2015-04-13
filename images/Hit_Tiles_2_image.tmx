@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="39" height="39" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="femat" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../../Game-1/images/femat.png" width="426" height="681"/>
+ </tileset>
+ <tileset firstgid="1001" name="hit-tiles" tilewidth="16" tileheight="16">
+  <image source="../../Game-1/images/hit-tiles.png" width="192" height="16"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="39" height="39">
+  <data encoding="base64" compression="zlib">
+   eJztlkEKg0AMRQd6VHuleglbPYG03Wh37kbozgvYKzQDCYQwIzIQp9AsHobh6/+YEJ1Ozk2GYRjGz9I65zrgAlwzCPfWTidbBc99AT2wAg1ePZ57Ucc0lWK2Bb0CM6tb9n7qhGZRzMb9eQ6Pnh+kwrOUXuu9jcDA6Ngs9ZiJn0m9Zk/Jn8/WiNc78BBnUq+ZbRUs6PkU/r2YTUIzWxPxC7yFf0zTKGebE75873UJzXxwTwmasQHrlK5ET2nufGLOSvZ0D6V6upejeppTH9XTnPpfe8p3l6zpm7Wl0coWdmvYXfRPIeszsqW5KWWj3cX3WE6tkc0wDMMwSvIFI3bUBg==
+  </data>
+ </layer>
+</map>

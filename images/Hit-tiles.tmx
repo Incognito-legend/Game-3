@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="39" height="39" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="femat" tilewidth="16" tileheight="16" spacing="1" margin="2">
+  <image source="./femat.png" width="428" height="683"/>
+ </tileset>
+ <tileset firstgid="1001" name="hit-tiles" tilewidth="16" tileheight="16">
+  <image source="./hit-tiles.png" width="32" height="16"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="39" height="39">
+  <data encoding="base64" compression="zlib">
+   eJztlNEKwCAIRYP9/4fmV+x1i1k4rybbfTiUEHkysR+tdUIIIWURcIz0ksv93jjKzQvd9FyZblpu75mvu735H/bbfU6tcj+5jOuf3KrON4u75R+quu2aL8h3IN2yvUTZazln59H1QrlF1CyCCl5Z/T/rnVVf7Zi7hBBCbJzs+ntr
+  </data>
+ </layer>
+</map>

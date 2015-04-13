@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="39" height="39" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="femat" tilewidth="16" tileheight="16" spacing="1" margin="2">
+  <image source="femat.png" width="426" height="681"/>
+ </tileset>
+ <tileset firstgid="1001" name="hit-tiles" tilewidth="16" tileheight="16">
+  <image source="hit-tiles.png" width="192" height="16"/>
+  <tile id="0">
+   <properties>
+    <property name="wall" value="1001"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="floor" value="1002"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="entrance: Home" value="1003"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="entrance: Arena" value="1004"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="entrance: Blacksmith" value="1005"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="entrance: Shop" value="1006"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="class: Hunter" value="1007"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="class: Druid" value="1008"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="class: Mage" value="1009"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="class: Palladin" value="1010"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="class: Warrior" value="1011"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="39" height="39">
+  <data encoding="base64" compression="zlib">
+   eJzt0SEKACAQAEHB/z9UweYDLFcNplOZMH1hWy2lAQAp+iFt97e9ZoTsjpufatOmbd82Q3YbAMDPFpeeeww=
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="39" height="39" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="femat" tilewidth="16" tileheight="16" spacing="1" margin="2">
+  <image source="./femat.png" width="428" height="683"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="39" height="39">
+  <data encoding="base64" compression="zlib">
+   eJztlr1OwzAUhW+bERBs0I1HCB2ZGIt4iVa8SGAHBAsDS1ugrTqx0QUoCCSY2PgdKngBJAgpbJyrxKpjkaTCrlQkD5/sa19fnzr2UXtE1LNYLP+eZVB3iI5BzQnj2pBxPSE2oeuCyNtHvQOwg7iF1kSMuks6uj4lbSfgDfF5VJvjtXw8XnTi8WouHvel2IQ2brnWHbhF7afo2+jEQptv6Ny20W9HdDRjrsf1dbTJ962MfiWiLfX/Egttpu5bWamvg+m3kKZtlkJfECCupuWbum9fNPAnAcdib6GH/WEhasWYnKOuR13PhLYS6oi9xf785hjus3cdggZoOqGHqTny2pIBbeItuBR/Z/LdLmCevesUnIFu5HEF6dzaCi6Zu28uJd+3IubZu+7BA3h0Qg8rptw3oc3UubE29tCK1MoeoSLPq+tGoa3jxNthPUNdZ+KbqtpM+ZurqUm+b/zm51KQ/UJ4Rla+ibcgPGSF4h4mWox7PC/8gimF42n5XLer62/PqJWVh33KV0TzAfpoqxxn5X8D3bfAbIBNsAXe8Z/tA/j5+G+4BEHYegHm+mAXd/8a3ID13CBXoKuLaYAmaIEJ7DMJppT/En2cVxC2NI25GXAEXsAr2MsNck2cl4yf0JfHfGkuKd9PWK+jaxSMg67fznUUqLXTvnVWbLFYLJbx4wdghreN
+  </data>
+ </layer>
+</map>
