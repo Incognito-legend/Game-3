@@ -21,6 +21,9 @@ public class Player extends Actor
     int Class = 4;
     boolean dirtyFlag = true;
     boolean dirtyFlag1 = true;
+    int Lobby = 1;
+    int Room = Lobby;
+    int Blacksmith = 2;
     
     public void act() 
     {
@@ -37,20 +40,9 @@ public class Player extends Actor
 
         boolean dirtyFlag = true;
         boolean dirtyFlag1 = true;
-        int Lobby = 1;
-        int Room = Lobby;
-        int Blacksmith = 2;
-        
-        int Class = 4;
+
         // Movement and controls section
-    if (Room == Lobby){
-        if (Greenfoot.isKeyDown ("left"))
-    {
-      level.scroll(10, 0);
-
-
-        
-//start of movement        
+    if (Room == Lobby){    
   if (Greenfoot.isKeyDown ("left")){
        
        level.scroll(10, 0);
@@ -75,8 +67,8 @@ public class Player extends Actor
         }
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "left";
-        System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
-        System.out.println(level.pos_x + ", " + level.pos_y);
+        //System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
+        //System.out.println(level.pos_x + ", " + level.pos_y);
     }
         else  if (Greenfoot.isKeyDown ("right"))
     {
@@ -102,8 +94,8 @@ public class Player extends Actor
         }
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "right";
-        System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
-        System.out.println(level.pos_x + ", " + level.pos_y);
+        //System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
+        //System.out.println(level.pos_x + ", " + level.pos_y);
     }
         else if (Greenfoot.isKeyDown("up"))
     {
@@ -128,8 +120,8 @@ public class Player extends Actor
         }    
         whichWalk = (whichWalk + 1) % 4;  
         lastWayFacing = "up";
-        System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
-        System.out.println(level.pos_x + ", " + level.pos_y);
+        //System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
+        //System.out.println(level.pos_x + ", " + level.pos_y);
     }    
         else if (Greenfoot.isKeyDown("down"))
     {   
@@ -154,8 +146,8 @@ public class Player extends Actor
         }   
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "down";
-        System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
-        System.out.println(level.pos_x + ", " + level.pos_y);
+        //System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
+        //System.out.println(level.pos_x + ", " + level.pos_y);
     //end of Player movement
     //Beginning of Artificial movement
     } 
@@ -296,7 +288,7 @@ if (Room == Blacksmith){
         }
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "left";
-        System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
+        //System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
     }
   
         else  if (Greenfoot.isKeyDown ("right"))
@@ -321,7 +313,7 @@ if (Room == Blacksmith){
         }
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "right";
-        System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
+        //System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
     }
 
         else if (Greenfoot.isKeyDown("up"))
@@ -346,7 +338,7 @@ if (Room == Blacksmith){
         }    
         whichWalk = (whichWalk + 1) % 4;  
         lastWayFacing = "up";
-        System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
+        //System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
     }
     
         else if (Greenfoot.isKeyDown("down"))
@@ -371,7 +363,7 @@ if (Room == Blacksmith){
         }   
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "down";
-        System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
+        //System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
     } 
     
     else 
@@ -392,7 +384,6 @@ if (Room == Blacksmith){
 }
 }
 
-}
 
     //block#1001 = wall
     //block#1002 = floor
