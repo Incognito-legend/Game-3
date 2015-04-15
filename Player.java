@@ -24,6 +24,8 @@ public class Player extends Actor
     int Lobby = 1;
     int Room = Lobby;
     int Blacksmith = 2;
+    boolean Blacksmith_Goodbye = false;
+    boolean Blacksmith_Welcome = false;
     
     public void act() 
     {
@@ -182,7 +184,7 @@ public class Player extends Actor
            System.out.println("Welcome to the Blacksmith!");
            //Room = Blacksmith;
            //getbackground();
-           
+           Room = Blacksmith;
            level.changeMap(2);
            
            dirtyFlag1 = false;
@@ -381,9 +383,20 @@ if (Room == Blacksmith){
         
     }
 }
-}
-}
 
+       if ((level.getTileAt(hero_x, hero_y) == 1012) && !(Blacksmith_Goodbye)){
+        
+           System.out.println("Goodbye!");
+           Blacksmith_Goodbye = true;
+        
+    }
+       if ((level.getTileAt(hero_x, hero_y) == 1004) && !(Blacksmith_Welcome)){
+           
+           System.out.println("My goods are of the highest quality!");
+           Blacksmith_Welcome = true;
+}
+}
+}
 
     //block#1001 = wall
     //block#1002 = floor
