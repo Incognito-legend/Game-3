@@ -185,8 +185,8 @@ public class Player extends Actor
            //Room = Blacksmith;
            //getbackground();
            Room = Blacksmith;
+           level.setDefaultForMap(1);
            level.changeMap(2);
-           
            dirtyFlag1 = false;
            
            
@@ -268,6 +268,11 @@ public class Player extends Actor
             level.music.play();
     }
 }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+//===============================================================================================================================================
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+
 if (Room == Blacksmith){
     if (Greenfoot.isKeyDown ("left"))
     {
@@ -382,21 +387,50 @@ if (Room == Blacksmith){
         }
         
     }
-}
 
-       if ((level.getTileAt(hero_x, hero_y) == 1012) && !(Blacksmith_Goodbye)){
+//SYSTEM MESSAGE PANEL Start
+    if ((level.getTileAt(hero_x, hero_y) == 1012) && !(Blacksmith_Goodbye)){
         
            System.out.println("Goodbye!");
            Blacksmith_Goodbye = true;
+           Room = Lobby;
+           level.changeMap(1);
+           
+           dirtyFlag1 = true;
         
-    }
+ } else if (!(level.getTileAt(hero_x, hero_y) == 1012) && (Blacksmith_Goodbye)){
+           Blacksmith_Goodbye = false;
+           level.track_num = 1;
+ }
        if ((level.getTileAt(hero_x, hero_y) == 1004) && !(Blacksmith_Welcome)){
            
            System.out.println("My goods are of the highest quality!");
            Blacksmith_Welcome = true;
+ } else if (!(level.getTileAt(hero_x, hero_y) == 1004) && (Blacksmith_Welcome)){
+     System.out.println("Farewell Stranger!");
+     Blacksmith_Welcome = false;
+ }
+//SYSTEM MESSAGE PANEL End
+}
+    if (!level.music.isPlaying()) {
+        level.track_num++;
+        
+        if(level.track_num > 100) {
+            level.track_num = 1;
+        }
+        
+        if( level.track_num == 1) {
+            
+           level.music = new GreenfootSound("079 - Shattered Life.wav");
+        } else if( level.track_num == 2)  {
+            
+           level.music = new GreenfootSound("043 - Silent Ground.wav");
+        }
+            level.music.play();
+    }
 }
 }
-}
+
 
     //block#1001 = wall
     //block#1002 = floor
