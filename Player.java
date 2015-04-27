@@ -394,7 +394,9 @@ if (Room == Blacksmith){
            System.out.println("Goodbye!");
            Blacksmith_Goodbye = true;
            Room = Lobby;
+           level.setDefaultForMap(2);
            level.changeMap(1);
+
            
            dirtyFlag1 = true;
         
