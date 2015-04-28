@@ -64,6 +64,8 @@ public class background extends World
             largeImage = map_Lobby;
             setBackground(map_Lobby);
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
+            pos_x = -1928;
+            pos_y = -2205;
             statement = false;
             statement_2 = true;
             System.out.println("Current Map Image =" + largeImage);
@@ -80,7 +82,7 @@ public class background extends World
             statement = true;
             System.out.println("check: code has failed if this is seen in console more than once");
             System.out.println("Current Map Image =" + largeImage);
-            System.out.println(width + "," + height); 
+            System.out.println(width + "," + height);
         }
         
     
@@ -95,5 +97,12 @@ public int getTileAt(int x, int y){
         return hit_tiles[i];
         
 }
-    
+public void stop(int song){
+    if (song == 1){
+        GreenfootSound music;
+}
+}
+public void play(int song){
+
+}
 }

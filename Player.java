@@ -251,22 +251,22 @@ public class Player extends Actor
         Class = 5;
     }
 
-        if (!level.music.isPlaying()) {
-        level.track_num++;
-        
-        if(level.track_num > 100) {
-            level.track_num = 1;
-        }
-        
-        if( level.track_num == 1) {
-            
-           level.music = new GreenfootSound("079 - Shattered Life.wav");
-        } else if( level.track_num == 2)  {
-            
-           level.music = new GreenfootSound("043 - Silent Ground.wav");
-        }
-            level.music.play();
-    }
+//         if (!level.music.isPlaying()) {
+//         level.track_num++;
+//         
+//         if(level.track_num > 100) {
+//             level.track_num = 1;
+//         }
+//         
+//         if( level.track_num == 1) {
+//             
+//            level.music = new GreenfootSound("079 - Shattered Life.wav");
+//         } else if( level.track_num == 2)  {
+//             
+//            level.music = new GreenfootSound("043 - Silent Ground.wav");
+//         }
+//             level.music.play();
+//     }
 }
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -414,22 +414,10 @@ if (Room == Blacksmith){
  }
 //SYSTEM MESSAGE PANEL End
 }
-    if (!level.music.isPlaying()) {
-        level.track_num++;
-        
-        if(level.track_num > 100) {
-            level.track_num = 1;
-        }
-        
-        if( level.track_num == 1) {
-            
-           level.music = new GreenfootSound("079 - Shattered Life.wav");
-        } else if( level.track_num == 2)  {
-            
-           level.music = new GreenfootSound("043 - Silent Ground.wav");
-        }
-            level.music.play();
-    }
+//     if (!level.music.isPlaying()) {
+//         level.track_num++;
+//         
+    
 }
 }
 
