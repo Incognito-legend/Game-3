@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="39" height="39" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="femat" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../../Game-1/images/femat.png" width="426" height="681"/>
+ </tileset>
+ <tileset firstgid="1001" name="hit-tiles" tilewidth="16" tileheight="16">
+  <image source="../../Game-1/images/hit-tiles.png" width="192" height="16"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="39" height="39">
+  <data encoding="base64" compression="zlib">
+   eJztlssNwjAMQBOxA4xR1ugUUKYAQeGAGKCABPMg7h0AVYzAjc8NW8QislLIgZoefHhysIE8JTal7BhTKoqiKK3lbH6DtNsxUMccIeW2tsZM7TumEWuM5NikWwL7bIHCxV3EGj8jcW64zwDYuNiPWEu5ZbBPD+gyLuZFqJYI3Cl+f1LjRmfF81Ju/iykHpgbAxNbX5echYWDep7cCq++d3XJWZh5UM8P3f1R//vvkXCjfssZvL94XWoWssDe+QcvKTe60za6he409JvBHTPBWfjmxf2kzo0/y+c2Lifhxp/lIxuXk5iFCtYPiAdgha+BpQnn7i5XdWT6jTjhOQJX4OY86nJN/7dUFEVRlH/yBF4Yh4Y=
+  </data>
+ </layer>
+</map>
