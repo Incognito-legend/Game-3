@@ -561,7 +561,7 @@ if (Room == Shop){
            Shop_Welcome = true;
 } else if (!(level.getTileAt(hero_x, hero_y) == 1006) && (Shop_Welcome)){
      System.out.println("You be careful out there!");
-     Blacksmith_Welcome = false;
+     Shop_Welcome = false;
  }
 //SYSTEM MESSAGE PANEL End
 }

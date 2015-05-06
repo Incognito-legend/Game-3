@@ -39,7 +39,7 @@ public class background extends World
         
         addObject(new Palladin(), 512, 389);
         
-        System.out.println("Start of Background Fuction!: " + d);
+        //System.out.println("Start of Background Fuction!: " + d);
        
         music = new GreenfootSound("043 - Silent Ground.wav");
         music_2 = new GreenfootSound("079 - Shattered Life.wav");
@@ -56,7 +56,7 @@ public class background extends World
 
        getBackground().drawImage(largeImage, pos_x, pos_y);
 
-       System.out.println("pos_x " + pos_x + ", pos_y " + pos_y);
+       //System.out.println("pos_x " + pos_x + ", pos_y " + pos_y);
 }
     public int changeMap(int m){
 
@@ -68,19 +68,19 @@ public class background extends World
           if ((!(statement_3)) && (statement) && (statement_2)){
             pos_x = -1648;
             pos_y = -2205;
-            System.out.println("Current Map Image =" + largeImage);
-            System.out.println(width + "," + height);
+            //System.out.println("Current Map Image =" + largeImage);
+            //System.out.println(width + "," + height);
           } else if ((!(statement_2)) && (statement) && (statement_3)){
             pos_x = -1928;
             pos_y = -2205;
-            System.out.println("Current Map Image =" + largeImage);
-            System.out.println(width + "," + height);
+            //System.out.println("Current Map Image =" + largeImage);
+            //System.out.println(width + "," + height);
           }
             statement = false;
             statement_2 = true;
             statement_3 = true;
-            System.out.println("Current Map Image =" + largeImage);
-            System.out.println(width + "," + height);
+            //System.out.println("Current Map Image =" + largeImage);
+            //System.out.println(width + "," + height);
         }
         
         if ((m == 2) && (statement_2 = true)){
@@ -93,42 +93,58 @@ public class background extends World
             statement_2 = false;
             statement = true;
             statement_3 = true;
-            System.out.println("check: code has failed if this is seen in console more than once");
-            System.out.println("Current Map Image =" + largeImage);
-            System.out.println(width + "," + height);
+            //System.out.println("check: code has failed if this is seen in console more than once");
+            //System.out.println("Current Map Image =" + largeImage);
+            //System.out.println(width + "," + height);
         }
         if ((m == 3) && (statement_3 = true)){
             hit_tiles = hit_tiles_Shop;
             largeImage = map_Shop;
             setBackground(map_Shop);
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
-            pos_x = -1458;
-            pos_y = -1915;
+            if (getRandomNumberRange(1,100) <= 50){
+            pos_x = -1168;
+            pos_y = -1835;
+      }else {
+            pos_x = -1648;
+            pos_y = -1835;
+      }
             statement_3 = false;
             statement = true;
             statement_2 = true;
-            System.out.println("check: code has failed if this is seen in console more than once");
-            System.out.println("Current Map Image =" + largeImage);
-            System.out.println(width + "," + height);
-        }
+            //System.out.println("check: code has failed if this is seen in console more than once");
+            //System.out.println("Current Map Image =" + largeImage);
+            //System.out.println(width + "," + height);
+      }
         
     
     return 0;
 }
+
 public int setDefaultForMap(int Map){
        largeImage.scale(largeImage.getWidth()/6,largeImage.getHeight()/6);
        return 0;
 }
+
 public int getTileAt(int x, int y){
         int i = x + width * y;
         return hit_tiles[i];
         
 }
+
+public int getRandomNumberRange(int start, int end){
+    int normal = Greenfoot.getRandomNumber(end-start+1);
+    return normal+start;
+}
+
+
 public void stop(int song){
     if (song == 1){
         GreenfootSound music;
 }
 }
+
+
 public void play(int song){
 
 }
