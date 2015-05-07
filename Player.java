@@ -47,7 +47,10 @@ public class Player extends Actor
         boolean dirtyFlag1 = true;
 
         // Movement and controls section
-    if (Room == Lobby){    
+    if (Room == Lobby){
+     
+
+        
   if (Greenfoot.isKeyDown ("left")){
        
        level.scroll(10, 0);
@@ -184,7 +187,7 @@ public class Player extends Actor
         
     }
        if (level.getTileAt(hero_x, hero_y) == 1005 && (dirtyFlag1 == true)){
-           System.out.println("Welcome to the Blacksmith!");
+           //System.out.println("Welcome to the Blacksmith!");
            //Room = Blacksmith;
            //getbackground();
            Room = Blacksmith;
@@ -198,7 +201,7 @@ public class Player extends Actor
 
     }
        if (level.getTileAt(hero_x, hero_y) == 1006 && (dirtyFlag1 == true)){
-        System.out.println("Welcome to the Shop!");
+        //System.out.println("Welcome to the Shop!");
         Room = Shop;
         level.setDefaultForMap(1);
         level.changeMap(3);
@@ -410,12 +413,12 @@ if (Room == Blacksmith){
            Blacksmith_Goodbye = false;
            level.track_num = 1;
  }
-       if ((level.getTileAt(hero_x, hero_y) == 1004) && !(Blacksmith_Welcome)){
+       if ((level.getTileAt(hero_x, hero_y) == 1006) && !(Blacksmith_Welcome)){
            
            System.out.println("My goods are of the highest quality!");
            Blacksmith_Welcome = true;
- } else if (!(level.getTileAt(hero_x, hero_y) == 1004) && (Blacksmith_Welcome)){
-     System.out.println("Farewell Stranger!");
+ } else if (!(level.getTileAt(hero_x, hero_y) == 1006) && (Blacksmith_Welcome)){
+     //System.out.println("Farewell Stranger!");
      Blacksmith_Welcome = false;
  }
 //SYSTEM MESSAGE PANEL End
@@ -542,7 +545,7 @@ if (Room == Shop){
 //SYSTEM MESSAGE PANEL Start
     if ((level.getTileAt(hero_x, hero_y) == 1012) && !(Shop_Goodbye)){
         
-           System.out.println("Goodbye!");
+           //System.out.println("Goodbye!");
            Shop_Goodbye = true;
            Room = Lobby;
            level.setDefaultForMap(2);
@@ -558,6 +561,7 @@ if (Room == Shop){
        if ((level.getTileAt(hero_x, hero_y) == 1006) && !(Shop_Welcome)){
            
            System.out.println("Oh! Come on in!");
+           level.addObject(new Tutorial_Guide(), 0, 0);
            Shop_Welcome = true;
 } else if (!(level.getTileAt(hero_x, hero_y) == 1006) && (Shop_Welcome)){
      System.out.println("You be careful out there!");
