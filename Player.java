@@ -29,6 +29,7 @@ public class Player extends Actor
     boolean Blacksmith_Welcome = false;
     boolean Shop_Goodbye = false;
     boolean Shop_Welcome = false;
+    boolean windowPane = false;
     
     public void act() 
     {
@@ -427,7 +428,7 @@ if (Room == Blacksmith){
 //         level.track_num++;
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
-if (Room == Shop){
+if ((Room == Shop) && !(windowPane)){
     if (Greenfoot.isKeyDown ("left"))
     {
       level.scroll(10, 0);
@@ -561,7 +562,7 @@ if (Room == Shop){
        if ((level.getTileAt(hero_x, hero_y) == 1006) && !(Shop_Welcome)){
            
            System.out.println("Oh! Come on in!");
-           level.addObject(new Tutorial_Guide(), 0, 0);
+           windowPane = true;
            Shop_Welcome = true;
 } else if (!(level.getTileAt(hero_x, hero_y) == 1006) && (Shop_Welcome)){
      System.out.println("You be careful out there!");
@@ -569,9 +570,20 @@ if (Room == Shop){
  }
 //SYSTEM MESSAGE PANEL End
 }
+if ((Room == Shop) && (windowPane)){
+        if (lastWayFacing.equals("up")){
+            setImage(up2);
+        } else if (lastWayFacing.equals("down")){
+            setImage(down2);
+        } else if (lastWayFacing.equals("left")) {
+            setImage(left2);
+        } else if (lastWayFacing.equals("right")) {
+            setImage(right2);
+        }
+        level.addObject(new Tutorial_Guide(), 512, 389);
 }       
 }
-
+}
 
 
     //block#1001 = wall

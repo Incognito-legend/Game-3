@@ -8,12 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tutorial_Guide extends Actor
 {
-    /**
-     * Act - do whatever the Tutorial_Guide wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    int width = 117;
+    int height = 117;
+    GreenfootImage Tutorial_Guide = new GreenfootImage("Tutorial Guide.png");
+    public Tutorial_Guide() 
     {
-        // Add your action code here.
-    }    
+        Tutorial_Guide.scale(Tutorial_Guide.getWidth()*60,Tutorial_Guide.getHeight()*60);
+//         scale.Tutorial(117, 117);
+    }
+//     public int getHeight(){
+//         return 0;
+//     }
+//     public int getWidth(){
+//         return 0;
+//     }
+    //public void scale(int width, int height){
+ 
+    //}
 }
+
