@@ -13,17 +13,8 @@ public class Tutorial_Guide extends Actor
     GreenfootImage Tutorial_Guide = new GreenfootImage("Tutorial Guide.png");
     public Tutorial_Guide() 
     {
-        Tutorial_Guide.scale(Tutorial_Guide.getWidth()*60,Tutorial_Guide.getHeight()*60);
-//         scale.Tutorial(117, 117);
+        Tutorial_Guide.scale(Tutorial_Guide.getWidth()*6,Tutorial_Guide.getHeight()*6);
+
     }
-//     public int getHeight(){
-//         return 0;
-//     }
-//     public int getWidth(){
-//         return 0;
-//     }
-    //public void scale(int width, int height){
- 
-    //}
 }
 

@@ -105,7 +105,7 @@ public class background extends World
             if (getRandomNumberRange(1,100) <= 50){
             pos_x = -1168;
             pos_y = -1835;
-      }else {
+      }else{
             pos_x = -1648;
             pos_y = -1835;
       }
