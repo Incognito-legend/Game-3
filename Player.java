@@ -26,6 +26,8 @@ public class Player extends Actor
     int Blacksmith = 2;
     int Shop = 3;
     int Arena = 4;
+    int Arena_Open_Doors = 5;
+    int Arena_Battle_Room = 6;
     boolean Blacksmith_Goodbye = false;
     boolean Blacksmith_Welcome = false;
     boolean Shop_Goodbye = false;
@@ -62,7 +64,7 @@ public class Player extends Actor
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(-10, 0);
       }
       
@@ -89,7 +91,7 @@ public class Player extends Actor
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(10, 0);
         }
         
@@ -115,7 +117,7 @@ public class Player extends Actor
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, -10);
         }
         
@@ -141,7 +143,7 @@ public class Player extends Actor
        hero_y_px = -level.pos_y + getY()+40;
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, 10);
         }
         
@@ -178,12 +180,12 @@ public class Player extends Actor
     }
     
     // Tile Definitions
-       if (level.getTileAt(hero_x, hero_y) == 1003){
+       if (level.getTileAt(hero_x, hero_y) == 3){
         System.out.println("You're at your house!");
         
         
     }
-       if (level.getTileAt(hero_x, hero_y) == 1004 && (dirtyFlag1 == true)){
+       if (level.getTileAt(hero_x, hero_y) == 4 && (dirtyFlag1 == true)){
 //         System.out.println("You're at the Arena!");
            Room = Arena;
            level.setDefaultForMap(1);
@@ -191,7 +193,7 @@ public class Player extends Actor
            dirtyFlag1 = false;
         
     }
-       if (level.getTileAt(hero_x, hero_y) == 1005 && (dirtyFlag1 == true)){
+       if (level.getTileAt(hero_x, hero_y) == 5 && (dirtyFlag1 == true)){
            //System.out.println("Welcome to the Blacksmith!");
            //Room = Blacksmith;
            //getbackground();
@@ -205,7 +207,7 @@ public class Player extends Actor
 
 
     }
-       if (level.getTileAt(hero_x, hero_y) == 1006 && (dirtyFlag1 == true)){
+       if (level.getTileAt(hero_x, hero_y) == 6 && (dirtyFlag1 == true)){
         //System.out.println("Welcome to the Shop!");
         Room = Shop;
         level.setDefaultForMap(1);
@@ -213,51 +215,51 @@ public class Player extends Actor
         dirtyFlag1 = false;
         
     }
-    //        if (Class == 1 && (level.getTileAt(hero_x, hero_y) == 1005) && dirtyFlag1 == false && (this instanceof hunter)){
+    //        if (Class == 1 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof hunter)){
         //        dirtyFlag1 = true;
         //        level.addObject(new hunter(), 512, 389);
-        //     }  else if (Class == 3 && (level.getTileAt(hero_x, hero_y) == 1005) && dirtyFlag1 == false && (this instanceof Mage)){
+        //     }  else if (Class == 3 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof Mage)){
             //        dirtyFlag1 = true;
             //        level.addObject(new Mage(), 512, 389);
-            //     }  else if (Class == 4 && (level.getTileAt(hero_x, hero_y) == 1005) && dirtyFlag1 == false && (this instanceof Palladin)){
+            //     }  else if (Class == 4 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof Palladin)){
                 //        dirtyFlag1 = true;
                 //        level.addObject(new Palladin(), 512, 389);
-                //     }  else if (Class == 5 && (level.getTileAt(hero_x, hero_y) == 1005) && dirtyFlag1 == false && (this instanceof Warrior)){
+                //     }  else if (Class == 5 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof Warrior)){
                     //        dirtyFlag1 = true;
                     //        level.addObject(new Warrior(), 512, 389);
-                    //     }  else if (Class == 2 && (level.getTileAt(hero_x, hero_y) == 1005) && dirtyFlag1 == false && (this instanceof Druid)){
+                    //     }  else if (Class == 2 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof Druid)){
                         //        dirtyFlag1 = true;
                         //        level.addObject(new Druid(), 512, 389);
                         //     }
-       if (level.getTileAt(hero_x, hero_y) == 1007 && !(this instanceof hunter)){
+       if (level.getTileAt(hero_x, hero_y) == 7 && !(this instanceof hunter)){
         level.removeObject(this);
         level.addObject(new hunter(), 512, 389);
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Hunter ] !");
         Class = 1;
     }
-       if (level.getTileAt(hero_x, hero_y) == 1008 && !(this instanceof Druid)){
+       if (level.getTileAt(hero_x, hero_y) == 8 && !(this instanceof Druid)){
         level.removeObject(this);
         level.addObject(new Druid(), 512, 389);
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Druid ] !");
         Class = 2;
     }
-       if (level.getTileAt(hero_x, hero_y) == 1009 && !(this instanceof Mage)){
+       if (level.getTileAt(hero_x, hero_y) == 9 && !(this instanceof Mage)){
         level.removeObject(this);
         level.addObject(new Mage(), 512, 389);
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Mage ] !");
         Class = 3;
     }
-        if (level.getTileAt(hero_x, hero_y) == 1010 && !(this instanceof Palladin)){
+        if (level.getTileAt(hero_x, hero_y) == 10 && !(this instanceof Palladin)){
         level.removeObject(this);
         level.addObject(new Palladin(), 512, 389);
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Palladin ] !");
         Class = 4;
     }
-       if (level.getTileAt(hero_x, hero_y) == 1011 && !(this instanceof Warrior)){
+       if (level.getTileAt(hero_x, hero_y) == 11 && !(this instanceof Warrior)){
         level.removeObject(this);
         level.addObject(new Warrior(), 512, 389);
         level.addObject(new Smoke_Effect(), 512, 389);
@@ -295,7 +297,7 @@ if (Room == Blacksmith){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(-10, 0);
         }
         if (whichWalk == 0) {
@@ -320,7 +322,7 @@ if (Room == Blacksmith){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(10, 0);
         }
         if (whichWalk == 0) {
@@ -345,7 +347,7 @@ if (Room == Blacksmith){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, -10);
         }
         if (whichWalk == 0) {
@@ -370,7 +372,7 @@ if (Room == Blacksmith){
        hero_y_px = -level.pos_y + getY()+40;
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, 10);
         }
         if (whichWalk == 0) {
@@ -403,7 +405,7 @@ if (Room == Blacksmith){
     }
 
 //SYSTEM MESSAGE PANEL Start
-    if ((level.getTileAt(hero_x, hero_y) == 1012) && !(Blacksmith_Goodbye)){
+    if ((level.getTileAt(hero_x, hero_y) == 12) && !(Blacksmith_Goodbye)){
         
            System.out.println("Goodbye!");
            Blacksmith_Goodbye = true;
@@ -414,15 +416,15 @@ if (Room == Blacksmith){
            
            dirtyFlag1 = true;
         
- } else if (!(level.getTileAt(hero_x, hero_y) == 1012) && (Blacksmith_Goodbye)){
+ } else if (!(level.getTileAt(hero_x, hero_y) == 12) && (Blacksmith_Goodbye)){
            Blacksmith_Goodbye = false;
            level.track_num = 1;
  }
-       if ((level.getTileAt(hero_x, hero_y) == 1006) && !(Blacksmith_Welcome)){
+       if ((level.getTileAt(hero_x, hero_y) == 6) && !(Blacksmith_Welcome)){
            
            System.out.println("My goods are of the highest quality!");
            Blacksmith_Welcome = true;
- } else if (!(level.getTileAt(hero_x, hero_y) == 1006) && (Blacksmith_Welcome)){
+ } else if (!(level.getTileAt(hero_x, hero_y) == 6) && (Blacksmith_Welcome)){
      //System.out.println("Farewell Stranger!");
      Blacksmith_Welcome = false;
  }
@@ -440,7 +442,7 @@ if ((Room == Shop) && !(windowPane)){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(-10, 0);
         }
         if (whichWalk == 0) {
@@ -465,7 +467,7 @@ if ((Room == Shop) && !(windowPane)){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(10, 0);
         }
         if (whichWalk == 0) {
@@ -490,7 +492,7 @@ if ((Room == Shop) && !(windowPane)){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, -10);
         }
         if (whichWalk == 0) {
@@ -515,7 +517,7 @@ if ((Room == Shop) && !(windowPane)){
        hero_y_px = -level.pos_y + getY()+40;
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, 10);
         }
         if (whichWalk == 0) {
@@ -548,7 +550,7 @@ if ((Room == Shop) && !(windowPane)){
     }
 
 //SYSTEM MESSAGE PANEL Start
-    if ((level.getTileAt(hero_x, hero_y) == 1012) && !(Shop_Goodbye)){
+    if ((level.getTileAt(hero_x, hero_y) == 12) && !(Shop_Goodbye)){
         
            //System.out.println("Goodbye!");
            Shop_Goodbye = true;
@@ -559,16 +561,16 @@ if ((Room == Shop) && !(windowPane)){
            
            dirtyFlag1 = true;
         
- } else if (!(level.getTileAt(hero_x, hero_y) == 1012) && (Shop_Goodbye)){
+ } else if (!(level.getTileAt(hero_x, hero_y) == 12) && (Shop_Goodbye)){
            Shop_Goodbye = false;
            level.track_num = 1;
  }
-       if ((level.getTileAt(hero_x, hero_y) == 1006) && !(Shop_Welcome)){
+       if ((level.getTileAt(hero_x, hero_y) == 6) && !(Shop_Welcome)){
            
            System.out.println("Oh! Come on in!");
            windowPane = true;
            Shop_Welcome = true;
-} else if (!(level.getTileAt(hero_x, hero_y) == 1006) && (Shop_Welcome)){
+} else if (!(level.getTileAt(hero_x, hero_y) == 6) && (Shop_Welcome)){
      System.out.println("You be careful out there!");
      Shop_Welcome = false;
  }
@@ -599,7 +601,7 @@ if (Room == Arena){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(-10, 0);
         }
         if (whichWalk == 0) {
@@ -624,7 +626,7 @@ if (Room == Arena){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(10, 0);
         }
         if (whichWalk == 0) {
@@ -649,7 +651,7 @@ if (Room == Arena){
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, -10);
         }
         if (whichWalk == 0) {
@@ -674,7 +676,7 @@ if (Room == Arena){
        hero_y_px = -level.pos_y + getY()+40;
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-      if (level.getTileAt (hero_x, hero_y) == 1001){
+      if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, 10);
         }
         if (whichWalk == 0) {
@@ -705,9 +707,133 @@ if (Room == Arena){
         }
         
     }
-           if (level.getTileAt(hero_x, hero_y) == 1004 && (dirtyFlag1 == true)){
+           if (level.getTileAt(hero_x, hero_y) == 4 && (dirtyFlag1 == true)){
 // entering Arena Battle room
-           Room = Arena_Battle_Room;
+           Room = Arena_Open_Doors;
+           level.setDefaultForMap(1);
+           level.changeMap(4);
+           dirtyFlag1 = false;
+        
+    }
+}
+
+if (Room == Arena){
+    if (Greenfoot.isKeyDown ("left"))
+    {
+      level.scroll(10, 0);
+       hero_x_px = -level.pos_x + getX()-50;
+       hero_y_px = -level.pos_y + getY();
+       hero_x = hero_x_px/96;
+       hero_y = hero_y_px/96;
+      if (level.getTileAt (hero_x, hero_y) == 1){
+          level.scroll(-10, 0);
+        }
+        if (whichWalk == 0) {
+            setImage(left1);
+        } else if (whichWalk == 1) {
+            setImage(left2);
+        } else if (whichWalk == 2) {
+            setImage(left3);
+        } else if (whichWalk == 3) {
+            setImage(left2);
+        }
+        whichWalk = (whichWalk + 1) % 4;
+        lastWayFacing = "left";
+        //System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
+    }
+  
+        else  if (Greenfoot.isKeyDown ("right"))
+    {
+        background x = (background)this.getWorld();
+      x.scroll(-10, 0);
+       hero_x_px = -level.pos_x + getX()+50;
+       hero_y_px = -level.pos_y + getY();
+       hero_x = hero_x_px/96;
+       hero_y = hero_y_px/96;
+      if (level.getTileAt (hero_x, hero_y) == 1){
+          level.scroll(10, 0);
+        }
+        if (whichWalk == 0) {
+            setImage(right1);
+        } else if (whichWalk == 1) {
+            setImage(right2);
+        } else if (whichWalk == 2) {
+            setImage(right3);
+        } else if (whichWalk == 3) {
+            setImage(right2);
+        }
+        whichWalk = (whichWalk + 1) % 4;
+        lastWayFacing = "right";
+        //System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
+    }
+
+        else if (Greenfoot.isKeyDown("up"))
+    {
+        background x = (background)this.getWorld();
+      x.scroll(0, 10);
+       hero_x_px = -level.pos_x + getX();
+       hero_y_px = -level.pos_y + getY();
+       hero_x = hero_x_px/96;
+       hero_y = hero_y_px/96;
+      if (level.getTileAt (hero_x, hero_y) == 1){
+          level.scroll(0, -10);
+        }
+        if (whichWalk == 0) {
+            setImage(up1);
+        } else if (whichWalk == 1) {
+            setImage(up2);
+        } else if (whichWalk == 2) {
+            setImage(up3);
+        } else if (whichWalk == 3) {
+            setImage(up2);
+        }    
+        whichWalk = (whichWalk + 1) % 4;  
+        lastWayFacing = "up";
+        //System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
+    }
+    
+        else if (Greenfoot.isKeyDown("down"))
+    {   
+        background x = (background)this.getWorld();
+      x.scroll(0, -10);
+       hero_x_px = -level.pos_x + getX();
+       hero_y_px = -level.pos_y + getY()+40;
+       hero_x = hero_x_px/96;
+       hero_y = hero_y_px/96;
+      if (level.getTileAt (hero_x, hero_y) == 1){
+          level.scroll(0, 10);
+        }
+        if (whichWalk == 0) {
+            setImage(down1);
+        } else if (whichWalk == 1) {
+            setImage(down2);
+        } else if (whichWalk == 2) {
+            setImage(down3);
+        } else if (whichWalk == 3) {
+            setImage(down2);
+        }   
+        whichWalk = (whichWalk + 1) % 4;
+        lastWayFacing = "down";
+        //System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
+    } 
+    
+    else 
+    {
+        
+        if (lastWayFacing.equals("up")){
+            setImage(up2);
+        } else if (lastWayFacing.equals("down")){
+            setImage(down2);
+        } else if (lastWayFacing.equals("left")) {
+            setImage(left2);
+        } else if (lastWayFacing.equals("right")) {
+            setImage(right2);
+        }
+        
+    }
+           if (level.getTileAt(hero_x, hero_y) == 4 && (dirtyFlag1 == true)){
+// entering Arena Battle room
+           Room = Arena_Open_Doors;
            level.setDefaultForMap(1);
            level.changeMap(5);
            dirtyFlag1 = false;
@@ -718,11 +844,11 @@ if (Room == Arena){
 }
 
 
-    //block#1001 = wall
+    //block#1 = wall
     //block#1002 = floor
     //TB revisited later   
     //}
-    //if (!(level.getTileAt(hero_x, hero_y) == 1012)){
+    //if (!(level.getTileAt(hero_x, hero_y) == 12)){
            //dirtyFlag = true;
            
     //}   
