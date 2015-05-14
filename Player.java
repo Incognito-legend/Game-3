@@ -744,6 +744,7 @@ if (Room == Arena){
            Room = Arena_Open_Doors;
            level.setDefaultForMap(1);
            level.changeMap(5);
+           level.addObject(new Objective_Arrow(), 512, 389);
            dirtyFlag1 = false;
         
     }
