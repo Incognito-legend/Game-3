@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="39" height="39" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="hit-tiles" tilewidth="16" tileheight="16">
+  <image source="hit-tiles.png" width="192" height="16"/>
+  <tile id="0">
+   <properties>
+    <property name="Wall" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="floor" value="2"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Village" value="3"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="Dark Temple Part 1" value="7"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="Dark Temple part 2" value="9"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="Generate Next Random Room" value="12"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="39" height="39">
+  <data encoding="base64" compression="zlib">
+   eJztlEsOgCAMRAEXxuj9z2vcEUJo6ddAF5Oa2spjKOaUUg6FOjoqebO0KpW8WTzZiqFWZcud516OUy/h2/funvAWU89lm92H1Lex/aPIqaeyYf2BctD8SbCdTYTYriZCa1DZsDOgtUawBZsnm4Us2Dh91DPFcmBzkv/e0T4hLzAeS5+pBJ/mvEndmd3vKdVLLht2big1kmycmdRg0/LRat44fTuzUTXLxtmL9lorsT2VvFlC/9ULvoIIbw==
+  </data>
+ </layer>
+</map>

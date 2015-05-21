@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="39" height="39" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="fe" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../../../../Downloads/fe.png" width="762" height="477"/>
+ </tileset>
+ <tileset firstgid="1233" name="Fire emblem map tiles part 2" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../../../../Downloads/Fire emblem map tiles part 2.png" width="762" height="458"/>
+ </tileset>
+ <tileset firstgid="2377" name="TrentIconsFinal-upd6" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../../../../Downloads/TrentIconsFinal-upd6.png" width="171" height="341"/>
+ </tileset>
+ <tileset firstgid="2577" name="femat" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="femat.png" width="426" height="681"/>
+ </tileset>
+ <tileset firstgid="3577" name="hit-tiles" tilewidth="16" tileheight="16">
+  <image source="hit-tiles.png" width="192" height="16"/>
+ </tileset>
+ <tileset firstgid="3589" name="femat-2" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="femat-2.png" width="762" height="460"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="39" height="39">
+  <data encoding="base64" compression="zlib">
+   eJztwzENAAAMA6AqmH+BFVIbOyChl1RVVVVVVX13Q5KeHg==
+  </data>
+ </layer>
+</map>

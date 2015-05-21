@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="39" height="39" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="fe" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../../../../Downloads/fe.png" width="762" height="477"/>
+ </tileset>
+ <tileset firstgid="1233" name="Fire emblem map tiles part 2" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../../../../Downloads/Fire emblem map tiles part 2.png" width="762" height="458"/>
+ </tileset>
+ <tileset firstgid="2377" name="TrentIconsFinal-upd6" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../../../../Downloads/TrentIconsFinal-upd6.png" width="171" height="341"/>
+ </tileset>
+ <tileset firstgid="2577" name="femat" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="femat.png" width="426" height="681"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="39" height="39">
+  <data encoding="base64" compression="zlib">
+   eJztlslOwzAQQFMpKcdIqVh+ASj8USTI3wAFRNsfg8INtew7tCCuLDOqRwyj2Emwkxaphyc7jsd5ndqTJHXPS2bMmPHviTUkrJVz09YowynLsSi2rnyNMrHNmx943qfveV/AhwMCWG/D0o9ia7DWMax55IiapVss3Hqw5jtwKMCcYi6egVPgheWmJ+ZSvHQr6pfmJr3oOZjTB+AReAJO/OwY13nTPQfv3QJ3wL0Yz3KzrWl53PKOV+UWwnhdnWHsLwXjFq/nVH9SbhE7vw3oD1RLY5Ehp2W7Xat9j/35YNynFscu2f2q3W40+4m4KumcyvcC1fQz4ML/XePTvE0xrmvIOrAW/Dynqa5DwznRxdj+p4lwo/1Nz6b3T8TyE7J+ZIipqr7hfqf8NFiu+Dlxud/k95HJDff7m2IB5r2qvumcVPXOQrchMFIMFWW6FcnbkHmNpsxtlEJVbrxW4TfaQLVU37BGnDOwXlCMnC+/e13WkL767X1WD9LcKEbOd1FDuBuvW5JQ45YV4+o/jVjdaoo20rhlxbhyW4S1VoEVYFm0eO8A5uwCe6pt54jZdOCF8GdLcHwrBdP8tlj/L27U7wAtYD+FlsbNNL/L1rfNncyj9O8Ir27ONWzOaZH8biuvHU3uJ0Us3KbBSec2aR9JGW7fkqfylw==
+  </data>
+ </layer>
+</map>

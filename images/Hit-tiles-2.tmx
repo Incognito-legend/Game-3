@@ -1,69 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="39" height="39" tilewidth="16" tileheight="16">
- <tileset firstgid="1" name="femat" tilewidth="16" tileheight="16" spacing="1" margin="2">
-  <image source="femat.png" width="426" height="681"/>
- </tileset>
- <tileset firstgid="1001" name="hit-tiles" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="hit-tiles" tilewidth="16" tileheight="16">
   <image source="hit-tiles.png" width="192" height="16"/>
   <tile id="0">
    <properties>
-    <property name="wall" value="1001"/>
+    <property name="wall" value="1"/>
    </properties>
   </tile>
   <tile id="1">
    <properties>
-    <property name="floor" value="1002"/>
+    <property name="floor" value="2"/>
    </properties>
   </tile>
   <tile id="2">
    <properties>
-    <property name="entrance: Home" value="1003"/>
+    <property name="entrance: Home" value="3"/>
    </properties>
   </tile>
   <tile id="3">
    <properties>
-    <property name="entrance: Arena" value="1004"/>
+    <property name="entrance: Arena" value="4"/>
    </properties>
   </tile>
   <tile id="4">
    <properties>
-    <property name="entrance: Blacksmith" value="1005"/>
+    <property name="entrance: Blacksmith" value="5"/>
    </properties>
   </tile>
   <tile id="5">
    <properties>
-    <property name="entrance: Shop" value="1006"/>
+    <property name="entrance: Shop" value="6"/>
    </properties>
   </tile>
   <tile id="6">
    <properties>
-    <property name="class: Hunter" value="1007"/>
+    <property name="class: Hunter" value="7"/>
    </properties>
   </tile>
   <tile id="7">
    <properties>
-    <property name="class: Druid" value="1008"/>
+    <property name="class: Druid" value="8"/>
    </properties>
   </tile>
   <tile id="8">
    <properties>
-    <property name="class: Mage" value="1009"/>
+    <property name="class: Mage" value="9"/>
    </properties>
   </tile>
   <tile id="9">
    <properties>
-    <property name="class: Palladin" value="1010"/>
+    <property name="class: Palladin" value="10"/>
    </properties>
   </tile>
   <tile id="10">
    <properties>
-    <property name="class: Warrior" value="1011"/>
+    <property name="class: Warrior" value="11"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="Valley Portal" value="12"/>
    </properties>
   </tile>
  </tileset>
  <layer name="Tile Layer 1" width="39" height="39">
   <data encoding="base64" compression="zlib">
-   eJztlFkOgCAMREm8/0HBXS/gb20gsrTY6Hy8yARCn6GpH5zzAAAAzLKyvLG8s3ywfCp5BYJE1nJrBW7pWj3dUrVbz3zdreZ90G/3OfVUO+bCv39yszrfStxL3sGq21vzRfI/JN2seNXUlPYayXrKcFvI3hw5p9lPFmaJlEOPPuN3h8w9jT4DAAAgzwWND3uU
+   eJztlNkOgCAMBAHv4/+/11dsIHK0UHUfJrKB0DE0tcYYCwAAQC0LySvJG8k7yYeQl/PgyFJutcAtXqulW6x27Zmvu5W8D/rtPqeeaodc6PdPblrnW457zjtodes1Xzj/g9NNi1dJTW6vwVuPCW6ztzcFzkn2k4ZZwuXQos/o3S5xT6LPcjg71gYAgDdxAf1kBxk=
   </data>
  </layer>
 </map>

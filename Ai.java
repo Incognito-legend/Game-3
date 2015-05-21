@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ai extends Actor
 {
-    /**
-     * Act - do whatever the Ai wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+boolean Ai_Interface = true;
+    public Ai() 
     {
-        // Add your action code here.
+        if ((Greenfoot.isKeyDown("Space")) && (Ai_Interface)){
+            
+            Ai_Interface = false;
     }    
+}
 }

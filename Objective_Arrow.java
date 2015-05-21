@@ -23,6 +23,7 @@ public class Objective_Arrow extends Actor
         Objective_Arrow_2.scale(Objective_Arrow_2.getWidth()/2,Objective_Arrow_2.getHeight()/2);
                if (counter == 0 && timer == 9) {
             setImage("Objective_Arrow_1(up).png");
+//             setBackground(map_Lobby);
         } else if (counter == 1 && timer == 9) {
             setImage("Objective_Arrow_1(up).png");
         } else if (counter == 2 && timer == 9) {
