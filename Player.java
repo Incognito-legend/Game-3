@@ -189,7 +189,7 @@ public class Player extends Actor
 //         System.out.println("You're at the Arena!");
            Room = Arena;
            level.setDefaultForMap(1);
-           level.changeMap(4);
+           level.changeMap(4,1);
            dirtyFlag1 = false;
         
     }
@@ -199,7 +199,7 @@ public class Player extends Actor
            //getbackground();
            Room = Blacksmith;
            level.setDefaultForMap(1);
-           level.changeMap(2);
+           level.changeMap(2,1);
            dirtyFlag1 = false;
            
            
@@ -211,7 +211,7 @@ public class Player extends Actor
         //System.out.println("Welcome to the Shop!");
         Room = Shop;
         level.setDefaultForMap(1);
-        level.changeMap(3);
+        level.changeMap(3,1);
         dirtyFlag1 = false;
         
     }
@@ -418,7 +418,7 @@ if (Room == Blacksmith){
            Blacksmith_Goodbye = true;
            Room = Lobby;
            level.setDefaultForMap(2);
-           level.changeMap(1);
+           level.changeMap(1,1);
 
            
            dirtyFlag1 = true;
@@ -571,7 +571,7 @@ if ((Room == Shop) && !(windowPane)){
            Shop_Goodbye = true;
            Room = Lobby;
            level.setDefaultForMap(2);
-           level.changeMap(1);
+           level.changeMap(1,1);
 
            
            dirtyFlag1 = true;
@@ -607,7 +607,8 @@ if ((Room == Shop) && (windowPane)){
         } else if (lastWayFacing.equals("right")) {
             setImage(right2);
         }
-        level.addObject(new Tutorial_Guide(), 512, 389);
+        level.setDefaultForMap(1);
+        level.changeMap(3,2);
 }
 
 
@@ -743,7 +744,7 @@ if (Room == Arena){
 // entering Arena Battle room
            Room = Arena_Open_Doors;
            level.setDefaultForMap(1);
-           level.changeMap(5);
+           level.changeMap(5,1);
            level.addObject(new Objective_Arrow(), 512, 389);
            dirtyFlag1 = false;
         
@@ -876,7 +877,7 @@ if (Room == Arena_Open_Doors){
 // entering Arena Battle room
            Room = Arena;
            level.setDefaultForMap(1);
-           level.changeMap(4);
+           level.changeMap(4,1);
            dirtyFlag1 = false;
         
     }

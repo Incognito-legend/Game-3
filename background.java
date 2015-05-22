@@ -66,7 +66,7 @@ public class background extends World
 
        //System.out.println("pos_x " + pos_x + ", pos_y " + pos_y);
 }
-    public int changeMap(int m){
+    public int changeMap(int m, int n){
 
         if ((m == 1) && (statement = true)){
             hit_tiles = hit_tiles_Lobby;
@@ -121,6 +121,10 @@ public class background extends World
             pos_x = -1648;
             pos_y = -1835;
       }
+            if ((m == 3) && (statement = true) && (n == 2)){
+                addObject(new Tutorial_Guide(), 512, 389);
+                statement = false;
+            }
             statement_3 = false;
             statement = true;
             statement_2 = true;
