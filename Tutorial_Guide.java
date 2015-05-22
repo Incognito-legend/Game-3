@@ -6,15 +6,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tutorial_Guide extends Actor
+public class Tutorial_Guide extends Player
 {
-    int width = 117;
-    int height = 117;
+    boolean check = true;
     GreenfootImage Tutorial_Guide = new GreenfootImage("Tutorial Guide.png");
-    public Tutorial_Guide() 
+    public void act() 
     {
-        Tutorial_Guide.scale(Tutorial_Guide.getWidth()*6,Tutorial_Guide.getHeight()*6);
-
-    }
+        if (check){
+        setImage(Tutorial_Guide);
+        Tutorial_Guide.scale(Tutorial_Guide.getWidth()*5,Tutorial_Guide.getHeight()*5);
+        check = false;
 }
-
+}
+}

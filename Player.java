@@ -79,8 +79,8 @@ public class Player extends Actor
         }
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "left";
-        //System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
-        //System.out.println(level.pos_x + ", " + level.pos_y);
+//         System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
+//         System.out.println(level.pos_x + ", " + level.pos_y);
     }
         else  if (Greenfoot.isKeyDown ("right"))
     {
@@ -106,8 +106,8 @@ public class Player extends Actor
         }
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "right";
-        //System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
-        //System.out.println(level.pos_x + ", " + level.pos_y);
+//         System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
+//         System.out.println(level.pos_x + ", " + level.pos_y);
     }
         else if (Greenfoot.isKeyDown("up"))
     {
@@ -132,8 +132,8 @@ public class Player extends Actor
         }    
         whichWalk = (whichWalk + 1) % 4;  
         lastWayFacing = "up";
-        //System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
-        //System.out.println(level.pos_x + ", " + level.pos_y);
+//         System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
+//         System.out.println(level.pos_x + ", " + level.pos_y);
     }    
         else if (Greenfoot.isKeyDown("down"))
     {   
@@ -158,8 +158,8 @@ public class Player extends Actor
         }   
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "down";
-        //System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
-        //System.out.println(level.pos_x + ", " + level.pos_y);
+//         System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
+//         System.out.println(level.pos_x + ", " + level.pos_y);
     //end of Player movement
     //Beginning of Artificial movement
     } 

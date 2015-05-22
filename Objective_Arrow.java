@@ -18,9 +18,6 @@ public class Objective_Arrow extends Actor
     {
             int width = 216;
             int height = 256;
-        background level = (background)this.getWorld();
-        Objective_Arrow_1.scale(Objective_Arrow_1.getWidth()/2,Objective_Arrow_1.getHeight()/2);
-        Objective_Arrow_2.scale(Objective_Arrow_2.getWidth()/2,Objective_Arrow_2.getHeight()/2);
                if (counter == 0 && timer == 9) {
             setImage("Objective_Arrow_1(up).png");
 //             setBackground(map_Lobby);

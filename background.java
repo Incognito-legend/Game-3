@@ -168,7 +168,6 @@ public int setDefaultForMap(int Map){
 public int getTileAt(int x, int y){
         int i = x + width * y;
         return hit_tiles[i];
-        
 }
 
 public int getRandomNumberRange(int start, int end){
