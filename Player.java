@@ -34,6 +34,31 @@ public class Player extends Actor
     boolean Shop_Welcome = false;
     boolean windowPane = false;
     
+    boolean Player_Stats = false;
+    int Affinity_;
+    int Aid_;
+    int Attack_Speed_;
+    int Constitution_;
+    int Defense_;
+    int Hp_;
+    int Leadership_;
+    int Level_;
+    int Luck_;
+    int Magic_;
+    int Maximum_Hp_;
+    int Movement_;
+    int Movement_Star_;
+    int Pursuit_Critical_Coefficient_;
+    int Relative_Power_;
+    int Resistance_;
+    int Skill_;
+    int Speed_;
+    int Strength_;
+    int Weapon_Level_;
+    int Weapon_Rank_;
+    //
+    int Weight_;
+    // ^^^ (Character / Class) Specific Stat
     public void act() 
     {
     
@@ -265,6 +290,7 @@ public class Player extends Actor
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Warrior ] !");
         Class = 5;
+        Player_Stats = true;
     }
 
 //         if (!level.music.isPlaying()) {
@@ -745,7 +771,7 @@ if (Room == Arena){
            Room = Arena_Open_Doors;
            level.setDefaultForMap(1);
            level.changeMap(5,1);
-           level.addObject(new Objective_Arrow(), 512, 389);
+           //level.addObject(new Objective_Arrow(), 512, 389);
            dirtyFlag1 = false;
         
     }

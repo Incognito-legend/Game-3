@@ -142,6 +142,7 @@ public class background extends World
     if (statement_5){
     pos_x = -1358;
     pos_y = -2320;
+ 
 }
     statement_4 = false;
     statement = true;
@@ -155,6 +156,7 @@ public class background extends World
     largeImage = map_Arena_Open;
     setBackground(map_Arena_Open);
     largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
+    addObject(new Objective_Arrow(), 412, 489);
     statement_5 = false;
     statement = true;
     statement_2 = true;

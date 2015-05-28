@@ -9,33 +9,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Objective_Arrow extends Actor
 {
     int counter = 0;
-    private long lastMark = System.currentTimeMillis();
-    private SimpleTimer timer = new SimpleTimer();
-//     int timer = 0;
-//     int seconds = 0;
+    
+    int width = 216;
+    int height = 256;
+    
+    int pos_x = -1358;
+    int pos_y = -2045;
+    int x = 412;
+    int y = 489;
     public void act() 
     {
-            int width = 216;
-            int height = 256;
-if ((counter == 0) && (timer.millisElapsed() > 1000 && Gr           eenfoot.isKeyDown("space"))){
-     setImage("Objective_Arrow_1(up).png");
-timer.mark();
-             System.out.println("seconds = " + Integer.toString(timer.millisElapsed()));
-        } else if ((counter == 1) && (timer.millisElapsed() > 1000 && Greenfoot.isKeyDown("space"))){
-            
-            setImage("Objective_Arrow_2(up).png");
-timer.mark();
-             System.out.println("seconds = " + Integer.toString(timer.millisElapsed()));
+if (Greenfoot.isKeyDown("up"))
+setLocation(getX(), getY() - 3);
+if (Greenfoot.isKeyDown("down"))
+setLocation(getX(), getY() + 3);
 
-        }
-        counter = (counter + 1) % 2;
-        }
-    public void mark()
-    {
-        lastMark = System.currentTimeMillis();
+  
+        if (counter == 0){
+       setImage("Objective_Arrow_1(up).png");    
+  } else if (counter == 25){
+      setImage("Objective_Arrow_2(up).png");
+}
+        counter = (counter + 1) % 50;
     }
-        public int millisElapsed()
-    {
-        return (int) (System.currentTimeMillis() - lastMark);
-    }
-    }    
+}
+// 
+//         public void scroll(int dx, int dy)
+//     {
+//        pos_x = pos_x + dx;
+//        
+//        pos_y += dy;
+// 
+//        //System.out.println("pos_x " + pos_x + ", pos_y " + pos_y);
+// }
+//     }
