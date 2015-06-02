@@ -7,7 +7,7 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tutorial_Guide extends Player
+public class Tutorial_Guide extends Interface_Ai
 
 {
     boolean check = true;

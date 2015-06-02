@@ -35,6 +35,7 @@ public class Player extends Actor
     boolean windowPane = false;
     
     boolean Player_Stats = false;
+    
     int Affinity_;
     int Aid_;
     int Attack_Speed_;

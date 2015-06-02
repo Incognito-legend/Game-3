@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Arena_Master extends Actor
+public class Arena_Master extends Interface_Ai
 {
     /**
      * Act - do whatever the Arena_Master wants to do. This method is called whenever
