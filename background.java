@@ -31,7 +31,7 @@ public class background extends World
     boolean statement_4 = true;
     boolean statement_5 = true;
 
-      
+    boolean Objective_Arrow_Statement = false;  
     public background()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -63,8 +63,6 @@ public class background extends World
        pos_y += dy;
 
        getBackground().drawImage(largeImage, pos_x, pos_y);
-       
-       //System.out.println("pos_x " + pos_x + ", pos_y " + pos_y);
 }
     public int changeMap(int m, int n){
 

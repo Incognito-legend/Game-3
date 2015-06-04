@@ -19,12 +19,6 @@ public class Objective_Arrow extends Actor
     int y = 489;
     public void act() 
     {
-if (Greenfoot.isKeyDown("up"))
-setLocation(getX(), getY() - 3);
-if (Greenfoot.isKeyDown("down"))
-setLocation(getX(), getY() + 3);
-
-  
         if (counter == 0){
        setImage("Objective_Arrow_1(up).png");    
   } else if (counter == 25){

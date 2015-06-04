@@ -212,7 +212,7 @@ public class Player extends Actor
         
     }
        if (level.getTileAt(hero_x, hero_y) == 4 && (dirtyFlag1 == true)){
-//         System.out.println("You're at the Arena!");
+       //         System.out.println("You're at the Arena!");
            Room = Arena;
            level.setDefaultForMap(1);
            level.changeMap(4,1);
