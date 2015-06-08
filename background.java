@@ -43,7 +43,7 @@ public class background extends World
         
         Date d = new Date();
         
-        addObject(new Palladin(), 490, 325);
+        addObject(new Palladin(), 512, 389);
         
 //         addObject(new Pirate_Ai(), 512, 389);
         

@@ -9,11 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Ai extends Targeted_AI_Portrait_Instance
 {
 boolean Ai_Interface = true;
+int AI_Enemy_Stats_Speed = 11;
     public Ai() 
     {
         if ((Greenfoot.isKeyDown("Space")) && (Ai_Interface)){
             
             Ai_Interface = false;
+
     }    
 }
 }

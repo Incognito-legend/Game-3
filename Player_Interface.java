@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Player_Interface extends Actor
+public class Player_Interface extends Player
 {
     boolean Player_Stats = false;
     

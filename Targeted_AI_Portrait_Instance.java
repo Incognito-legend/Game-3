@@ -8,12 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Targeted_AI_Portrait_Instance extends Player_Interface
 {
-    /**
-     * Act - do whatever the Targeted_AI_Portrait_Instance wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    int speed = 11;
     public void act() 
     {
-        // Add your action code here.
-    }    
+//             turnTowards(Player.getX(), Player.getY());
+//             move( speed );
+    }
+//         public void scroll(int dx, int dy)
+//     {
+// //        pos_x = pos_x + dx;
+// //        
+// //        pos_y += dy;
+// // 
+// //        getBackground().drawImage(largeImage, pos_x, pos_y);
+//     }
 }

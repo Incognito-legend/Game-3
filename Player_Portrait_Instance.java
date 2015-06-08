@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Player_Portrait_Instance extends Player_Interface
+public class Player_Portrait_Instance extends Player
 {
     /**
      * Act - do whatever the Player_Portrait_Instance wants to do. This method is called whenever
@@ -14,6 +14,6 @@ public class Player_Portrait_Instance extends Player_Interface
      */
     public void act() 
     {
-        // Add your action code here.
+        setImage("Player_class_hunter_Character_Portrait-(detailed).png");
     }    
 }

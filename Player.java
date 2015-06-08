@@ -16,7 +16,13 @@ public class Player extends Actor
     String up2;
     String up3;
     String lastWayFacing = "down";
-   
+    
+    String lastClassType = "Paladin";
+    int x = 512;
+    int y = 389;
+    
+    
+    
     int whichWalk = 0;
     int Class = 4;
     boolean dirtyFlag = true;
@@ -263,6 +269,8 @@ public class Player extends Actor
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Hunter ] !");
         Class = 1;
+        Player_Stats = true;
+        level.addObject(new Player_Portrait_Instance(), 120, 100);
     }
        if (level.getTileAt(hero_x, hero_y) == 8 && !(this instanceof Druid)){
         level.removeObject(this);
@@ -270,6 +278,7 @@ public class Player extends Actor
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Druid ] !");
         Class = 2;
+        Player_Stats = true;
     }
        if (level.getTileAt(hero_x, hero_y) == 9 && !(this instanceof Mage)){
         level.removeObject(this);
@@ -277,6 +286,7 @@ public class Player extends Actor
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Mage ] !");
         Class = 3;
+        Player_Stats = true;
     }
         if (level.getTileAt(hero_x, hero_y) == 10 && !(this instanceof Palladin)){
         level.removeObject(this);
@@ -284,6 +294,7 @@ public class Player extends Actor
         level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Palladin ] !");
         Class = 4;
+        Player_Stats = true;
     }
        if (level.getTileAt(hero_x, hero_y) == 11 && !(this instanceof Warrior)){
         level.removeObject(this);
