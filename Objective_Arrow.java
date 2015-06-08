@@ -25,6 +25,11 @@ public class Objective_Arrow extends Actor
       setImage("Objective_Arrow_2(up).png");
 }
         counter = (counter + 1) % 50;
+        setLocation(pos_x, pos_y);
+    }
+      
+    public void setLocation(int pos_x, int pos_y){
+        
     }
 }
 // 

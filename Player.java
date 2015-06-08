@@ -40,7 +40,10 @@ public class Player extends Actor
     boolean Shop_Welcome = false;
     boolean windowPane = false;
     
+    boolean cutscene = false;
+    
     boolean Player_Stats = false;
+    
     
     int Affinity_;
     int Aid_;
@@ -83,7 +86,8 @@ public class Player extends Actor
         boolean dirtyFlag1 = true;
 
         // Movement and controls section
-    if (Room == Lobby){
+  if (!(cutscene)){
+        if (Room == Lobby){
      
 
         
@@ -623,7 +627,7 @@ if ((Room == Shop) && !(windowPane)){
            System.out.println("Oh! Come on in!");
            windowPane = true;
            Shop_Welcome = true;
-} else if (!(level.getTileAt(hero_x, hero_y) == 6) && (Shop_Welcome)){
+ } else if (!(level.getTileAt(hero_x, hero_y) == 6) && (Shop_Welcome)){
      System.out.println("You be careful out there!");
      Shop_Welcome = false;
  }
@@ -664,6 +668,7 @@ if (Room == Arena){
     if (Greenfoot.isKeyDown ("left"))
     {
       level.scroll(10, 0);
+      
        hero_x_px = -level.pos_x + getX()-50;
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
@@ -922,7 +927,7 @@ if (Room == Arena_Open_Doors){
 }
 }
 }
-
+}
 
     //block#1 = wall
     //block#1002 = floor

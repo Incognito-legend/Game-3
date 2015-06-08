@@ -63,6 +63,7 @@ public class background extends World
        pos_y += dy;
 
        getBackground().drawImage(largeImage, pos_x, pos_y);
+
 }
     public int changeMap(int m, int n){
 

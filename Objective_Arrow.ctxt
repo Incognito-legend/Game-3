@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ act()
-numComments=1
+comment1.params=pos_x\ pos_y
+comment1.target=void\ setLocation(int,\ int)
+numComments=2
