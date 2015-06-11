@@ -23,15 +23,30 @@ public class background extends World
     int width = 39;
     int height = 39;
     int track_num = 1;
-    GreenfootSound music;
-    GreenfootSound music_2;
+//     GreenfootSound music;
+//     GreenfootSound music_2;
+// song place holder vvvvv
+GreenfootSound Arena_Song;
+// song place holder ^^^^^
+GreenfootSound Arena_Entrance = new GreenfootSound("086 - Arena Entrance.wav");
+//
+GreenfootSound Arena_Preparations = new GreenfootSound("082 - Prepare to Charge.wav");
+//    
+GreenfootSound Arena_Battle = new GreenfootSound("087 - Arena Battle.wav");
+//     
+GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
+//     
+//     GreenfootSound Arena_Defeat;
+    
     boolean statement = true;
     boolean statement_2 = true;
     boolean statement_3 = true;
     boolean statement_4 = true;
     boolean statement_5 = true;
+    boolean statement_6 = true;
+    boolean check_statement = false;
 
-    boolean Objective_Arrow_Statement = false;  
+    boolean Objective_Arrow_Statement = false;
     public background()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -49,9 +64,10 @@ public class background extends World
         
         //System.out.println("Start of Background Fuction!: " + d);
        
-        music = new GreenfootSound("043 - Silent Ground.wav");
-        music_2 = new GreenfootSound("079 - Shattered Life.wav");
-        
+//         GreenfootSound music = new GreenfootSound("043 - Silent Ground.wav");
+//         GreenfootSound music_2 = new GreenfootSound("079 - Shattered Life.wav");
+//         GreenfootSound Arena_Entrance = new GreenfootSound("086 - Arena Entrance.wav");
+//         GreenfootSound Arena_Battle = new GreenfootSound("087 - Arena Battle.wav");
         
        // addObject(new Level_1(), 600, -9000);
     }
@@ -141,29 +157,67 @@ public class background extends World
     if (statement_5){
     pos_x = -1358;
     pos_y = -2320;
- 
+    if (!(check_statement)){
+Arena_Song = Arena_Preparations;
+Arena_Song.playLoop();
+changeSongTrack();
+if (Arena_Song.isPlaying()){
+}
+if (!(Arena_Song.isPlaying())){
+Arena_Song = Arena_Preparations;
+Arena_Song.playLoop();
+changeSongTrack();
+}
+}
+
+} else if (!(statement_5)){
+    
+if (check_statement){
+Arena_Song.stop();
+Arena_Song = Arena_Battle;
+Arena_Song.playLoop();
+changeSongTrack();
+}
 }
     statement_4 = false;
     statement = true;
     statement_2 = true;
     statement_3 = true;
     statement_5 = true;
+    
+}
+        if ((m == 5) && (statement_5 = true)){
+            
+    hit_tiles = hit_tiles_Arena_Open;
+    
+    largeImage = map_Arena_Open;
+    
+    setBackground(map_Arena_Open);
+    
+    largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
+    
+//     addObject(new Objective_Arrow(), 412, 489);
+
+if (!(check_statement)){
+    
+    check_statement = true;
+    
 }
 
-        if ((m == 5) && (statement_5 = true)){
-    hit_tiles = hit_tiles_Arena_Open;
-    largeImage = map_Arena_Open;
-    setBackground(map_Arena_Open);
-    largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
-    addObject(new Objective_Arrow(), 412, 489);
     statement_5 = false;
     statement = true;
     statement_2 = true;
     statement_3 = true;
     statement_4 = true;
+    
 }
+
     return 0;
+    
 }
+
+
+
 
 public int setDefaultForMap(int Map){
        largeImage.scale(largeImage.getWidth()/6,largeImage.getHeight()/6);
@@ -179,17 +233,18 @@ public int getRandomNumberRange(int start, int end){
     int normal = Greenfoot.getRandomNumber(end-start+1);
     return normal+start;
 }
-
-
-public void stop(int song){
-    if (song == 1){
-        GreenfootSound music;
+public void changeSongTrack(){
+    if ((Arena_Song == Arena_Entrance)){
+    if (!(Arena_Song.isPlaying())){
+    Arena_Song = Arena_Preparations;
+    Arena_Song.play();
+    }
+}
+    if ((Arena_Song == Arena_Preparations)){
+    if (!(Arena_Song.isPlaying())){
+    Arena_Song = Arena_Entrance;
+    Arena_Song.play();
+    }
 }
 }
-
-
-public void play(int song){
-
-}
-
 }

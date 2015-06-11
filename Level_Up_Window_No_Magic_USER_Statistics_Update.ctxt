@@ -1,5 +1,4 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ act()
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Level_Up_Window_No_Mag\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment0.params=instance
+comment0.target=int\ Level_UP_STAT_Window_Instance(int)
 numComments=1

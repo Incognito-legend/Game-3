@@ -274,7 +274,8 @@ public class Player extends Actor
         System.out.println("You have chosen the [ Hunter ] !");
         Class = 1;
         Player_Stats = true;
-        level.addObject(new Player_Portrait_Instance(), 120, 100);
+        level.addObject(new Player_Portrait_Instance(), 120, 500);
+        level.addObject(new Player_Name_Panel(), 120, 100);
     }
        if (level.getTileAt(hero_x, hero_y) == 8 && !(this instanceof Druid)){
         level.removeObject(this);
