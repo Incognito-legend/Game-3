@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class WeaponType here.
+ * Write a description of class Symbols here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class WeaponType extends Symbols
+public class Symbols extends Player_Interface
 {
     /**
-     * Act - do whatever the WeaponType wants to do. This method is called whenever
+     * Act - do whatever the Symbols wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

@@ -11,15 +11,13 @@ public class Tutorial_Guide extends Interface_Ai
 
 {
     boolean check = true;
-    GreenfootImage Tutorial_Guide = new GreenfootImage("Tutorial Guide.png");
     public Tutorial_Guide() 
     {
         Date d = new Date();
-        if ((check)){
-        setImage(Tutorial_Guide);
-        Tutorial_Guide.scale(Tutorial_Guide.getWidth()*2,Tutorial_Guide.getHeight()*2);
+        if (check){
+        setImage("Tutorial Guide.png");
         check = false;
-        System.out.println("End of T.O. Check!: " + d);
+//         System.out.println("End of T.O. Check!: " + d);
 }
 }
 }

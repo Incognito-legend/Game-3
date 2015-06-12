@@ -21,7 +21,7 @@ public class Player extends Actor
     int x = 512;
     int y = 389;
     
-    
+    int instance;
     
     int whichWalk = 0;
     int Class = 4;
@@ -269,44 +269,37 @@ public class Player extends Actor
                         //     }
        if (level.getTileAt(hero_x, hero_y) == 7 && !(this instanceof hunter)){
         level.removeObject(this);
-        level.addObject(new hunter(), 512, 389);
-        level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Hunter ] !");
         Class = 1;
+        level.Class(1);
         Player_Stats = true;
-        level.addObject(new Player_Portrait_Instance(), 120, 500);
-        level.addObject(new Player_Name_Panel(), 120, 100);
     }
        if (level.getTileAt(hero_x, hero_y) == 8 && !(this instanceof Druid)){
         level.removeObject(this);
-        level.addObject(new Druid(), 512, 389);
-        level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Druid ] !");
         Class = 2;
+        level.Class(2);
         Player_Stats = true;
     }
        if (level.getTileAt(hero_x, hero_y) == 9 && !(this instanceof Mage)){
         level.removeObject(this);
-        level.addObject(new Mage(), 512, 389);
-        level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Mage ] !");
         Class = 3;
+        level.Class(3);
         Player_Stats = true;
     }
         if (level.getTileAt(hero_x, hero_y) == 10 && !(this instanceof Palladin)){
         level.removeObject(this);
-        level.addObject(new Palladin(), 512, 389);
-        level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Palladin ] !");
         Class = 4;
+        level.Class(4);
         Player_Stats = true;
     }
        if (level.getTileAt(hero_x, hero_y) == 11 && !(this instanceof Warrior)){
         level.removeObject(this);
-        level.addObject(new Warrior(), 512, 389);
-        level.addObject(new Smoke_Effect(), 512, 389);
         System.out.println("You have chosen the [ Warrior ] !");
         Class = 5;
+        level.Class(5);
         Player_Stats = true;
     }
 
@@ -480,11 +473,6 @@ if (Room == Blacksmith){
  }
 //SYSTEM MESSAGE PANEL End
 }
-//     if (!level.music.isPlaying()) {
-//         level.track_num++;
-//
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
-
 
 
 
@@ -926,6 +914,10 @@ if (Room == Arena_Open_Doors){
         
     }
 }
+
+} else if (cutscene){
+    level.addObject(new Level_UP_STAT_Window_Instance(), 512, 389);
+    instance = 1;
 }
 }
 }
