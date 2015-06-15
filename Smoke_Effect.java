@@ -4,10 +4,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Smoke_Effect extends Player
 {
     int counter = 1;
+    GreenfootSound Smoke = new GreenfootSound("miss_fixed.wav");
     public void act() 
     {
        background level = (background)this.getWorld();
         if(counter == 1) {
+           Smoke.play();
            setImage("cloud-0.png");
         }      else if (counter == 2) {
            setImage("cloud-1.png");            

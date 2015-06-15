@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level_UP_STAT_Window_Instance extends Player
 {
 int counter = 1;
+int instance = 1; 
 GreenfootSound LVL_UP_STAT_WINDOW_Sound;
 public void Act(){
             if (instance == 1){

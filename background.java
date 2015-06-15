@@ -25,7 +25,7 @@ public class background extends World
 GreenfootSound Song;
 GreenfootSound Arena_Entrance = new GreenfootSound("086 - Arena Entrance.wav");
 GreenfootSound Arena_Preparations = new GreenfootSound("082 - Prepare to Charge.wav");    
-GreenfootSound Arena_Battle = new GreenfootSound("087 - Arena Battle.wav");    
+GreenfootSound Arena_Battle = new GreenfootSound("026 - Strike.wav");    
 GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");         
     boolean statement = true;
     boolean statement_2 = true;
