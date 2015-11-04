@@ -13,7 +13,7 @@ int instance = 1;
 GreenfootSound LVL_UP_STAT_WINDOW_Sound;
 public void Act(){
             if (instance == 1){
-        background level = (background)this.getWorld();
+        //background level = (background)this.getWorld();
         GreenfootSound LVL_UP_STAT_WINDOW_Sound = new GreenfootSound("Level_Up_Stat.wav");
         
         if(counter == 1) {
@@ -36,9 +36,9 @@ public void Act(){
         }      else if (counter == 9) {
            setImage("Level_Up_Window1-flip8.png");
         }      else if(counter == 10) {
-        instance = 2;        
+        //instance = 2;        
         }      else if (counter == 20){
-        level.removeObject(this);
+        
         }
         counter++;
     }

@@ -13,10 +13,8 @@ public class Tutorial_Guide extends Interface_Ai
     boolean check = true;
     public Tutorial_Guide() 
     {
-        Date d = new Date();
         if (check){
         setImage("Tutorial Guide.png");
-        check = false;
 //         System.out.println("End of T.O. Check!: " + d);
 }
 }
