@@ -28,11 +28,17 @@ GreenfootSound Arena_Preparations = new GreenfootSound("082 - Prepare to Charge.
 GreenfootSound Arena_Battle = new GreenfootSound("026 - Strike.wav");    
 GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");         
     boolean statement = true;
+    //statement is
     boolean statement_2 = true;
+    //statement_2 is
     boolean statement_3 = true;
+    //statement_3 is
     boolean statement_4 = true;
+    //statement_4 is
     boolean statement_5 = true;
+    //statement_5 is
     boolean statement_6 = true;
+    
     boolean check_statement = false;
     boolean Objective_Arrow_Statement = false;
     public background()

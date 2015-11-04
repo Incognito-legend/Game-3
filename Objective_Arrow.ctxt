@@ -1,6 +1,8 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ act()
-comment1.params=pos_x\ pos_y
-comment1.target=void\ setLocation(int,\ int)
-numComments=2
+comment0.target=Objective_Arrow
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Objective_Arrow\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=pos_x\ pos_y
+comment2.target=void\ setLocation(int,\ int)
+numComments=3
