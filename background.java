@@ -23,6 +23,7 @@ public class background extends World
     int height = 39;
     int track_num = 1;
 GreenfootSound Song;
+GreenfootSound Lobby = new GreenfootSound("043 - Silent Ground.wav");
 GreenfootSound Arena_Entrance = new GreenfootSound("086 - Arena Entrance.wav");
 GreenfootSound Arena_Preparations = new GreenfootSound("082 - Prepare to Charge.wav");    
 GreenfootSound Arena_Battle = new GreenfootSound("026 - Strike.wav");    
@@ -38,7 +39,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
     boolean statement_5 = true;
     //statement_5 is
     boolean statement_6 = true;
-    
+    //statement_6 is
     boolean check_statement = false;
     boolean Objective_Arrow_Statement = false;
     public background()
@@ -48,7 +49,9 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
         largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);        
         getBackground().drawImage(largeImage, -1400, -2045);        
         Date d = new Date();        
-        addObject(new Palladin(), 512, 389);               
+        addObject(new Palladin(), 512, 389);
+        Song = Lobby;
+        Song.playLoop();        
 //("043 - Silent Ground.wav");
 //("079 - Shattered Life.wav");
 //("086 - Arena Entrance.wav");
@@ -152,6 +155,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
     pos_x = -1358;
     pos_y = -2320;
     if (!(check_statement)){
+Song.stop();
 Song = Arena_Preparations;
 Song.playLoop();
 changeSongTrack();
@@ -214,6 +218,12 @@ public void changeSongTrack(){
     }
 }
     if ((Song == Arena_Preparations)){
+    if (!(Song.isPlaying())){
+    Song = Arena_Entrance;
+    Song.play();
+    }
+}
+    if ((Song == Lobby)){
     if (!(Song.isPlaying())){
     Song = Arena_Entrance;
     Song.play();

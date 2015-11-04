@@ -15,7 +15,7 @@ public class Player extends Actor
     String up1;
     String up2;
     String up3;
-    String lastWayFacing = "down";
+    String lastWayFacing = "s";
     
     String lastClassType = "Paladin";
     int x = 512;
@@ -91,7 +91,7 @@ public class Player extends Actor
      
 
         
-  if (Greenfoot.isKeyDown ("left")){
+  if (Greenfoot.isKeyDown ("a")){
        
        level.scroll(10, 0);
        
@@ -114,11 +114,11 @@ public class Player extends Actor
             setImage(left2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "left";
+        lastWayFacing = "a";
 //         System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
 //         System.out.println(level.pos_x + ", " + level.pos_y);
     }
-        else  if (Greenfoot.isKeyDown ("right"))
+        else  if (Greenfoot.isKeyDown ("d"))
     {
        
        background x = (background)this.getWorld();
@@ -141,11 +141,11 @@ public class Player extends Actor
             setImage(right2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "right";
+        lastWayFacing = "d";
 //         System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
 //         System.out.println(level.pos_x + ", " + level.pos_y);
     }
-        else if (Greenfoot.isKeyDown("up"))
+        else if (Greenfoot.isKeyDown("w"))
     {
        background x = (background)this.getWorld();
        x.scroll(0, 10);
@@ -167,11 +167,11 @@ public class Player extends Actor
             setImage(up2);
         }    
         whichWalk = (whichWalk + 1) % 4;  
-        lastWayFacing = "up";
+        lastWayFacing = "w";
 //         System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
 //         System.out.println(level.pos_x + ", " + level.pos_y);
     }    
-        else if (Greenfoot.isKeyDown("down"))
+        else if (Greenfoot.isKeyDown("s"))
     {   
        background x = (background)this.getWorld();
        x.scroll(0, -10);
@@ -193,7 +193,7 @@ public class Player extends Actor
             setImage(down2);
         }   
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "down";
+        lastWayFacing = "s";
 //         System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
 //         System.out.println(level.pos_x + ", " + level.pos_y);
     //end of Player movement
@@ -202,13 +202,13 @@ public class Player extends Actor
        //end of Artificial movement
     else 
     {
-        if (lastWayFacing.equals("up")){
+        if (lastWayFacing.equals("w")){
             setImage(up2);
-        } else if (lastWayFacing.equals("down")){
+        } else if (lastWayFacing.equals("s")){
             setImage(down2);
-        } else if (lastWayFacing.equals("left")) {
+        } else if (lastWayFacing.equals("a")) {
             setImage(left2);
-        } else if (lastWayFacing.equals("right")) {
+        } else if (lastWayFacing.equals("d")) {
             setImage(right2);
         }
         
@@ -333,7 +333,7 @@ public class Player extends Actor
 
 
 if (Room == Blacksmith){
-    if (Greenfoot.isKeyDown ("left"))
+    if (Greenfoot.isKeyDown ("a"))
     {
       level.scroll(10, 0);
        hero_x_px = -level.pos_x + getX()-50;
@@ -353,11 +353,11 @@ if (Room == Blacksmith){
             setImage(left2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "left";
+        lastWayFacing = "a";
         //System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
     }
   
-        else  if (Greenfoot.isKeyDown ("right"))
+        else  if (Greenfoot.isKeyDown ("d"))
     {
         background x = (background)this.getWorld();
       x.scroll(-10, 0);
@@ -378,11 +378,11 @@ if (Room == Blacksmith){
             setImage(right2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "right";
+        lastWayFacing = "d";
         //System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
     }
 
-        else if (Greenfoot.isKeyDown("up"))
+        else if (Greenfoot.isKeyDown("w"))
     {
         background x = (background)this.getWorld();
       x.scroll(0, 10);
@@ -403,11 +403,11 @@ if (Room == Blacksmith){
             setImage(up2);
         }    
         whichWalk = (whichWalk + 1) % 4;  
-        lastWayFacing = "up";
+        lastWayFacing = "w";
         //System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
     }
     
-        else if (Greenfoot.isKeyDown("down"))
+        else if (Greenfoot.isKeyDown("s"))
     {   
         background x = (background)this.getWorld();
       x.scroll(0, -10);
@@ -428,20 +428,20 @@ if (Room == Blacksmith){
             setImage(down2);
         }   
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "down";
+        lastWayFacing = "s";
         //System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
     } 
     
     else 
     {
         
-        if (lastWayFacing.equals("up")){
+        if (lastWayFacing.equals("w")){
             setImage(up2);
-        } else if (lastWayFacing.equals("down")){
+        } else if (lastWayFacing.equals("s")){
             setImage(down2);
-        } else if (lastWayFacing.equals("left")) {
+        } else if (lastWayFacing.equals("a")) {
             setImage(left2);
-        } else if (lastWayFacing.equals("right")) {
+        } else if (lastWayFacing.equals("d")) {
             setImage(right2);
         }
         
@@ -481,7 +481,7 @@ if (Room == Blacksmith){
 
 
 if ((Room == Shop) && !(windowPane)){
-    if (Greenfoot.isKeyDown ("left"))
+    if (Greenfoot.isKeyDown ("a"))
     {
       level.scroll(10, 0);
        hero_x_px = -level.pos_x + getX()-50;
@@ -501,11 +501,11 @@ if ((Room == Shop) && !(windowPane)){
             setImage(left2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "left";
+        lastWayFacing = "a";
         //System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
     }
   
-        else  if (Greenfoot.isKeyDown ("right"))
+        else  if (Greenfoot.isKeyDown ("d"))
     {
         background x = (background)this.getWorld();
       x.scroll(-10, 0);
@@ -526,11 +526,11 @@ if ((Room == Shop) && !(windowPane)){
             setImage(right2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "right";
+        lastWayFacing = "d";
         //System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
     }
 
-        else if (Greenfoot.isKeyDown("up"))
+        else if (Greenfoot.isKeyDown("w"))
     {
         background x = (background)this.getWorld();
       x.scroll(0, 10);
@@ -551,11 +551,11 @@ if ((Room == Shop) && !(windowPane)){
             setImage(up2);
         }    
         whichWalk = (whichWalk + 1) % 4;  
-        lastWayFacing = "up";
+        lastWayFacing = "w";
         //System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
     }
     
-        else if (Greenfoot.isKeyDown("down"))
+        else if (Greenfoot.isKeyDown("s"))
     {   
         background x = (background)this.getWorld();
       x.scroll(0, -10);
@@ -576,20 +576,20 @@ if ((Room == Shop) && !(windowPane)){
             setImage(down2);
         }   
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "down";
+        lastWayFacing = "s";
         //System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
     } 
     
     else 
     {
         
-        if (lastWayFacing.equals("up")){
+        if (lastWayFacing.equals("w")){
             setImage(up2);
-        } else if (lastWayFacing.equals("down")){
+        } else if (lastWayFacing.equals("s")){
             setImage(down2);
-        } else if (lastWayFacing.equals("left")) {
+        } else if (lastWayFacing.equals("a")) {
             setImage(left2);
-        } else if (lastWayFacing.equals("right")) {
+        } else if (lastWayFacing.equals("d")) {
             setImage(right2);
         }
         
@@ -629,13 +629,13 @@ if ((Room == Shop) && !(windowPane)){
 
 
 if ((Room == Shop) && (windowPane)){
-        if (lastWayFacing.equals("up")){
+        if (lastWayFacing.equals("w")){
             setImage(up2);
-        } else if (lastWayFacing.equals("down")){
+        } else if (lastWayFacing.equals("s")){
             setImage(down2);
-        } else if (lastWayFacing.equals("left")) {
+        } else if (lastWayFacing.equals("a")) {
             setImage(left2);
-        } else if (lastWayFacing.equals("right")) {
+        } else if (lastWayFacing.equals("d")) {
             setImage(right2);
         }
         level.setDefaultForMap(1);
@@ -654,7 +654,7 @@ if ((Room == Shop) && (windowPane)){
 
 
 if (Room == Arena){
-    if (Greenfoot.isKeyDown ("left"))
+    if (Greenfoot.isKeyDown ("a"))
     {
       level.scroll(10, 0);
       
@@ -675,12 +675,12 @@ if (Room == Arena){
             setImage(left2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "left";
+        lastWayFacing = "a";
         System.out.println(level.pos_x + ", " + level.pos_y);
         System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
     }
   
-        else  if (Greenfoot.isKeyDown ("right"))
+        else  if (Greenfoot.isKeyDown ("d"))
     {
         background x = (background)this.getWorld();
       x.scroll(-10, 0);
@@ -701,12 +701,12 @@ if (Room == Arena){
             setImage(right2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "right";
+        lastWayFacing = "d";
         System.out.println(level.pos_x + ", " + level.pos_y);
         System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
     }
 
-        else if (Greenfoot.isKeyDown("up"))
+        else if (Greenfoot.isKeyDown("w"))
     {
         background x = (background)this.getWorld();
       x.scroll(0, 10);
@@ -727,12 +727,12 @@ if (Room == Arena){
             setImage(up2);
         }    
         whichWalk = (whichWalk + 1) % 4;  
-        lastWayFacing = "up";
+        lastWayFacing = "w";
         System.out.println(level.pos_x + ", " + level.pos_y);
         System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
     }
     
-        else if (Greenfoot.isKeyDown("down"))
+        else if (Greenfoot.isKeyDown("s"))
     {   
         background x = (background)this.getWorld();
       x.scroll(0, -10);
@@ -753,7 +753,7 @@ if (Room == Arena){
             setImage(down2);
         }   
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "down";
+        lastWayFacing = "s";
         System.out.println(level.pos_x + ", " + level.pos_y);
         System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
     } 
@@ -761,13 +761,13 @@ if (Room == Arena){
     else 
     {
         
-        if (lastWayFacing.equals("up")){
+        if (lastWayFacing.equals("w")){
             setImage(up2);
-        } else if (lastWayFacing.equals("down")){
+        } else if (lastWayFacing.equals("s")){
             setImage(down2);
-        } else if (lastWayFacing.equals("left")) {
+        } else if (lastWayFacing.equals("a")) {
             setImage(left2);
-        } else if (lastWayFacing.equals("right")) {
+        } else if (lastWayFacing.equals("d")) {
             setImage(right2);
         }
         
@@ -792,7 +792,7 @@ if (Room == Arena){
 
 
 if (Room == Arena_Open_Doors){
-    if (Greenfoot.isKeyDown ("left"))
+    if (Greenfoot.isKeyDown ("a"))
     {
       level.scroll(10, 0);
        hero_x_px = -level.pos_x + getX()-50;
@@ -812,11 +812,11 @@ if (Room == Arena_Open_Doors){
             setImage(left2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "left";
+        lastWayFacing = "a";
         //System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
     }
   
-        else  if (Greenfoot.isKeyDown ("right"))
+        else  if (Greenfoot.isKeyDown ("d"))
     {
         background x = (background)this.getWorld();
       x.scroll(-10, 0);
@@ -837,11 +837,11 @@ if (Room == Arena_Open_Doors){
             setImage(right2);
         }
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "right";
+        lastWayFacing = "d";
         //System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
     }
 
-        else if (Greenfoot.isKeyDown("up"))
+        else if (Greenfoot.isKeyDown("w"))
     {
         background x = (background)this.getWorld();
       x.scroll(0, 10);
@@ -862,11 +862,11 @@ if (Room == Arena_Open_Doors){
             setImage(up2);
         }    
         whichWalk = (whichWalk + 1) % 4;  
-        lastWayFacing = "up";
+        lastWayFacing = "w";
         //System.out.println("hero moved up, Tile: " + hero_x + ", " + hero_y);
     }
     
-        else if (Greenfoot.isKeyDown("down"))
+        else if (Greenfoot.isKeyDown("s"))
     {   
         background x = (background)this.getWorld();
       x.scroll(0, -10);
@@ -887,20 +887,20 @@ if (Room == Arena_Open_Doors){
             setImage(down2);
         }   
         whichWalk = (whichWalk + 1) % 4;
-        lastWayFacing = "down";
+        lastWayFacing = "s";
         //System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
     } 
     
     else 
     {
         
-        if (lastWayFacing.equals("up")){
+        if (lastWayFacing.equals("w")){
             setImage(up2);
-        } else if (lastWayFacing.equals("down")){
+        } else if (lastWayFacing.equals("s")){
             setImage(down2);
-        } else if (lastWayFacing.equals("left")) {
+        } else if (lastWayFacing.equals("a")) {
             setImage(left2);
-        } else if (lastWayFacing.equals("right")) {
+        } else if (lastWayFacing.equals("d")) {
             setImage(right2);
         }
         
