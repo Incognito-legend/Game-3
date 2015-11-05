@@ -7,6 +7,7 @@ public class background extends World
     GreenfootImage map_Lobby = new GreenfootImage("map-2.png");
     GreenfootImage map_Blacksmith = new GreenfootImage("Hit_Tiles_2_image.png");
     GreenfootImage map_Shop = new GreenfootImage("shop image.png");
+    GreenfootImage map_Shop_Instance_Cleric = new GreenfootImage("Shop_Background.png");
     GreenfootImage map_Arena_entrance = new GreenfootImage("Arena_Variant-1.png");
     GreenfootImage map_Arena_Open = new GreenfootImage("Arena_Variant-2.png");
     GreenfootImage map_Valley = new GreenfootImage("Valley-temple.png");
@@ -26,6 +27,9 @@ public class background extends World
 GreenfootSound Song;
 GreenfootSound Lobby = new GreenfootSound("043 - Silent Ground.wav");
 GreenfootSound Inn = new GreenfootSound("044 - The Inn.wav");
+GreenfootSound Shop = new GreenfootSound("084 - Shop.wav");
+GreenfootSound Armory = new GreenfootSound("083 - Armory.wav");
+GreenfootSound Antagonist = new GreenfootSound("061 - Stratagem.wav");
 GreenfootSound Valiant_Arrival = new GreenfootSound("047 - A Knight's Oath.wav");
 GreenfootSound Companions = new GreenfootSound("046 - Together, We Ride!.wav");
 GreenfootSound The_Ultimate_Tragedy = new GreenfootSound("050 - Final Farewell.wav"); 
@@ -141,11 +145,14 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             pos_y = -1835;
         }
         if ((m == 3) && (statement = true) && (n == 2)){
-                addObject(new Shop_Background(), 512, 389);
-                addObject(new Tutorial_Guide(), 512, 389);
-                Song = Inn;
-                Song.playLoop();
-                changeSongTrack();
+            hit_tiles = hit_tiles_Shop;
+            largeImage = map_Shop_Instance_Cleric;
+            setBackground(map_Shop_Instance_Cleric);
+            largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
+            addObject(new Tutorial_Guide(), 512, 389);
+            Song = Shop;
+            Song.playLoop();
+            changeSongTrack();
                 
                 //statement = false;
         }
@@ -241,7 +248,13 @@ public void changeSongTrack(){
     if (!(Song.isPlaying())){
     Song = Inn;
     Song.play();
+    }
 }
+    if ((Song == Shop)){
+    if (!(Song.isPlaying())){
+    Song = Shop;
+    Song.play();
+    }
 }
 }
 }
