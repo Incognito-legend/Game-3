@@ -16,6 +16,7 @@ public class Druid extends Player
      up1 = baseString + "sprite classes - Druid - up - p1.png";
      up2 = baseString + "sprite classes - Druid - up - p2.png";
      up3 = baseString + "sprite classes - Druid - up - p3.png";
+     SBIC = baseString + "Palladin - SBIC.png";
     
     }
 }

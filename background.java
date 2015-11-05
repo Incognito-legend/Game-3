@@ -143,17 +143,13 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             pos_x = -1648;
             pos_y = -1835;
         }
-        if ((m == 3) && (statement = true) && (n == 2)){
+        if ((m == 3) && (statement) && (n == 2)){
             largeImage = map_SBIC;
             setBackground(map_SBIC);
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
-            addObject(new Tutorial_Guide(), 512, 389);
             Song = Shop;
             Song.playLoop();
             changeSongTrack();
-            statement = false;
-                
-                //statement = false;
         }
             statement_3 = false;
             statement = true;

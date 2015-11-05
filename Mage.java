@@ -15,6 +15,7 @@ public class Mage extends Player
      up1 = baseString + "mage - up - p1.png";
      up2 = baseString + "mage - up - p2.png";
      up3 = baseString + "mage - up - p3.png";
+     SBIC = baseString + "Palladin - SBIC.png";
         
     }
 }

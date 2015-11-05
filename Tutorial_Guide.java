@@ -15,7 +15,6 @@ public class Tutorial_Guide extends Interface_Ai
     {
         if (check){
         setImage("Tutorial Guide.png");
-//         System.out.println("End of T.O. Check!: " + d);
 }
 }
 }

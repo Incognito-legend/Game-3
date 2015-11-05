@@ -16,6 +16,7 @@ public class hunter extends Player
         up1 = baseString + "Lostboys hunter up 1.png";
         up2 = baseString + "Lostboys hunter up 2.png";
         up3 = baseString + "Lostboys hunter up 3.png";
+        SBIC = baseString + "Palladin - SBIC.png";
       
     }
 }

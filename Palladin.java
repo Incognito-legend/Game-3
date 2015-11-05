@@ -16,6 +16,7 @@ public class Palladin extends Player
      up1 = baseString + "Palladin - up 1.png";
      up2 = baseString + "Palladin - up 2.png";
      up3 = baseString + "Palladin - up 3.png";
+     SBIC = baseString + "Palladin - SBIC.png";
     
     }   
 }

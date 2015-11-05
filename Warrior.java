@@ -15,5 +15,6 @@ public class Warrior extends Player
         up1 = baseString + "Female Warrior up 1.png";
         up2 = baseString + "Female Warrior up 2.png";
         up3 = baseString + "Female Warrior up 3.png";
+        SBIC = baseString + "Palladin - SBIC.png";
     }
 }
