@@ -45,8 +45,8 @@ public void Act(){
     ///end ^
     //start v
     //non-switch stage - regular level up - increase magic/non-magic player Level by 1! (if int exp = 100) -> set to 0 again.
-    if (instance == 2){
-       setImage("Level_Up_Window1-big.png");  
-}
+//     if (instance == 2){
+//        setImage("Level_Up_Window1-big.png");  
+// }
 }
 }
