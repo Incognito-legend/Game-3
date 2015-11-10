@@ -53,11 +53,14 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
     public background()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(980, 650, 1);        
+        super(980, 650, 1);
+        //super(930, 600, 1); 
         largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);        
         getBackground().drawImage(largeImage, -1400, -2045);        
         Date d = new Date();        
         addObject(new Palladin(), 512, 389);
+        //addObject(new Palladin(), 462, 339); 
+        // Yes I spelled Paladin wrong because I was young and stupid when I started this and I thought it would be funny to leave it as this 
         Song = Lobby;
         changeSongTrack();
           
@@ -78,26 +81,46 @@ return 0;
     addObject(new Smoke_Effect(), 512, 389);
     addObject(new Player_Portrait_Instance(), 120, 500);
     addObject(new Player_Name_Panel(), 120, 100);
+//        addObject(new hunter(), 462, 339);
+//        addObject(new Smoke_Effect(), 462, 339);
+//        addObject(new Player_Portrait_Instance(), 120, 500);
+//        addObject(new Player_Name_Panel(), 120, 100);
     }if (Current_Class == 2){   
     addObject(new Druid(), 512, 389);
     addObject(new Smoke_Effect(), 512, 389);
     addObject(new PPI_Druid(), 120, 500);
     addObject(new Player_Name_Panel(), 120, 100);
+//        addObject(new Druid(), 462, 339);
+//        addObject(new Smoke_Effect(), 462, 339);
+//        addObject(new PPI_Druid(), 120, 500);
+//        addObject(new Player_Name_Panel(), 120, 100);
     }    if (Current_Class == 3){
     addObject(new Mage(), 512, 389);
     addObject(new Smoke_Effect(), 512, 389);
     addObject(new PPI_Mage(), 120, 500);
     addObject(new Player_Name_Panel(), 120, 100); 
+//        addObject(new Mage(), 462, 339);
+//        addObject(new Smoke_Effect(), 462, 339);
+//        addObject(new PPI_Mage(), 120, 500);
+//        addObject(new Player_Name_Panel(), 120, 100);
     }    if (Current_Class == 4){
     addObject(new Palladin(), 512, 389);    
     addObject(new Smoke_Effect(), 512, 389);            
     addObject(new PPI_Paladin(), 120, 500);    
-    addObject(new Player_Name_Panel(), 120, 100);    
+    addObject(new Player_Name_Panel(), 120, 100);
+//        addObject(new Palladin(), 462, 339);    
+//        addObject(new Smoke_Effect(), 462, 339);            
+//        addObject(new PPI_Paladin(), 120, 500);    
+//        addObject(new Player_Name_Panel(), 120, 100);    
     }    if (Current_Class == 5){    
     addObject(new Warrior(), 512, 389);    
     addObject(new Smoke_Effect(), 512, 389);        
     addObject(new PPI_Warrior(), 120, 500);    
-    addObject(new Player_Name_Panel(), 120, 100);        
+    addObject(new Player_Name_Panel(), 120, 100);
+//        addObject(new Warrior(), 462, 339);    
+//        addObject(new Smoke_Effect(), 462, 339);        
+//        addObject(new PPI_Warrior(), 120, 500);    
+//        addObject(new Player_Name_Panel(), 120, 100);            
     }    
     return 0;
 }
@@ -116,6 +139,7 @@ return 0;
             setBackground(map_Lobby);
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
           if ((!(statement_3)) && (statement) && (statement_2)){
+            //pos_x = -1648;
             pos_x = -1648;
             pos_y = -2205;
           } else if ((!(statement_2)) && (statement) && (statement_3)){
@@ -135,6 +159,8 @@ return 0;
             largeImage = map_Blacksmith;
             setBackground(map_Blacksmith); 
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
+            //pos_x = -1458;
+            //entering blacksmith parameters x and y of map for player illusionary postion
             pos_x = -1458;
             pos_y = -1915;
             Song.stop();

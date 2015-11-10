@@ -414,7 +414,7 @@ if ((Room == Shop) && (windowPane)){
     setImage(SBIC);
     level.addObject(new Tutorial_Guide(), 100, 100);
     level.addObject(new Trade_Instance(), 500, 300);
-    
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 200, 250);
     level.setTransparency(0);
     level.getTransparency();
     level.setDefaultForMap(1);
