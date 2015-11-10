@@ -350,10 +350,8 @@ if (Room == Blacksmith){
            Room = Lobby;
            level.setDefaultForMap(2);
            level.changeMap(1,1);
-
-           
            dirtyFlag1 = true;
-        
+           
  } else if (!(level.getTileAt(hero_x, hero_y) == 12) && (Blacksmith_Goodbye)){
            Blacksmith_Goodbye = false;
            level.track_num = 1;
@@ -383,17 +381,17 @@ if ((Room == Shop) && !(windowPane)){
     if ((level.getTileAt(hero_x, hero_y) == 12) && !(Shop_Goodbye)){
         
            //System.out.println("Goodbye!");
-           Shop_Goodbye = true;
+          
            Room = Lobby;
            level.setDefaultForMap(2);
            level.changeMap(1,1);
 
            
            dirtyFlag1 = true;
-        
+           Shop_Goodbye = true;
  } else if (!(level.getTileAt(hero_x, hero_y) == 12) && (Shop_Goodbye)){
            Shop_Goodbye = false;
-           level.track_num = 1;
+           //level.track_num = 1;
  }
        if ((level.getTileAt(hero_x, hero_y) == 6) && !(Shop_Welcome)){
            
@@ -414,11 +412,11 @@ if ((Room == Shop) && !(windowPane)){
 
 if ((Room == Shop) && (windowPane)){
     setImage(SBIC);
-	level.addObject(new Tutorial_Guide(), 100, 100);
-	level.addObject(new Trade_Instance(), 500, 300);
-	
+    level.addObject(new Tutorial_Guide(), 100, 100);
+    level.addObject(new Trade_Instance(), 500, 300);
+    
     level.setTransparency(0);
-	level.getTransparency();
+    level.getTransparency();
     level.setDefaultForMap(1);
     level.changeMap(3,2);        
 }
