@@ -431,7 +431,26 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 450);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 500);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 550);
-    level.addObject(new Shop_Options(), 512, 389);
+    //------------------------------------------------------------------
+    //level.addObject(new Shop_Options(), 512, 389);
+    level.addObject(new Shop_Welcome_Message(), 500, 0); 
+    //------------------------------------------------------------------
+    // first shop items trade interface Text row vvvvvvvvv
+    level.addObject(new Shop_option_1(), 300, 250);
+    level.addObject(new Shop_option_2(), 300, 300);
+    level.addObject(new Shop_option_3(), 300, 350);
+    level.addObject(new Shop_option_4(), 300, 400);
+    level.addObject(new Shop_option_5(), 300, 450);
+    level.addObject(new Shop_option_6(), 300, 500);
+    level.addObject(new Shop_option_7(), 300, 550);
+    // next Text row vvvvvvvvvv
+    level.addObject(new Shop_option_8(), 700, 250);
+    level.addObject(new Shop_option_9(), 700, 300);
+    level.addObject(new Shop_option_10(), 700, 350);
+    level.addObject(new Shop_option_11(), 700, 400);
+    level.addObject(new Shop_option_12(), 700, 450);
+    //level.addObject(new Shop_option_1(), 700, 500);
+    //level.addObject(new Shop_option_1(), 700, 550);
     level.setTransparency(0);
     level.getTransparency();
     level.setDefaultForMap(1);
