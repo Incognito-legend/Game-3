@@ -411,10 +411,27 @@ if ((Room == Shop) && !(windowPane)){
 
 
 if ((Room == Shop) && (windowPane)){
+    // Visual INITIALIZATION OF TRADE INSTANCE: SHOP
     setImage(SBIC);
     level.addObject(new Tutorial_Guide(), 100, 100);
     level.addObject(new Trade_Instance(), 500, 300);
-    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 200, 250);
+    // first shop items trade interface row vvvvvvvvv
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 250);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 300);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 350);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 400);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 450);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 500);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 550);
+    // next row vvvvvvvvvv
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 250);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 300);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 350);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 400);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 450);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 500);
+    level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 550);
+    level.addObject(new Shop_Options(), 512, 389);
     level.setTransparency(0);
     level.getTransparency();
     level.setDefaultForMap(1);
