@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Shop_option_2 extends Interface_Ai
+public class Shop_option_2 extends Shop
 {
     /**
      * Act - do whatever the Shop_option_2 wants to do. This method is called whenever
@@ -14,6 +14,6 @@ public class Shop_option_2 extends Interface_Ai
      */
     public void act() 
     {
-        // Add your action code here.
+        setImage("Shop_option_2[].png");
     }    
 }
