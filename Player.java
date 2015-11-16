@@ -70,6 +70,27 @@ public class Player extends Actor
     //
     int Weight_;
     // ^^^ (Character / Class) Specific Stat
+    boolean Left_Edge = true;
+    boolean Right_Edge = false;
+    boolean Top = true;
+    boolean Bottom = false;
+    int S_Loc = 1;
+    int S_Object;
+    int S_One = 1;
+    int S_Two = 2;
+    int S_Three = 3;
+    int S_Four = 4;
+    int S_Five = 5;
+    int S_Six = 6;
+    int S_Seven = 7;
+    int S_Eight = 8;
+    int S_Nine = 9;
+    int S_Ten = 10;
+    int S_Eleven = 11;
+    int S_Twelve = 12;
+    int S_Thirteen = 13;
+    int S_Fourteen = 14;
+    boolean Pl = false;
     public void act() 
     {
     
@@ -455,60 +476,60 @@ if ((Room == Shop) && (windowPane)){
     level.getTransparency();
     level.setDefaultForMap(1);
     level.changeMap(3,2);
-    boolean Left_Edge = true;
-    boolean Right_Edge = false;
-    boolean Top = true;
-    boolean Bottom = false;
-    int S_Up = 1;
-    int S_Down = 1;
-    int S_Object;
-    int S_One = 1;
-    int S_Two = 2;
-    int S_Three = 3;
-    int S_Four = 4;
-    int S_Five = 5;
-    int S_Six = 6;
-    int S_Seven = 7;
-    int S_Eight = 8;
-    int S_Nine = 9;
-    int S_Ten = 10;
-    int S_Eleven = 11;
-    int S_Twelve = 12;
-    int S_Thirteen = 13;
-    int S_Fourteen = 14;
-    if ((Greenfoot.isKeyDown ("a")) && (!(Left_Edge))){
+    Pl = true;
+    if (Pl){
+    if ((Greenfoot.isKeyDown ("left")) && (!(Left_Edge))){
         
         if (Right_Edge){
             Right_Edge = false;
+            System.out.println("Right_Edge = " + Right_Edge);
+            Left_Edge = true;
         }
         
-        Left_Edge = true;
+        System.out.println("Left_Edge = " + Left_Edge);
+    } else if ((Greenfoot.isKeyDown ("up")) && (!(Top)) && (S_Loc >= 2)){
+            S_Loc = S_Loc - 1;
+            System.out.println("S_Loc = " + S_Loc);
+    } else if ((Greenfoot.isKeyDown ("down")) && (!(Bottom)) && (S_Loc <= 6)){
+            S_Loc = S_Loc + 1;
+            System.out.println("S_Loc = " + S_Loc);
+    } else if ((Greenfoot.isKeyDown ("right")) && (!(Right_Edge))){
         
-    } else if ((Greenfoot.isKeyDown ("w")) && (!(Top))){
+        if (Left_Edge){
+            Left_Edge = false;
+            System.out.println("Right_Edge = " + Right_Edge);
+            Right_Edge = true;
+        }
         
-if ((S_Up == 1) && (Left_Edge) && (!(Right_Edge))){
+        
+        //Shop_Parameters = 
+        
+    } 
+    else 
+    {
+        if ((S_Loc == 1) && (Left_Edge) && (!(Right_Edge))){
         Top = true;
-            S_Up = S_Up - 0;
+            S_Loc = S_Loc - 0;
             S_Object = S_One; 
             
             // Spells : (300, 250)
             
-        } else if ((S_Up == 1) && (!(Left_Edge)) && (Right_Edge)){
+        } else if ((S_Loc == 1) && (!(Left_Edge)) && (Right_Edge)){
         Top = true;
-            S_Up = S_Up - 0;
+            S_Loc = S_Loc - 0;
             S_Object = S_Eight;
             
             // Miscelaneous : (700, 250)
             
         }
         
-if ((S_Up == 2) && (Left_Edge) && (!(Right_Edge))){
+if ((S_Loc == 2) && (Left_Edge) && (!(Right_Edge))){
             
             S_Object = S_Two;
             
             // Melee Weapons : (300, 300)
             
-        } else if ((S_Up == 2) && (!(Left_Edge)) && (Right_Edge)){
+        } else if ((S_Loc == 2) && (!(Left_Edge)) && (Right_Edge)){
             
             S_Object = S_Nine;
             
@@ -516,13 +537,13 @@ if ((S_Up == 2) && (Left_Edge) && (!(Right_Edge))){
             
         }
         
-if ((S_Up == 3) && (Left_Edge) && (!(Right_Edge))){
+if ((S_Loc == 3) && (Left_Edge) && (!(Right_Edge))){
     
             S_Object = S_Three;
             
             // Ranged Weapons : (300, 350)
             
-        } else if ((S_Up == 3) && (!(Left_Edge)) && (Right_Edge)){
+        } else if ((S_Loc == 3) && (!(Left_Edge)) && (Right_Edge)){
             
             S_Object = S_Ten;
             
@@ -530,13 +551,13 @@ if ((S_Up == 3) && (Left_Edge) && (!(Right_Edge))){
             
         }
         
-if ((S_Up == 4) && (Left_Edge) && (!(Right_Edge))){
+if ((S_Loc == 4) && (Left_Edge) && (!(Right_Edge))){
     
             S_Object = S_Four;
             
             // Staves : (300, 400)
             
-        } else if ((S_Up == 4) && (!(Left_Edge)) && (Right_Edge)){
+        } else if ((S_Loc == 4) && (!(Left_Edge)) && (Right_Edge)){
             
             S_Object = S_Eleven;
             
@@ -544,56 +565,51 @@ if ((S_Up == 4) && (Left_Edge) && (!(Right_Edge))){
             
         }
         
-if ((S_Up == 5) && (Left_Edge) && (!(Right_Edge))){
+if ((S_Loc == 5) && (Left_Edge) && (!(Right_Edge))){
     
             S_Object = S_Five;
             
+            // Relics : (300, 450)
             
-            
-        } else if ((S_Up == 5) && (!(Left_Edge)) && (Right_Edge)){
+        } else if ((S_Loc == 5) && (!(Left_Edge)) && (Right_Edge)){
             
             S_Object = S_Twelve;
             
-            
+            // Magic Skills : (700, 450)
             
         }
         
-if ((S_Up == 6) && (Left_Edge) && (!(Right_Edge))){
+if ((S_Loc == 6) && (Left_Edge) && (!(Right_Edge))){
     
             S_Object = S_Six;
             
-            // Spells : (300, 250)
+            // Items : (300, 500)
             
-        } else if ((S_Up == 6) && (!(Left_Edge)) && (Right_Edge)){
+        } else if ((S_Loc == 6) && (!(Left_Edge)) && (Right_Edge)){
             
             S_Object = S_Thirteen;
             
-            // N/A : (700, 250)
+            // Empty N/A : (700, 500)
             
         }
         
-if ((S_Up == 7) && (Left_Edge) && (!(Right_Edge))){
-            S_Object = S_Seven;
-        } else if ((S_Up == 7) && (!(Left_Edge)) && (Right_Edge)){
+if ((S_Loc == 7) && (Left_Edge) && (!(Right_Edge))){
     
-        }
-        
-    } else if ((Greenfoot.isKeyDown ("s")) && (!(Bottom))){
-        
-    } else if ((Greenfoot.isKeyDown ("d")) && (!(Right_Edge))){
-        
-        if (Left_Edge){
+            S_Object = S_Seven;
             
-            Left_Edge = false;
+            // Materials : (300, 550)
+            
+        } else if ((S_Loc == 7) && (!(Left_Edge)) && (Right_Edge)){
+            
+            S_Object = S_Fourteen;
+            
+            // Empty N/A : (700, 550)
             
         }
-        
-        //Shop_Parameters = 
-        
-    } 
     
 }
-
+}
+}
 
 //-------------------------------------------------------------------------------
 
