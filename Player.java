@@ -454,7 +454,144 @@ if ((Room == Shop) && (windowPane)){
     level.setTransparency(0);
     level.getTransparency();
     level.setDefaultForMap(1);
-    level.changeMap(3,2);        
+    level.changeMap(3,2);
+    boolean Left_Edge = true;
+    boolean Right_Edge = false;
+    boolean Top = true;
+    boolean Bottom = false;
+    int S_Up = 1;
+    int S_Down = 1;
+    int S_Object;
+    int S_One = 1;
+    int S_Two = 2;
+    int S_Three = 3;
+    int S_Four = 4;
+    int S_Five = 5;
+    int S_Six = 6;
+    int S_Seven = 7;
+    int S_Eight = 8;
+    int S_Nine = 9;
+    int S_Ten = 10;
+    int S_Eleven = 11;
+    int S_Twelve = 12;
+    int S_Thirteen = 13;
+    int S_Fourteen = 14;
+    if ((Greenfoot.isKeyDown ("a")) && (!(Left_Edge))){
+        
+        if (Right_Edge){
+            Right_Edge = false;
+        }
+        
+        Left_Edge = true;
+        
+    } else if ((Greenfoot.isKeyDown ("w")) && (!(Top))){
+        
+if ((S_Up == 1) && (Left_Edge) && (!(Right_Edge))){
+        Top = true;
+            S_Up = S_Up - 0;
+            S_Object = S_One; 
+            
+            // Spells : (300, 250)
+            
+        } else if ((S_Up == 1) && (!(Left_Edge)) && (Right_Edge)){
+        Top = true;
+            S_Up = S_Up - 0;
+            S_Object = S_Eight;
+            
+            // Miscelaneous : (700, 250)
+            
+        }
+        
+if ((S_Up == 2) && (Left_Edge) && (!(Right_Edge))){
+            
+            S_Object = S_Two;
+            
+            // Melee Weapons : (300, 300)
+            
+        } else if ((S_Up == 2) && (!(Left_Edge)) && (Right_Edge)){
+            
+            S_Object = S_Nine;
+            
+            // Enchanting : (700, 300)
+            
+        }
+        
+if ((S_Up == 3) && (Left_Edge) && (!(Right_Edge))){
+    
+            S_Object = S_Three;
+            
+            // Ranged Weapons : (300, 350)
+            
+        } else if ((S_Up == 3) && (!(Left_Edge)) && (Right_Edge)){
+            
+            S_Object = S_Ten;
+            
+            // Rare Goods : (700, 350)
+            
+        }
+        
+if ((S_Up == 4) && (Left_Edge) && (!(Right_Edge))){
+    
+            S_Object = S_Four;
+            
+            // Staves : (300, 400)
+            
+        } else if ((S_Up == 4) && (!(Left_Edge)) && (Right_Edge)){
+            
+            S_Object = S_Eleven;
+            
+            // Ammo : (700, 400)
+            
+        }
+        
+if ((S_Up == 5) && (Left_Edge) && (!(Right_Edge))){
+    
+            S_Object = S_Five;
+            
+            
+            
+        } else if ((S_Up == 5) && (!(Left_Edge)) && (Right_Edge)){
+            
+            S_Object = S_Twelve;
+            
+            
+            
+        }
+        
+if ((S_Up == 6) && (Left_Edge) && (!(Right_Edge))){
+    
+            S_Object = S_Six;
+            
+            // Spells : (300, 250)
+            
+        } else if ((S_Up == 6) && (!(Left_Edge)) && (Right_Edge)){
+            
+            S_Object = S_Thirteen;
+            
+            // N/A : (700, 250)
+            
+        }
+        
+if ((S_Up == 7) && (Left_Edge) && (!(Right_Edge))){
+            S_Object = S_Seven;
+        } else if ((S_Up == 7) && (!(Left_Edge)) && (Right_Edge)){
+    
+        }
+        
+    } else if ((Greenfoot.isKeyDown ("s")) && (!(Bottom))){
+        
+    } else if ((Greenfoot.isKeyDown ("d")) && (!(Right_Edge))){
+        
+        if (Left_Edge){
+            
+            Left_Edge = false;
+            
+        }
+        
+        //Shop_Parameters = 
+        
+    } 
+    
 }
 
 
