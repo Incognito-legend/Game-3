@@ -6,41 +6,41 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Shop_Cursor extends Actor
+public class Shop_Cursor extends Interface_Ai
 {
-    boolean Left_Edge = true;
-    boolean Right_Edge = false;
-    boolean Top = true;
-    boolean Bottom = false;
-    int S_Loc = 1;
-    int S_Object;
-    int S_One = 1;
-    int S_Two = 2;
-    int S_Three = 3;
-    int S_Four = 4;
-    int S_Five = 5;
-    int S_Six = 6;
-    int S_Seven = 7;
-    int S_Eight = 8;
-    int S_Nine = 9;
-    int S_Ten = 10;
-    int S_Eleven = 11;
-    int S_Twelve = 12;
-    int S_Thirteen = 13;
-    int S_Fourteen = 14;
-    boolean Pl = false;
-    int counter = 1;
-    
-int pos_x = -1400;
+//     boolean Left_Edge = true;
+//     boolean Right_Edge = false;
+//     boolean Top = true;
+//     boolean Bottom = false;
+//     int S_Loc = 1;
+//     int S_Object;
+//     int S_One = 1;
+//     int S_Two = 2;
+//     int S_Three = 3;
+//     int S_Four = 4;
+//     int S_Five = 5;
+//     int S_Six = 6;
+//     int S_Seven = 7;
+//     int S_Eight = 8;
+//     int S_Nine = 9;
+//     int S_Ten = 10;
+//     int S_Eleven = 11;
+//     int S_Twelve = 12;
+//     int S_Thirteen = 13;
+//     int S_Fourteen = 14;
+//     boolean Pl = false;
+//     int counter = 1;
+//     
+// int pos_x = -1400;
+// 
+// int pos_y = -2045;
+// 
+// 
+// GreenfootImage shop_Cursor = new GreenfootImage("Shop_Cursor (Transparent background).png");
+// 
+// 
 
-int pos_y = -2045;
-
-
-GreenfootImage shop_Cursor = new GreenfootImage("Shop_Cursor (Transparent background).png");
-
-
-
-     public void act() 
+     public Shop_Cursor() 
      {
 //         if (Greenfoot.isKeyDown("a"))
 //         {
@@ -382,11 +382,32 @@ GreenfootImage shop_Cursor = new GreenfootImage("Shop_Cursor (Transparent backgr
 // }
 //     }
 }
-    public void shopCursorScroll(int dx, int dy){
-       pos_x = pos_x + dx;
-       pos_y += dy;
-       drawImage(shop_Cursor, pos_x, pos_y);
+//     public void shopCursorScroll(int dx, int dy){
+//        pos_x = pos_x + dx;
+//        pos_y += dy;
+//        drawImage(shop_Cursor, pos_x, pos_y);
+// }
+// public void drawImage(GreenfootImage image, int x, int y){
+// }
+     int pos_x = -1358;
+     int pos_y = -2045;
+     int counter = 0;
+//     int x = 412;
+//     int y = 489;
+     public void act() 
+     {
+         if (Greenfoot.isKeyDown("w"))
+         {
+         if (counter == 0){
+             
+  } else if (counter == 25){
+        
 }
-public void drawImage(GreenfootImage image, int x, int y){
-}
+        counter = (counter + 1) % 50;
+        setLocation(pos_x, pos_y);
+    }
+} 
+    public void setLocation(int pos_x, int pos_y){
+        
+    }
 }

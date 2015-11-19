@@ -2,4 +2,12 @@
 comment0.target=Player
 comment1.params=
 comment1.target=void\ act()
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ getKey()
+comment3.params=speed
+comment3.target=void\ setSpeed(int)
+comment4.params=
+comment4.target=void\ start()
+comment5.params=
+comment5.target=void\ stop()
+numComments=6

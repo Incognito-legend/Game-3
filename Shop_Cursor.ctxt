@@ -2,9 +2,9 @@
 comment0.target=Shop_Cursor
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Shop_Cursor\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ act()
-comment2.params=dx\ dy
-comment2.target=void\ shopCursorScroll(int,\ int)
-comment3.params=image\ x\ y
-comment3.target=void\ drawImage(greenfoot.GreenfootImage,\ int,\ int)
+comment1.target=Shop_Cursor()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=pos_x\ pos_y
+comment3.target=void\ setLocation(int,\ int)
 numComments=4

@@ -98,7 +98,7 @@ public class Player extends Actor
         background level = (background)this.getWorld();
 
 
-       int hero_x_px = -level.pos_x + getX();
+        int hero_x_px = -level.pos_x + getX();
         int hero_y_px = -level.pos_y + getY();
         int hero_x = hero_x_px/96;
         int hero_y = hero_y_px/96;
@@ -228,11 +228,11 @@ public class Player extends Actor
         } else if (lastWayFacing.equals("d")) {
             setImage(right2);
         }
-         if ((Room == Shop) && (windowPane)){
-         level.setDefaultForMap(1);
-         level.changeMap(3,2);
-         setImage(SBIC);        
-         }
+//          if ((Room == Shop) && (windowPane)){
+//          level.setDefaultForMap(1);
+//          level.changeMap(3,2);
+//          setImage(SBIC);        
+//          }
     }
     
     
@@ -397,7 +397,7 @@ if (Room == Blacksmith){
 
 
 
-if ((Room == Shop) && !(windowPane)){
+if ((Room == Shop) && (!(cutscene)) && (!(windowPane))){
 //SYSTEM MESSAGE PANEL Start
     if ((level.getTileAt(hero_x, hero_y) == 12) && !(Shop_Goodbye)){
         
@@ -432,6 +432,10 @@ if ((Room == Shop) && !(windowPane)){
 
 
 if ((Room == Shop) && (windowPane)){
+    setSpeed(50);
+     level.setDefaultForMap(1);
+     level.changeMap(3,2);
+    
     // Visual INITIALIZATION OF TRADE INSTANCE: SHOP
     setImage(SBIC);
     level.addObject(new Tutorial_Guide(), 100, 100);
@@ -471,278 +475,165 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Shop_option_12(), 700, 450);
     //
     level.addObject(new Shop_Cursor(), 300, 250);
-    //
-    if (Greenfoot.isKeyDown ("a")){
-    }
-    
+    //    
 // level.addObject(new Shop_option_(), 700, 500);
 // level.addObject(new Shop_option_(), 700, 550);
-    level.setTransparency(0);
-    level.getTransparency();
+//     level.setTransparency(0);
+//     level.getTransparency();
 Pl = true;
     if (Pl){
     if (Greenfoot.isKeyDown ("a")){
          
-        if (Right_Edge){
-            Right_Edge = false;
-            System.out.println("Right_Edge = " + Right_Edge);
-            Left_Edge = true;
+//         getKey();
+        System.out.println("Left_Edge = " + Left_Edge);
+        if (whichWalk == 0) {
+            
+        } else if (whichWalk == 1) {
+        
         }
         
-        System.out.println("Left_Edge = " + Left_Edge);
-    } else if (Greenfoot.isKeyDown ("w")){
+        whichWalk = (whichWalk + 1) % 3;
+        
+    } 
+    else if (Greenfoot.isKeyDown ("w"))
+    {
+//         getKey();
             S_Loc = S_Loc - 1;
             System.out.println("S_Loc = " + S_Loc);
-        if ((S_Loc == 1) && (Left_Edge) && (!(Right_Edge))){
-        Top = true;
-            S_Loc = S_Loc - 0;
-            S_Object = S_One; 
             
-            // Spells : (300, 250)
-            
-        } else if ((S_Loc == 1) && (!(Left_Edge)) && (Right_Edge)){
-        Top = true;
-            S_Loc = S_Loc - 0;
-            S_Object = S_Eight;
-            
-            // Miscelaneous : (700, 250)
-            
+        if (whichWalk == 0) {
+            System.out.println("Test line =" + whickWalk);
+        } else if (whichWalk == 1) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 2) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 3) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 4) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 5) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 6) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 7) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 8) {
+            System.out.println("Test line =" + whichWalk);     
+        } else if (whichWalk == 9) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 10) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 11) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 12) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 13) {
+            System.out.println("Test line =" + whichWalk);
+        } else if (whichWalk == 14) {
+            System.out.println("Test line =" + whichWalk);
         }
         
-        else if ((S_Loc == 2) && (Left_Edge) && (!(Right_Edge))){
-            
-            S_Object = S_Two;
-            
-            // Melee Weapons : (300, 300)
-            
-        } else if ((S_Loc == 2) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Nine;
-            
-            // Enchanting : (700, 300)
-            
-        }
-        
-        else if ((S_Loc == 3) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Three;
-            
-            // Ranged Weapons : (300, 350)
-            
-        } else if ((S_Loc == 3) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Ten;
-            
-            // Rare Goods : (700, 350)
-            
-        }
-        
-        else if ((S_Loc == 4) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Four;
-            
-            // Staves : (300, 400)
-            
-        } else if ((S_Loc == 4) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Eleven;
-            
-            // Ammo : (700, 400)
-            
-        }
-        
-        else if ((S_Loc == 5) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Five;
-            
-            // Relics : (300, 450)
-            
-        } else if ((S_Loc == 5) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Twelve;
-            
-            // Magic Skills : (700, 450)
-            
-        }
-        
-        else if ((S_Loc == 6) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Six;
-            
-            // Items : (300, 500)
-            
-        } else if ((S_Loc == 6) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Thirteen;
-            
-            // Empty N/A : (700, 500)
-            
-        }
-        
-        else if ((S_Loc == 7) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Seven;
-            
-            // Materials : (300, 550)
-            
-        } else if ((S_Loc == 7) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Fourteen;
-            
-            // Empty N/A : (700, 550)
-            
-        }
-    } else if ((Greenfoot.isKeyDown ("s")) && (!(Bottom)) && (S_Loc <= 6)){
+        whichWalk = (whichWalk + 1) % 15;
+
+    } else if (Greenfoot.isKeyDown ("s")){
             S_Loc = S_Loc + 1;
             System.out.println("S_Loc = " + S_Loc);
-                   if ((S_Loc == 1) && (Left_Edge) && (!(Right_Edge))){
-        Top = true;
-            S_Loc = S_Loc - 0;
-            S_Object = S_One; 
+        if (whichWalk == 0) {
             
-            // Spells : (300, 250)
+        } else if (whichWalk == 1) {
             
-        } else if ((S_Loc == 1) && (!(Left_Edge)) && (Right_Edge)){
-        Top = true;
-            S_Loc = S_Loc - 0;
-            S_Object = S_Eight;
+        } else if (whichWalk == 2) {
             
-            // Miscelaneous : (700, 250)
+        } else if (whichWalk == 3) {
             
+        } else if (whichWalk == 4) {
+        
+        } else if (whichWalk == 5) {
+       
+        } else if (whichWalk == 6) {
+        
+        } else if (whichWalk == 7) {
+        
+        } else if (whichWalk == 8) {
+                   
+        } else if (whichWalk == 9) {
+            
+        } else if (whichWalk == 10) {
+            
+        } else if (whichWalk == 11) {
+            
+        } else if (whichWalk == 12) {
+        
+        } else if (whichWalk == 13) {
+       
+        } else if (whichWalk == 14) {
+        
         }
         
-        else if ((S_Loc == 2) && (Left_Edge) && (!(Right_Edge))){
-            
-            S_Object = S_Two;
-            
-            // Melee Weapons : (300, 300)
-            
-        } else if ((S_Loc == 2) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Nine;
-            
-            // Enchanting : (700, 300)
-            
-        }
+        whichWalk = (whichWalk + 1) % 15;
+    } 
+    else if (Greenfoot.isKeyDown ("d"))
+    {
         
-        else if ((S_Loc == 3) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Three;
-            
-            // Ranged Weapons : (300, 350)
-            
-        } else if ((S_Loc == 3) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Ten;
-            
-            // Rare Goods : (700, 350)
-            
-        }
-        
-        else if ((S_Loc == 4) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Four;
-            
-            // Staves : (300, 400)
-            
-        } else if ((S_Loc == 4) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Eleven;
-            
-            // Ammo : (700, 400)
-            
-        }
-        
-        else if ((S_Loc == 5) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Five;
-            
-            // Relics : (300, 450)
-            
-        } else if ((S_Loc == 5) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Twelve;
-            
-            // Magic Skills : (700, 450)
-            
-        }
-        
-        else if ((S_Loc == 6) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Six;
-            
-            // Items : (300, 500)
-            
-        } else if ((S_Loc == 6) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Thirteen;
-            
-            // Empty N/A : (700, 500)
-            
-        }
-        
-        else if ((S_Loc == 7) && (Left_Edge) && (!(Right_Edge))){
-    
-            S_Object = S_Seven;
-            
-            // Materials : (300, 550)
-            
-        } else if ((S_Loc == 7) && (!(Left_Edge)) && (Right_Edge)){
-            
-            S_Object = S_Fourteen;
-            
-            // Empty N/A : (700, 550)
-            
-        }
-    } else if ((Greenfoot.isKeyDown ("d")) && (!(Right_Edge))){
-        
-        if (Left_Edge){
-            Left_Edge = false;
-            System.out.println("Right_Edge = " + Right_Edge);
-            Right_Edge = true;
-        }
-        
+
+        System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
         
         //Shop_Parameters = 
+        if (whichWalk == 0) {
+            
+        } else if (whichWalk == 1) {
         
+        }
+        
+        whichWalk = (whichWalk + 1) % 3;
     }
 }
- else 
-{
+ 
+
     if (S_Object == 1){
         level.shopMoveCursor(1);
         System.out.println("Test");
+        System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
      } else if (S_Object == 2){
          level.shopMoveCursor(2);
+         System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
       } else if (S_Object == 3){
           level.shopMoveCursor(3);
+          System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
        } else if (S_Object == 4){
            level.shopMoveCursor(4);
+           System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
         } else if (S_Object == 5){
             level.shopMoveCursor(5);
+            System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
          } else if (S_Object == 6){
              level.shopMoveCursor(6);
+             System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
           } else if (S_Object == 7){
               level.shopMoveCursor(7);
+              System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
            } else if (S_Object == 8){
                level.shopMoveCursor(8);
+               System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
             } else if (S_Object == 9){
                 level.shopMoveCursor(9);
+                System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
              } else if (S_Object ==10){
                  level.shopMoveCursor(10);
+                 System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
               } else if (S_Object ==11){
                   level.shopMoveCursor(11);
+                  System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
                } else if (S_Object ==12){
                    level.shopMoveCursor(12);
+                   System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
                 } else if (S_Object ==13){
                     level.shopMoveCursor(13);
+                    System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
                  } else if (S_Object ==14){
                      level.shopMoveCursor(14);
+                     System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
     }
-}
-     level.setDefaultForMap(1);
-     level.changeMap(3,2);
-    
 }
 
 
@@ -771,12 +662,32 @@ if (Room == Arena_Open_Doors){
         
     }
 }
+}
+}
 
-} else if (cutscene){
-    level.addObject(new Level_UP_STAT_Window_Instance(), 512, 389);
-    instance = 1;
+
+static java.lang.String getKey(){
+    return getKey();
+//Get the most recently pressed key, since the last time this method was called.
 }
+
+
+static void setSpeed(int speed){
+    System.out.println("Speed =" + speed);
+//Set the speed of the execution.
 }
+
+
+static void start(){
+//Run (or resume) the execution.
+}
+
+
+static void stop(){
+//Pause the execution.
+}
+
+
 }
 
     //block#1 = wall
