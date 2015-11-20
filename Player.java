@@ -108,9 +108,9 @@ public class Player extends Actor
         boolean dirtyFlag1 = true;
 
         // Movement and controls section
-  if (!(cutscene) && (!(windowPane))){
+  if (!(windowPane)){
       if (Greenfoot.isKeyDown ("a")){
-       
+       background x = (background)this.getWorld();
        level.scroll(10, 0);
        
 
@@ -388,6 +388,28 @@ if (Room == Blacksmith){
 //SYSTEM MESSAGE PANEL End
 }
 
+if (Room == Arena){
+           if (level.getTileAt(hero_x, hero_y) == 4 && (dirtyFlag1 == true)){
+// entering Arena Battle room
+           Room = Arena_Open_Doors;
+           level.setDefaultForMap(1);
+           level.changeMap(5,1);
+           //level.addObject(new Objective_Arrow(), 512, 389);
+           dirtyFlag1 = false;
+        
+    }
+}
+
+if (Room == Arena_Open_Doors){
+           if (level.getTileAt(hero_x, hero_y) == 4 && (dirtyFlag1 == true)){
+// entering Arena Battle room
+           Room = Arena;
+           level.setDefaultForMap(1);
+           level.changeMap(4,1);
+           dirtyFlag1 = false;
+        
+    }
+}
 
 
 
@@ -397,7 +419,7 @@ if (Room == Blacksmith){
 
 
 
-if ((Room == Shop) && (!(cutscene)) && (!(windowPane))){
+if ((Room == Shop) && (!(windowPane))){
 //SYSTEM MESSAGE PANEL Start
     if ((level.getTileAt(hero_x, hero_y) == 12) && !(Shop_Goodbye)){
         
@@ -419,22 +441,21 @@ if ((Room == Shop) && (!(cutscene)) && (!(windowPane))){
            System.out.println("Oh! Come on in!");
            windowPane = true;
            Shop_Welcome = true;
- } else if (!(level.getTileAt(hero_x, hero_y) == 6) && (Shop_Welcome)){
-     System.out.println("You be careful out there!");
-     Shop_Welcome = false;
- }
+//  } else if (!(level.getTileAt(hero_x, hero_y) == 6) && (Shop_Welcome)){
+//      System.out.println("You be careful out there!");
+//      Shop_Welcome = false;
+//  }
 //SYSTEM MESSAGE PANEL End
 }
+}
 
-
-
-
-
+}
 
 if ((Room == Shop) && (windowPane)){
-    setSpeed(50);
-     level.setDefaultForMap(1);
-     level.changeMap(3,2);
+    
+    //setSpeed(50);
+    level.setDefaultForMap(1);
+    level.changeMap(3,2);
     
     // Visual INITIALIZATION OF TRADE INSTANCE: SHOP
     setImage(SBIC);
@@ -479,30 +500,31 @@ if ((Room == Shop) && (windowPane)){
 // level.addObject(new Shop_option_(), 700, 500);
 // level.addObject(new Shop_option_(), 700, 550);
 //     level.setTransparency(0);
-//     level.getTransparency();
-Pl = true;
-    if (Pl){
+//     level.getTransparency();    
     if (Greenfoot.isKeyDown ("a")){
-         
+       
+       
 //         getKey();
         System.out.println("Left_Edge = " + Left_Edge);
-        if (whichWalk == 0) {
-            
-        } else if (whichWalk == 1) {
-        
-        }
-        
-        whichWalk = (whichWalk + 1) % 3;
-        
+//         if (whichWalk == 0) {
+//             
+//         } else if (whichWalk == 1) {
+//         
+//         }
+//         
+//         whichWalk = (whichWalk + 1) % 3;
+//         
     } 
     else if (Greenfoot.isKeyDown ("w"))
     {
+        
+        
 //         getKey();
             S_Loc = S_Loc - 1;
             System.out.println("S_Loc = " + S_Loc);
             
         if (whichWalk == 0) {
-            System.out.println("Test line =" + whickWalk);
+            System.out.println("Test line =" + whichWalk);
         } else if (whichWalk == 1) {
             System.out.println("Test line =" + whichWalk);
         } else if (whichWalk == 2) {
@@ -536,133 +558,115 @@ Pl = true;
         whichWalk = (whichWalk + 1) % 15;
 
     } else if (Greenfoot.isKeyDown ("s")){
+        
+       
             S_Loc = S_Loc + 1;
             System.out.println("S_Loc = " + S_Loc);
-        if (whichWalk == 0) {
-            
-        } else if (whichWalk == 1) {
-            
-        } else if (whichWalk == 2) {
-            
-        } else if (whichWalk == 3) {
-            
-        } else if (whichWalk == 4) {
-        
-        } else if (whichWalk == 5) {
-       
-        } else if (whichWalk == 6) {
-        
-        } else if (whichWalk == 7) {
-        
-        } else if (whichWalk == 8) {
-                   
-        } else if (whichWalk == 9) {
-            
-        } else if (whichWalk == 10) {
-            
-        } else if (whichWalk == 11) {
-            
-        } else if (whichWalk == 12) {
-        
-        } else if (whichWalk == 13) {
-       
-        } else if (whichWalk == 14) {
-        
-        }
-        
-        whichWalk = (whichWalk + 1) % 15;
+//         if (whichWalk == 0) {
+//             
+//         } else if (whichWalk == 1) {
+//             
+//         } else if (whichWalk == 2) {
+//             
+//         } else if (whichWalk == 3) {
+//             
+//         } else if (whichWalk == 4) {
+//         
+//         } else if (whichWalk == 5) {
+//        
+//         } else if (whichWalk == 6) {
+//         
+//         } else if (whichWalk == 7) {
+//         
+//         } else if (whichWalk == 8) {
+//                    
+//         } else if (whichWalk == 9) {
+//             
+//         } else if (whichWalk == 10) {
+//             
+//         } else if (whichWalk == 11) {
+//             
+//         } else if (whichWalk == 12) {
+//         
+//         } else if (whichWalk == 13) {
+//        
+//         } else if (whichWalk == 14) {
+//         
+//         }
+//         
+//         whichWalk = (whichWalk + 1) % 15;
     } 
     else if (Greenfoot.isKeyDown ("d"))
     {
         
-
+        
         System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
         
         //Shop_Parameters = 
-        if (whichWalk == 0) {
-            
-        } else if (whichWalk == 1) {
-        
-        }
-        
-        whichWalk = (whichWalk + 1) % 3;
+//         if (whichWalk == 0) {
+//             
+//         } else if (whichWalk == 1) {
+//         
+//         }
+//         
+//         whichWalk = (whichWalk + 1) % 3;
     }
+//     else
+//     {
+// 
+//  
+// 
+//     if (S_Object == 1){
+//         level.shopMoveCursor(1);
+//         System.out.println("Test");
+//         System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//      } else if (S_Object == 2){
+//          level.shopMoveCursor(2);
+//          System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//       } else if (S_Object == 3){
+//           level.shopMoveCursor(3);
+//           System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//        } else if (S_Object == 4){
+//            level.shopMoveCursor(4);
+//            System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//         } else if (S_Object == 5){
+//             level.shopMoveCursor(5);
+//             System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//          } else if (S_Object == 6){
+//              level.shopMoveCursor(6);
+//              System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//           } else if (S_Object == 7){
+//               level.shopMoveCursor(7);
+//               System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//            } else if (S_Object == 8){
+//                level.shopMoveCursor(8);
+//                System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//             } else if (S_Object == 9){
+//                 level.shopMoveCursor(9);
+//                 System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//              } else if (S_Object ==10){
+//                  level.shopMoveCursor(10);
+//                  System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//               } else if (S_Object ==11){
+//                   level.shopMoveCursor(11);
+//                   System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//                } else if (S_Object ==12){
+//                    level.shopMoveCursor(12);
+//                    System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//                 } else if (S_Object ==13){
+//                     level.shopMoveCursor(13);
+//                     System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//                  } else if (S_Object ==14){
+//                      level.shopMoveCursor(14);
+//                      System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
+//     }
+// }
 }
- 
-
-    if (S_Object == 1){
-        level.shopMoveCursor(1);
-        System.out.println("Test");
-        System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-     } else if (S_Object == 2){
-         level.shopMoveCursor(2);
-         System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-      } else if (S_Object == 3){
-          level.shopMoveCursor(3);
-          System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-       } else if (S_Object == 4){
-           level.shopMoveCursor(4);
-           System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-        } else if (S_Object == 5){
-            level.shopMoveCursor(5);
-            System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-         } else if (S_Object == 6){
-             level.shopMoveCursor(6);
-             System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-          } else if (S_Object == 7){
-              level.shopMoveCursor(7);
-              System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-           } else if (S_Object == 8){
-               level.shopMoveCursor(8);
-               System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-            } else if (S_Object == 9){
-                level.shopMoveCursor(9);
-                System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-             } else if (S_Object ==10){
-                 level.shopMoveCursor(10);
-                 System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-              } else if (S_Object ==11){
-                  level.shopMoveCursor(11);
-                  System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-               } else if (S_Object ==12){
-                   level.shopMoveCursor(12);
-                   System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-                } else if (S_Object ==13){
-                    level.shopMoveCursor(13);
-                    System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-                 } else if (S_Object ==14){
-                     level.shopMoveCursor(14);
-                     System.out.println("S_Loc = " + S_Loc + ", S_Object" + S_Object);
-    }
-}
-
 
 //-------------------------------------------------------------------------------
 
 
-if (Room == Arena){
-           if (level.getTileAt(hero_x, hero_y) == 4 && (dirtyFlag1 == true)){
-// entering Arena Battle room
-           Room = Arena_Open_Doors;
-           level.setDefaultForMap(1);
-           level.changeMap(5,1);
-           //level.addObject(new Objective_Arrow(), 512, 389);
-           dirtyFlag1 = false;
-        
-    }
-}
 
-if (Room == Arena_Open_Doors){
-           if (level.getTileAt(hero_x, hero_y) == 4 && (dirtyFlag1 == true)){
-// entering Arena Battle room
-           Room = Arena;
-           level.setDefaultForMap(1);
-           level.changeMap(4,1);
-           dirtyFlag1 = false;
-        
-    }
-}
-}
 }
 
 
@@ -670,7 +674,6 @@ static java.lang.String getKey(){
     return getKey();
 //Get the most recently pressed key, since the last time this method was called.
 }
-
 
 static void setSpeed(int speed){
     System.out.println("Speed =" + speed);
@@ -689,7 +692,6 @@ static void stop(){
 
 
 }
-
     //block#1 = wall
     //block#1002 = floor
     //TB revisited later   

@@ -382,6 +382,7 @@ public class Shop_Cursor extends Interface_Ai
 // }
 //     }
 }
+}
 //     public void shopCursorScroll(int dx, int dy){
 //        pos_x = pos_x + dx;
 //        pos_y += dy;
@@ -389,25 +390,25 @@ public class Shop_Cursor extends Interface_Ai
 // }
 // public void drawImage(GreenfootImage image, int x, int y){
 // }
-     int pos_x = -1358;
-     int pos_y = -2045;
-     int counter = 0;
-//     int x = 412;
-//     int y = 489;
-     public void act() 
-     {
-         if (Greenfoot.isKeyDown("w"))
-         {
-         if (counter == 0){
-             
-  } else if (counter == 25){
-        
-}
-        counter = (counter + 1) % 50;
-        setLocation(pos_x, pos_y);
-    }
-} 
-    public void setLocation(int pos_x, int pos_y){
-        
-    }
-}
+//      int pos_x = -1358;
+//      int pos_y = -2045;
+//      int counter = 0;
+// //     int x = 412;
+// //     int y = 489;
+//      public void act() 
+//      {
+//          if (Greenfoot.isKeyDown("w"))
+//          {
+//          if (counter == 0){
+//              
+//   } else if (counter == 25){
+//         
+// }
+//         counter = (counter + 1) % 50;
+//         setLocation(pos_x, pos_y);
+//     }
+// } 
+//     public void setLocation(int pos_x, int pos_y){
+//         
+//     }
+// }
