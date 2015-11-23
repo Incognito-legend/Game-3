@@ -260,51 +260,52 @@ public int setDefaultForMap(int Map){
        largeImage.scale(largeImage.getWidth()/6,largeImage.getHeight()/6);
        return 0;
 }
-public int shopMoveCursor(int CursorLocation){
-       
-       if (!(shopCursorDirtyFlag)){
-           
-            addObject(new Shop_Cursor(), 300, 250);
-            // x:300
-            // y:250
-           shopCursorDirtyFlag = true;
-           // making this boolean true - disables this if statement, making Shop_Cursor appear only once.
-        }
-        
-//        if (CursorLocation == 1){
+// public int shopMoveCursor(int CursorLocation){
+//        
+//        if (!(shopCursorDirtyFlag)){
 //            
-//         } else if (CursorLocation == 2){
-//            
-//         } else if (CursorLocation == 3){
-//             
-//         } else if (CursorLocation == 4){
-//             
-//         } else if (CursorLocation == 5){
-//             
-//         } else if (CursorLocation == 6){
-//             
-//         } else if (CursorLocation == 7){
-//             
-//         } else if (CursorLocation == 8){
-//             
-//         } else if (CursorLocation == 9){
-//             
-//         } else if (CursorLocation == 10){
-//             
-//         } else if (CursorLocation == 11){
-//             
-//         } else if (CursorLocation == 12){
-//             
-//         } else if (CursorLocation == 13){
-//             
-//         } else if (CursorLocation == 14){
-//             
+//             addObject(new Shop_Cursor(), 300, 250);
+//             // x:300
+//             // y:250
+//            shopCursorDirtyFlag = true;
+//            // making this boolean true - disables this if statement, making Shop_Cursor appear only once.
 //         }
-        
-       return 0;
-       
-}    
-// public void setLocation(int x_axis_pos, int y_axis_pos){
+//         
+// //        if (CursorLocation == 1){
+// //            
+// //         } else if (CursorLocation == 2){
+// //            
+// //         } else if (CursorLocation == 3){
+// //             
+// //         } else if (CursorLocation == 4){
+// //             
+// //         } else if (CursorLocation == 5){
+// //             
+// //         } else if (CursorLocation == 6){
+// //             
+// //         } else if (CursorLocation == 7){
+// //             
+// //         } else if (CursorLocation == 8){
+// //             
+// //         } else if (CursorLocation == 9){
+// //             
+// //         } else if (CursorLocation == 10){
+// //             
+// //         } else if (CursorLocation == 11){
+// //             
+// //         } else if (CursorLocation == 12){
+// //             
+// //         } else if (CursorLocation == 13){
+// //             
+// //         } else if (CursorLocation == 14){
+// //             
+// //         }
+//         
+//        return 0;
+//        
+// }    
+ public void setLocation(int x_axis_pos, int y_axis_pos){
+    }
 //     
 
 public int getTileAt(int x, int y){
