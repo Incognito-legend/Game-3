@@ -51,7 +51,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
     //statement_6 is
     boolean check_statement = false;
     boolean Objective_Arrow_Statement = false;
-    //boolean shopCursorDirtyFlag = false;
+    boolean shopCursorDirtyFlag = false;
     
     public background()
     {    
@@ -72,12 +72,12 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
 //("086 - Arena Entrance.wav");
 //("087 - Arena Battle.wav");
 }
-public void setTransparency(int t){
-// System.out.println("transparency" + " " + "=" + t);
-}
-public int getTransparency(){
-return 0;
-}
+// public void setTransparency(int t){
+// // System.out.println("transparency" + " " + "=" + t);
+// }
+// public int getTransparency(){
+// return 0;
+// }
     public int Class(int Current_Class){
         if (Current_Class == 1){
     addObject(new hunter(), 512, 389);
@@ -156,7 +156,6 @@ return 0;
             statement_5 = true;
             
         }
-        
         if ((m == 2) && (statement_2)){
             hit_tiles = hit_tiles_Blacksmith;
             largeImage = map_Blacksmith;
@@ -176,6 +175,7 @@ return 0;
             statement_4 = true;
             statement_5 = true;
         }
+        
         if ((m == 3) && (statement_3 = true)){
             Song.stop();
             hit_tiles = hit_tiles_Shop;
@@ -260,14 +260,17 @@ public int setDefaultForMap(int Map){
        largeImage.scale(largeImage.getWidth()/6,largeImage.getHeight()/6);
        return 0;
 }
-// public int shopMoveCursor(int CursorLocation){
-//        
-// //        if (!(shopCursorDirtyFlag)){
-// //            addObject(new Shop_Cursor(), 300, 250);
-// //            shopCursorDirtyFlag = true;
-// //            // making this boolean true - disables this if statement, making Shop_Cursor appear only once.
-// //         }
-//         
+public int shopMoveCursor(int CursorLocation){
+       
+       if (!(shopCursorDirtyFlag)){
+           
+            addObject(new Shop_Cursor(), 300, 250);
+            // x:300
+            // y:250
+           shopCursorDirtyFlag = true;
+           // making this boolean true - disables this if statement, making Shop_Cursor appear only once.
+        }
+        
 //        if (CursorLocation == 1){
 //            
 //         } else if (CursorLocation == 2){
@@ -297,13 +300,12 @@ public int setDefaultForMap(int Map){
 //         } else if (CursorLocation == 14){
 //             
 //         }
-//         
-//        return 0;
-//        
-// }    
+        
+       return 0;
+       
+}    
 // public void setLocation(int x_axis_pos, int y_axis_pos){
 //     
-// }
 
 public int getTileAt(int x, int y){
         int i = x + width * y;

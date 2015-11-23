@@ -8,39 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Shop_Cursor extends Interface_Ai
 {
-//     boolean Left_Edge = true;
-//     boolean Right_Edge = false;
-//     boolean Top = true;
-//     boolean Bottom = false;
-//     int S_Loc = 1;
-//     int S_Object;
-//     int S_One = 1;
-//     int S_Two = 2;
-//     int S_Three = 3;
-//     int S_Four = 4;
-//     int S_Five = 5;
-//     int S_Six = 6;
-//     int S_Seven = 7;
-//     int S_Eight = 8;
-//     int S_Nine = 9;
-//     int S_Ten = 10;
-//     int S_Eleven = 11;
-//     int S_Twelve = 12;
-//     int S_Thirteen = 13;
-//     int S_Fourteen = 14;
-//     boolean Pl = false;
-//     int counter = 1;
-//     
-// int pos_x = -1400;
-// 
-// int pos_y = -2045;
-// 
-// 
-// GreenfootImage shop_Cursor = new GreenfootImage("Shop_Cursor (Transparent background).png");
-// 
-// 
 
-     public Shop_Cursor() 
+
+     public void act() 
      {
 //         if (Greenfoot.isKeyDown("a"))
 //         {
