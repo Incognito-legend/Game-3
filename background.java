@@ -58,15 +58,17 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(980, 650, 1);
         //super(930, 600, 1); 
-        largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);        
-        getBackground().drawImage(largeImage, -1400, -2045);        
+        
+          
         Date d = new Date();        
         addObject(new Palladin(), 512, 389);
         //addObject(new Palladin(), 462, 339); 
         // Yes I spelled Paladin wrong because I was young and stupid when I started this and I thought it would be funny to leave it as this 
+        largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);        
+        getBackground().drawImage(largeImage, -1400, -2045);
         Song = Lobby;
         changeSongTrack();
-          
+    
 //("043 - Silent Ground.wav");
 //("079 - Shattered Life.wav");
 //("086 - Arena Entrance.wav");
@@ -304,10 +306,10 @@ public int setDefaultForMap(int Map){
 //        return 0;
 //        
 // }    
- public void setLocation(int x_axis_pos, int y_axis_pos){
-    }
-//     
 
+//     
+public void setLocation(int x_axis_pos, int y_axis_pos){
+}
 public int getTileAt(int x, int y){
         int i = x + width * y;
         return hit_tiles[i];
@@ -354,4 +356,5 @@ public void changeSongTrack(){
 }
 }
 }
+
 }

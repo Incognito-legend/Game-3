@@ -2,4 +2,8 @@
 comment0.target=Player
 comment1.params=
 comment1.target=void\ act()
-numComments=2
+comment2.params=
+comment2.target=void\ Stats()
+comment3.params=checkStart
+comment3.target=boolean\ GameStart(boolean)
+numComments=4

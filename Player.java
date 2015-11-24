@@ -46,29 +46,7 @@ public class Player extends Actor
     boolean Player_Stats = false;
     
     
-//     int Affinity_;
-//     int Aid_;
-//     int Attack_Speed_;
-//     int Constitution_;
-//     int Defense_;
-//     int Hp_;
-//     int Leadership_;
-//     int Level_;
-//     int Luck_;
-//     int Magic_;
-//     int Maximum_Hp_;
-//     int Movement_;
-//     int Movement_Star_;
-//     int Pursuit_Critical_Coefficient_;
-//     int Relative_Power_;
-//     int Resistance_;
-//     int Skill_;
-//     int Speed_;
-//     int Strength_;
-//     int Weapon_Level_;
-//     int Weapon_Rank_;
-//     //
-//     int Weight_;
+
     // ^^^ (Character / Class) Specific Stat
     boolean Left_Edge = true;
     boolean Right_Edge = false;
@@ -81,6 +59,8 @@ public class Player extends Actor
     int S_Object;
     boolean Pl = false;
     boolean Shop_Check = false;
+    boolean a = false;
+    boolean Game_Start_Instance = false;
     public void act() 
     {
     
@@ -532,8 +512,133 @@ if ((Room == Shop) && (windowPane)){
  }
  
 }
+public void Stats(){ 
+    background level = (background)this.getWorld();
+    if (GameStart(false)){
+    
+    int Affinity_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Affinity: " + Affinity_);
+    
+    int Aid_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Aid: " + Aid_);
+    
+    int Attack_Speed_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Attack Speed: " + Attack_Speed_);
+    
+    int Constitution_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Constitution: " + Constitution_);
+    
+    int Defense_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Defense: " + Defense_);
+    
+    int Hp_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Hp: " + Hp_);
+    
+    int Leadership_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Leadership: " + Leadership_);
+    
+    int Level_ = 1;
+    
+    System.out.println("Level: " + Level_);
+    
+    int Luck_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Luck: " + Luck_);
+    
+    int Magic_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Magic: " + Magic_);
+    
+    int Maximum_Hp_ = 60;
+    
+    System.out.println("Maximum Hp: " + Maximum_Hp_);
+    
+    int Movement_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Movement: " + Movement_);
+    
+    int Movement_Star_ = 10;
+    
+    System.out.println("Movement_Star: " + Movement_Star_);
+    
+    int Pursuit_Critical_Coefficient_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("PCC: " + Pursuit_Critical_Coefficient_);
+    
+    int Relative_Power_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("RP: " + Relative_Power_);
+    
+    int Resistance_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Resistance: " + Resistance_);
+    
+    int Skill_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Skill: " + Skill_);
+    
+    int Speed_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Speed: " + Speed_);
+    
+    int Strength_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Strength: " + Strength_);
+    
+    int Weapon_Level_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Weapon Level: " + Weapon_Level_);
+    
+    int Weapon_Rank_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Weapon Rank: " + Weapon_Rank_);
+    
+    int Weight_ = (level.getRandomNumberRange(1,10));
+    
+    System.out.println("Weight: " + Weight_);
+    
+    a = true;
+    
+    if ((GameStart(false)) && (Greenfoot.isKeyDown("")) && (a)){
+    
+    GameStart(true);
+    
+}
+}
 }
 
+public boolean GameStart(boolean checkStart)
+
+{
+if (!(Game_Start_Instance)){    
+    if (checkStart)
+    
+    {
+        
+        Game_Start_Instance = true;
+        
+        System.out.println("Game Initialization Startup Process Complete");
+    }
+    
+    else if (!(checkStart))
+    
+    {
+           
+        Stats();
+            
+}
+}
+return checkStart;
+}
+
+}
 
 //-------------------------------------------------------------------------------
 
