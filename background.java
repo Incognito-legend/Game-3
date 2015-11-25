@@ -59,27 +59,15 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
         super(980, 650, 1);
         //super(930, 600, 1); 
         
-          
         Date d = new Date();        
         addObject(new Palladin(), 512, 389);
-        //addObject(new Palladin(), 462, 339); 
-        // Yes I spelled Paladin wrong because I was young and stupid when I started this and I thought it would be funny to leave it as this 
         largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);        
         getBackground().drawImage(largeImage, -1400, -2045);
         Song = Lobby;
         changeSongTrack();
     
-//("043 - Silent Ground.wav");
-//("079 - Shattered Life.wav");
-//("086 - Arena Entrance.wav");
-//("087 - Arena Battle.wav");
 }
-// public void setTransparency(int t){
-// // System.out.println("transparency" + " " + "=" + t);
-// }
-// public int getTransparency(){
-// return 0;
-// }
+
     public int Class(int Current_Class){
         if (Current_Class == 1){
     addObject(new hunter(), 512, 389);
@@ -144,7 +132,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             setBackground(map_Lobby);
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
           if ((!(statement_3)) && (statement) && (statement_2)){
-            //pos_x = -1648;
+
             pos_x = -1648;
             pos_y = -2205;
           } else if ((!(statement_2)) && (statement) && (statement_3)){
@@ -163,7 +151,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             largeImage = map_Blacksmith;
             setBackground(map_Blacksmith); 
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
-            //pos_x = -1458;
+        
             //entering blacksmith parameters x and y of map for player illusionary postion
             pos_x = -1458;
             pos_y = -1915;
@@ -308,7 +296,7 @@ public int setDefaultForMap(int Map){
 // }    
 
 //     
-public void setLocation(int x_axis_pos, int y_axis_pos){
+public void setLocation(int xC, int yC){
 }
 public int getTileAt(int x, int y){
         int i = x + width * y;

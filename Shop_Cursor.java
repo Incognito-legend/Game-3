@@ -9,15 +9,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shop_Cursor extends Interface_Ai
 {
 
-int counter_2 = 0;
+int counter_1_ = 0;
+int counter_2_ = 0;
+int counter_3_ = 0;
+int counter_4_ = 0;
 int side = 1;
 boolean Left = true;
 boolean Right = false;
 boolean General_Synopsis = true;
 boolean dirtyFlag_Shop = false;
 boolean keyAlreadyPressed = false;
-public int y;
-public int x;
+int y;
+int x;
 
      public void act() 
      {
@@ -59,7 +62,7 @@ public int x;
                 
                 {
                     
-                  if(counter_2 == 1)
+                  if(counter_1_ == 1)
                   
                   {
                       
@@ -67,7 +70,7 @@ public int x;
                       
                     }
                     
-                    else if (counter_2 == 2) 
+                    else if (counter_1_ == 2) 
                     
                     {
                         
@@ -75,7 +78,7 @@ public int x;
                         
                     }
                     
-                    else if (counter_2 == 3)
+                    else if (counter_1_ == 3)
                     
                     {
                         
@@ -83,7 +86,7 @@ public int x;
                         
                     }
                     
-                    else if (counter_2 == 4)
+                    else if (counter_1_ == 4)
                     
                     {
                     
@@ -91,7 +94,7 @@ public int x;
                         
                     }
                     
-                    else if (counter_2 == 5) 
+                    else if (counter_1_ == 5) 
                     
                     {
                         
@@ -99,7 +102,7 @@ public int x;
                         
                     }
                     
-                    else if (counter_2 == 6)
+                    else if (counter_1_ == 6)
                     
                     {
                         
@@ -107,7 +110,7 @@ public int x;
                         
                     }
                     
-                    else if (counter_2 == 7)
+                    else if (counter_1_ == 7)
                     
                     {
                         
@@ -115,7 +118,7 @@ public int x;
                         
                     }
                     
-                    counter_2 = ((counter_2) + 1) % 8;
+                    counter_1_ = ((counter_1_) + 1) % 8;
                     
                 }
                 
@@ -123,39 +126,39 @@ public int x;
                 
                 {
        
-                    if (counter_2 == 1)
+                    if (counter_2_ == 1)
                     
                     {
                         
                         setLocation(700, 250);
                         
                     }
-                    else if (counter_2 == 2)
+                    else if (counter_2_ == 2)
                     {
                         setLocation(700, 300);
                     }
-                    else if (counter_2 == 3)
+                    else if (counter_2_ == 3)
                     {
                         setLocation(700, 350);
                     }
-                    else if (counter_2 == 4)
+                    else if (counter_2_ == 4)
                     {
                         setLocation(700, 400);
                     }  
-                    else if (counter_2 == 5) 
+                    else if (counter_2_ == 5) 
                     {
                         setLocation(700, 450);
                     }  
-                    else if (counter_2 == 6) 
+                    else if (counter_2_ == 6) 
                     {
                         setLocation(700, 500);
                     }  
-                    else if (counter_2 == 7) 
+                    else if (counter_2_ == 7) 
                     {
                         setLocation(700, 550);
                     }
                     
-                    counter_2 = ((counter_2) + 1) % 8;
+                    counter_2_ = ((counter_2_) + 1) % 8;
                     
                 }
                 keyAlreadyPressed = true;
@@ -175,72 +178,73 @@ public int x;
                   
                   {
                       
-                      if(counter_2 == 1)
-                      
-                      {
-                          setLocation(300, 250);
-                        } 
-                        else if (counter_2 == 2)
-                        {
-                            setLocation(300, 300);         
-                        }  
-                        else if (counter_2 == 3) 
-                        {
-                            setLocation(300, 350);
-                        }  
-                        else if (counter_2 == 4)
-                        {
-                            setLocation(300, 400);
-                        }
-                        else if (counter_2 == 5) 
-                        {
-                            setLocation(300, 450);
-                        }   
-                        else if (counter_2 == 6) 
-                        {
-                            setLocation(300, 500);
-                        }  
-                        else if (counter_2 == 7)
-                        {
-                            setLocation(300, 550);
-                        }
+//                       if(counter_3_ == 1)
+//                       
+//                       {
+//                           setLocation(300, 250);
+//                         } 
+//                         else if (counter_3_ == 2)
+//                         {
+//                             setLocation(300, 300);         
+//                         }  
+//                         else if (counter_3_ == 3) 
+//                         {
+//                             setLocation(300, 350);
+//                         }  
+//                         else if (counter_3_ == 4)
+//                         {
+//                             setLocation(300, 400);
+//                         }
+//                         else if (counter_3_ == 5) 
+//                         {
+//                             setLocation(300, 450);
+//                         }   
+//                         else if (counter_3_ == 6) 
+//                         {
+//                             setLocation(300, 500);
+//                         }  
+//                         else if (counter_3_ == 7)
+//                         {
+//                             setLocation(300, 550);
+//                         }
+                        setLocation( x , (y + 50) % 600 );
                         
-                     counter_2 = ((counter_2) + 1) % 8;
+                     counter_3_ = ((counter_3_) + 1) % 8;
                      
                     } 
                     else if (side == 2)
                     {
                         
-                        if (counter_2 == 1) 
+                        if (counter_4_ == 1) 
                         {
                             setLocation(700, 250);
                         }
-                        else if (counter_2 == 2)
+                        else if (counter_4_ == 2)
                         {
-                            setLocation(700, y);
+                            setLocation(700, 300);
                         }  
-                        else if (counter_2 == 3) 
+                        else if (counter_4_ == 3) 
                         {
-                            setLocation(700, 350 = y);
+                            setLocation(700, 350);
                         } 
-                        else if (counter_2 == 4)
+                        else if (counter_4_ == 4)
                         {
-                            setLocation(700, 400 = y);
+                            setLocation(700, 400);
                         }
-                        else if (counter_2 == 5)
+                        else if (counter_4_ == 5)
                         {
-                            setLocation(700, 450 = y);
+                            setLocation(700, 450);
                         }  
-                        else if (counter_2 == 6) 
+                        else if (counter_4_ == 6) 
                         {
-                            setLocation(700, 500 = y);
+                            setLocation(700, 500);
                         }   
-                        else if (counter_2 == 7)
+                        else if (counter_4_ == 7)
                         {
-                            setLocation(700, 550 = y);
+                            setLocation(700, 550);
                         }
                         
-                     counter_2 = ((counter_2) + 1) % 8;
+                     counter_4_ = ((counter_4_) + 1) % 8;
                      
                     }
                   keyAlreadyPressed = true;
@@ -255,7 +259,7 @@ public int x;
                 else if (Greenfoot.isKeyDown("d"))
                 
                 {
-                    getY();
+                    
                     side = 2;
                         setLocation(700, y);
                         

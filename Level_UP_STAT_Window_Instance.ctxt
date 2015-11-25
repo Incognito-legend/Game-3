@@ -1,6 +1,4 @@
 #BlueJ class context
-comment0.target=Level_UP_STAT_Window_Instance
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Level_Up_Window_No_Mag\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ Act()
-numComments=2
+comment0.params=
+comment0.target=void\ Act()
+numComments=1
