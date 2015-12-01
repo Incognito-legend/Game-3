@@ -61,6 +61,7 @@ public class Player extends Actor
     boolean Shop_Check = false;
     boolean a = false;
     boolean Game_Start_Instance = false;
+    public boolean Initialization = false;
     public void act() 
     {
     
@@ -76,7 +77,12 @@ public class Player extends Actor
 
         boolean dirtyFlag = true;
         boolean dirtyFlag1 = true;
-
+        if (!(a))
+        {
+            Initialization = false;
+        GameStart(Initialization);
+        a = true;
+       }
         // Movement and controls section
   if (!(windowPane)){
       if (Greenfoot.isKeyDown ("a")){
@@ -474,47 +480,13 @@ if ((Room == Shop) && (windowPane)){
     Shop_Check = true;
 }
 
-
-
-
-
-
-
-
-//     if (Greenfoot.isKeyDown ("a")){
-//         
-//         
-//     } 
-//     else if (Greenfoot.isKeyDown ("w"))
-//     {
-//         
-//         
-//          
-//          
-//     } else if (Greenfoot.isKeyDown ("s")){
-//             
-//         
-// 
-//             
-//     } 
-//     else if (Greenfoot.isKeyDown ("d"))
-//     {
-//         
-//     }
-//     else
-//     {
-// 
-//  
-// 
-//    
-//     }
-    
  }
  
 }
-public void Stats(){ 
+public void Stats(){
+    if (!(Game_Start_Instance)){
     background level = (background)this.getWorld();
-    if (GameStart(false)){
+    
     
     int Affinity_ = (level.getRandomNumberRange(1,10));
     
@@ -604,35 +576,22 @@ public void Stats(){
     
     System.out.println("Weight: " + Weight_);
     
-    a = true;
+    Initialization = false;
     
-    if ((GameStart(false)) && (Greenfoot.isKeyDown("")) && (a)){
     
-    GameStart(true);
-    
-}
 }
 }
 
 public boolean GameStart(boolean checkStart)
-
 {
 if (!(Game_Start_Instance)){    
-    if (checkStart)
-    
-    {
-        
-        Game_Start_Instance = true;
-        
-        System.out.println("Game Initialization Startup Process Complete");
-    }
-    
-    else if (!(checkStart))
+       
+    if (!(checkStart))
     
     {
            
         Stats();
-            
+        Game_Start_Instance = true;
 }
 }
 return checkStart;
