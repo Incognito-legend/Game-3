@@ -1,5 +1,6 @@
 #BlueJ class context
 <<<<<<< HEAD
+<<<<<<< HEAD
 comment0.target=background
 comment1.params=
 comment1.target=background()
@@ -21,6 +22,8 @@ comment9.params=
 comment9.target=void\ changeSongTrack()
 numComments=10
 =======
+=======
+>>>>>>> origin/master
 comment0.params=
 comment0.target=background()
 comment1.params=Current_Class
@@ -40,4 +43,7 @@ comment7.target=int\ getRandomNumberRange(int,\ int)
 comment8.params=
 comment8.target=void\ changeSongTrack()
 numComments=9
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
