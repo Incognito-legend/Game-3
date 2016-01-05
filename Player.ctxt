@@ -1,8 +1,9 @@
 #BlueJ class context
-comment0.params=
-comment0.target=void\ act()
+comment0.target=Player
 comment1.params=
-comment1.target=void\ Stats()
-comment2.params=checkStart
-comment2.target=boolean\ GameStart(boolean)
-numComments=3
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ Stats()
+comment3.params=checkStart
+comment3.target=boolean\ GameStart(boolean)
+numComments=4
