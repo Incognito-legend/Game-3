@@ -17,6 +17,7 @@ public class Tutorial_Guide extends Interface_Ai
     public Tutorial_Guide() 
     {
         if (check){
+        
         setImage("Tutorial Guide_Resized.png");
         
         x = z;

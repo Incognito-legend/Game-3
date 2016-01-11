@@ -13,7 +13,7 @@ public class Trade_Inventory_Shop_Interface_LB extends Interface_Ai
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Trade_Inventory_Shop_Interface_LB() 
-    {
+    {   
         
     }    
 }
