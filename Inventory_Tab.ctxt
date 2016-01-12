@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Inventory_Tab
+comment0.text=\r\n\ This\ is\ the\ inventory\ tab\ for\ the\ player,\ all\ items\ will\ be\ placed\ in\ this,\ and\ the\ following\ code\ in\ public\ void\ act(){...}\ will\ effect\ all\ items\ when\ picked\ up.\r\n\ \r\n\ @author\ Cameron\ Wilson\r\n\ @version\ 1/12/2016,\ 11\:11\ AM.\r\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2

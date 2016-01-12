@@ -56,11 +56,12 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
     public background()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(980, 650, 1);
+        super(950, 600, 1);
         //super(930, 600, 1); 
         
         Date d = new Date();        
-        addObject(new Palladin(), 512, 389);
+        addObject(new Palladin(), 475, 300);
+        addObject(new Inventory_Tab(), 475, 545);
         largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);        
         getBackground().drawImage(largeImage, -1400, -2045);
         Song = Lobby;
@@ -132,10 +133,11 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             setBackground(map_Lobby);
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
           if ((!(statement_3)) && (statement) && (statement_2)){
-
+              System.out.println("check");
             pos_x = -1648;
             pos_y = -2205;
           } else if ((!(statement_2)) && (statement) && (statement_3)){
+              System.out.println("check");
             pos_x = -1928;
             pos_y = -2205;
           }
@@ -155,6 +157,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             //entering blacksmith parameters x and y of map for player illusionary postion
             pos_x = -1458;
             pos_y = -1915;
+            
             Song.stop();
             Song = Armory;
             Song.playLoop();
@@ -174,9 +177,11 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
             
             if (getRandomNumberRange(1,100) <= 50){
+                System.out.println("check");
             pos_x = -1168;
             pos_y = -1835;
         }else{
+                System.out.println("check");
             pos_x = -1648;
             pos_y = -1835;
         }
@@ -187,6 +192,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             Song = Shop;
             Song.playLoop();
             changeSongTrack();
+            
         }
             statement_3 = false;
             statement = true;
@@ -201,6 +207,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
     setBackground(map_Arena_entrance);
     largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
     if (statement_5){
+        System.out.println("check");
     pos_x = -1358;
     pos_y = -2320;
     if (!(check_statement)){

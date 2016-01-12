@@ -435,7 +435,7 @@ if ((Room == Shop) && (windowPane)){
     // Visual INITIALIZATION OF TRADE INSTANCE: SHOP
     if (!(Shop_Check))
     {
-        
+        // 1 = shop, 2 = blacksmith, 3 = arena, (coming soon: 4 = home);
     setImage(SBIC);
     level.addObject(new Tutorial_Guide(), 100, 100);
     level.addObject(new Trade_Instance(), 500, 300);
@@ -473,7 +473,7 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Shop_option_11(), 700, 400);
     level.addObject(new Shop_option_12(), 700, 450);
 
-     level.addObject(new Shop_Cursor(), 300, 250);
+    level.addObject(new Shop_Cursor(), 300, 250);
 
     level.setDefaultForMap(1);
     level.changeMap(3,2);  
@@ -596,6 +596,8 @@ if (!(Game_Start_Instance)){
 }
 return checkStart;
 }
+
+
 
 }
 
