@@ -8,38 +8,85 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Inventory_Tab extends Player
 {
-    private int imageCount = 3; // number of images in the animation
-    private int actsPerImage = 10; // act cycles per image
+    private int imageCount = 5; // number of images in the animation
+    private int actsPerImage = 5; // act cycles per image
     private int animationActCounter = 0; // act counter for the animatio    
     int imageNumber = animationActCounter / actsPerImage;
     
     boolean Inventory_Opened = false;
+    boolean df = false;
     int counter = 0;
     public void act() 
     {
+         
          animationActCounter = (animationActCounter + 1) % (imageCount * actsPerImage); // act counter that cycles for each complete cycle of images
-//         if (animationActCounter % actsPerImage == 0){ // if time to change image
-//         System.out.println("animationActCounter: " + animationActCounter + " imageCount: " + imageCount + " actsPerImage: " + actsPerImage + " imageNumber: " + imageNumber);
-//        }
-        if ((Greenfoot.isKeyDown("space")) && (!(Inventory_Opened)) && (animationActCounter % actsPerImage == 0)){
-            System.out.println("animationActCounter: " + animationActCounter + " imageCount: " + imageCount + " actsPerImage: " + actsPerImage + " imageNumber: " + imageNumber);
-            if (counter == 1){
-            setImage("inventory_tab_closed_animation.png");
-            } else if (counter == 2){
+         //         if (animationActCounter % actsPerImage == 0){ // if time to change image
+             //         System.out.println("animationActCounter: " + animationActCounter + " imageCount: " + imageCount + " actsPerImage: " + actsPerImage + " imageNumber: " + imageNumber);
+             //        }
+        if ((Greenfoot.isKeyDown("space")) && (!(Inventory_Opened)) && (!(df)) && (animationActCounter % actsPerImage == 0)){
+            //System.out.println("animationActCounter: " + animationActCounter + " imageCount: " + imageCount + " actsPerImage: " + actsPerImage + " imageNumber: " + imageNumber);
+            df = true;
+        } else if ((Greenfoot.isKeyDown("space")) && (Inventory_Opened)){
+            df = false;
+            
+    }
+    if ((df) && (!(Inventory_Opened))){
+     invTabImgOpen();
+    }
+    if ((!(df)) && (Inventory_Opened)){
+     invTabImgClose();
+    }
+}
+public void invTabImgOpen(){
+    if (!(Inventory_Opened)){
+    if (counter == 1){
             setImage("inventory_tab_closed.png");
+            } else if (counter == 2){
+            setImage("inventory_tab_closed_animation.png");
             } else if (counter == 3){
-            setImage("inventory_tab_resized_x5.png");
+            setImage("inventory_tab_resized_x5_ap1.png");
             } else if (counter == 4){
+            setImage("inventory_tab_resized_x5_ap2.png");
+            } else if (counter == 5){
+            setImage("inventory_tab_resized_x5_ap3.png");
+            } else if (counter == 6){
+            setImage("inventory_tab_resized_x5_ap4.png");
+            } else if (counter == 7){
               
             Inventory_Opened = true;
             
+            
+            
             }
-            counter = (counter + 1) % 4;
-        } else if ((Greenfoot.isKeyDown("space")) && (Inventory_Opened) && (animationActCounter % actsPerImage == 0)){
+            counter = (counter + 1) % 8;
+}
+}
+public void invTabImgClose(){
+    if (Inventory_Opened){
+    if (counter == 1){
+            setImage("inventory_tab_resized_x5_ap4.png");
+            } else if (counter == 2){
+            setImage("inventory_tab_resized_x5_ap3.png");
+            } else if (counter == 3){
+            setImage("inventory_tab_resized_x5_ap2.png");
+            } else if (counter == 4){
+            
+            setImage("inventory_tab_resized_x5_ap1.png");
+            } else if (counter == 5){
+            
+            setImage("inventory_tab_closed_animation.png");
+            } else if (counter == 6){
+            
             setImage("inventory_tab_closed.png");
+            } else if (counter == 7){
+              
             Inventory_Opened = false;
             
-    } 
+            
+            
+            }
+            counter = (counter + 1) % 8;
+    }
 }
     }
 

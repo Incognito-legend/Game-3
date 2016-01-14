@@ -1,6 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Date;
 import java.util.List;
+import greenfoot.core.WorldHandler;
+import javax.swing.*;
+import java.awt.Cursor;
+import java.awt.Point;
+import java.awt.Toolkit;
 public class background extends World
 {
     GreenfootImage largeImage = new GreenfootImage("map-2.png");
@@ -12,6 +17,10 @@ public class background extends World
     GreenfootImage map_Arena_Open = new GreenfootImage("Arena_Variant-2.png");
     GreenfootImage map_Valley = new GreenfootImage("Valley-temple.png");
     
+    int x;
+    int y;
+    boolean cursor_check = false;
+   
     int pos_x = -1400;
     int pos_y = -2045;
     int[] hit_tiles = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 1, 1, 1, 8, 1, 1, 1, 9, 1, 1, 1, 10, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 4, 1, 1, 1, 1, 2, 2, 2, 1, 6, 1, 1, 5, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
@@ -38,83 +47,143 @@ GreenfootSound Arena_Preparations = new GreenfootSound("082 - Prepare to Charge.
 GreenfootSound Arena_Battle = new GreenfootSound("026 - Strike.wav");    
 GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");         
     boolean statement = true;
-    //statement is
+   
     boolean statement_2 = true;
-    //statement_2 is
+    
     boolean statement_3 = true;
-    //statement_3 is
+    
     boolean statement_4 = true;
-    //statement_4 is
+    
     boolean statement_5 = true;
-    //statement_5 is
+    
     boolean statement_6 = true;
-    //statement_6 is
+   
     boolean check_statement = false;
     boolean Objective_Arrow_Statement = false;
     boolean shopCursorDirtyFlag = false;
+    int timer;
+
     
+    
+
+    
+        
+            
+    JPanel Pan = WorldHandler.getInstance().getWorldCanvas();  
+    /** The new Cursor */
+    Cursor NewCursor;
+    
+GreenfootImage cImage = new GreenfootImage("Mouse_Cursor.png");    
+GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
     public background()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(950, 600, 1);
-        //super(930, 600, 1); 
         
-        Date d = new Date();        
+        super(950, 600, 1, false);
+        
+        
+        Date d = new Date();
+        
         addObject(new Palladin(), 475, 300);
+        addObject(new cursor(),475,545);
         addObject(new Inventory_Tab(), 475, 545);
+        
         largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);        
         getBackground().drawImage(largeImage, -1400, -2045);
         Song = Lobby;
         changeSongTrack();
-    
+        
+            Toolkit Tk = Toolkit.getDefaultToolkit();
+                /** The Cursor Point, where the cursor has to click from the left uppon corner of the Cursor Picture */
+                Point CursorPoint= new Point(0,0);
+                /** Now you create the new Cursor */
+                NewCursor = 
+                    /** With the Toolkit you can Create a new Cursor */
+                Tk.createCustomCursor(
+                    /** The Image the Cursor should have, if you want to clear the Cursor it will have to be an empty Image */
+                    new GreenfootImage(5,5).getAwtImage(),
+                    /** The Cursor Point */
+                    CursorPoint,
+                    /** A Name for the new Cursor */
+                    "Mouse_Cursor.png");
+                    
+                    
+                    
+        
+        
 }
-
+public void act(){
+if (timer > 0)
+    {
+        timer--;
+        if (timer == 0){
+        ChangeMouseImage(cImage, x, y);
+    }
+        /* change image back */;
+    }
+    else if (Greenfoot.mouseClicked(getActor()))
+    {
+        System.out.println("Click Test: " + Greenfoot.mouseClicked(getActor()));
+        play();
+        //setImage("left.png");
+        timer = 2;
+    }
+}
+public void play()
+    {
+        //Greenfoot.playSound("E3.mp3");
+        cursor_check = true;
+        
+        ChangeMouseImage(cImageClicked, x, y);
+        
+        
+    }
+public void ChangeMouseImage(GreenfootImage image, int XClick, int yClick)
+    {
+        JPanel Panel = WorldHandler.getInstance().getWorldCanvas();
+        Cursor Cursor;
+        Cursor Cursor_clicked;
+        Toolkit Tk = Toolkit.getDefaultToolkit();
+        Point CursorPoint= new Point(0,0);
+        Cursor = Tk.createCustomCursor(image.getAwtImage(),CursorPoint,"Mouse_Cursor.png");
+        Cursor_clicked = Tk.createCustomCursor(image.getAwtImage(),CursorPoint,"Mouse_Cursor_Clicked.png");
+        
+        
+        if (!(cursor_check)){        
+        Panel.setCursor(Cursor);
+    } else if (cursor_check){       
+        Panel.setCursor(Cursor_clicked);
+    }
+        
+    }
+    
+public World getActor(){ return null; }
+    
     public int Class(int Current_Class){
         if (Current_Class == 1){
-    addObject(new hunter(), 512, 389);
-    addObject(new Smoke_Effect(), 512, 389);
+    addObject(new hunter(), 475, 300);
+    addObject(new Smoke_Effect(), 475, 300);
     addObject(new Player_Portrait_Instance(), 120, 500);
     addObject(new Player_Name_Panel(), 120, 100);
-//        addObject(new hunter(), 462, 339);
-//        addObject(new Smoke_Effect(), 462, 339);
-//        addObject(new Player_Portrait_Instance(), 120, 500);
-//        addObject(new Player_Name_Panel(), 120, 100);
     }if (Current_Class == 2){   
-    addObject(new Druid(), 512, 389);
-    addObject(new Smoke_Effect(), 512, 389);
+    addObject(new Druid(), 475, 300);
+    addObject(new Smoke_Effect(), 475, 300);
     addObject(new PPI_Druid(), 120, 500);
     addObject(new Player_Name_Panel(), 120, 100);
-//        addObject(new Druid(), 462, 339);
-//        addObject(new Smoke_Effect(), 462, 339);
-//        addObject(new PPI_Druid(), 120, 500);
-//        addObject(new Player_Name_Panel(), 120, 100);
     }    if (Current_Class == 3){
-    addObject(new Mage(), 512, 389);
-    addObject(new Smoke_Effect(), 512, 389);
+    addObject(new Mage(), 475, 300);
+    addObject(new Smoke_Effect(), 475, 300);
     addObject(new PPI_Mage(), 120, 500);
     addObject(new Player_Name_Panel(), 120, 100); 
-//        addObject(new Mage(), 462, 339);
-//        addObject(new Smoke_Effect(), 462, 339);
-//        addObject(new PPI_Mage(), 120, 500);
-//        addObject(new Player_Name_Panel(), 120, 100);
     }    if (Current_Class == 4){
-    addObject(new Palladin(), 512, 389);    
-    addObject(new Smoke_Effect(), 512, 389);            
+    addObject(new Palladin(), 475, 300);    
+    addObject(new Smoke_Effect(), 475, 300);            
     addObject(new PPI_Paladin(), 120, 500);    
-    addObject(new Player_Name_Panel(), 120, 100);
-//        addObject(new Palladin(), 462, 339);    
-//        addObject(new Smoke_Effect(), 462, 339);            
-//        addObject(new PPI_Paladin(), 120, 500);    
-//        addObject(new Player_Name_Panel(), 120, 100);    
+    addObject(new Player_Name_Panel(), 120, 100); 
     }    if (Current_Class == 5){    
-    addObject(new Warrior(), 512, 389);    
-    addObject(new Smoke_Effect(), 512, 389);        
+    addObject(new Warrior(), 475, 300);    
+    addObject(new Smoke_Effect(), 475, 300);        
     addObject(new PPI_Warrior(), 120, 500);    
-    addObject(new Player_Name_Panel(), 120, 100);
-//        addObject(new Warrior(), 462, 339);    
-//        addObject(new Smoke_Effect(), 462, 339);        
-//        addObject(new PPI_Warrior(), 120, 500);    
-//        addObject(new Player_Name_Panel(), 120, 100);            
+    addObject(new Player_Name_Panel(), 120, 100);          
     }    
     return 0;
 }
@@ -122,9 +191,14 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
        pos_x = pos_x + dx;
        pos_y += dy;
        getBackground().drawImage(largeImage, pos_x, pos_y);
+       //System.out.println("pos_x: " + pos_x + ", pos_y: " + pos_y);
 }
+
     public int changeMap(int m, int n){
-        if ((m == 1) && (statement = true)){
+        //------------------------------------------------------------------------------------------------------
+        // LOBBY - WORLD
+        //------------------------------------------------------------------------------------------------------
+        if ((m == 1) && (statement)){
             Song.stop();
             Song = Lobby;
             changeSongTrack();
@@ -133,13 +207,21 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             setBackground(map_Lobby);
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
           if ((!(statement_3)) && (statement) && (statement_2)){
-              System.out.println("check");
-            pos_x = -1648;
-            pos_y = -2205;
+              System.out.println("check1");
+
+            pos_x = -1690;
+            
+
+            pos_y = -2305;
+            
+            
+
           } else if ((!(statement_2)) && (statement) && (statement_3)){
-              System.out.println("check");
-            pos_x = -1928;
-            pos_y = -2205;
+              System.out.println("check2");
+
+            pos_x = -1970;
+
+            pos_y = -2305;
           }
             statement = false;
             statement_2 = true;
@@ -148,15 +230,21 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             statement_5 = true;
             
         }
+        //------------------------------------------------------------------------------------------------------
+        // BLACKSMITH
+        //------------------------------------------------------------------------------------------------------
         if ((m == 2) && (statement_2)){
             hit_tiles = hit_tiles_Blacksmith;
             largeImage = map_Blacksmith;
             setBackground(map_Blacksmith); 
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
         
-            //entering blacksmith parameters x and y of map for player illusionary postion
-            pos_x = -1458;
-            pos_y = -1915;
+           
+            
+
+             pos_x = -1438;
+             pos_y = -2035;
+             
             
             Song.stop();
             Song = Armory;
@@ -168,8 +256,10 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             statement_4 = true;
             statement_5 = true;
         }
-        
-        if ((m == 3) && (statement_3 = true)){
+        //------------------------------------------------------------------------------------------------------
+        // SHOP - ROOM
+        //------------------------------------------------------------------------------------------------------
+        if ((m == 3) && (statement_3)){
             Song.stop();
             hit_tiles = hit_tiles_Shop;
             largeImage = map_Shop;
@@ -177,14 +267,23 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
             
             if (getRandomNumberRange(1,100) <= 50){
-                System.out.println("check");
-            pos_x = -1168;
-            pos_y = -1835;
+                System.out.println("check1");
+
+               pos_x = -1202;
+
+               pos_y = -1935;
+               
         }else{
-                System.out.println("check");
-            pos_x = -1648;
-            pos_y = -1835;
+                System.out.println("check2");
+
+               pos_x = -1682;
+
+               pos_y = -1935;
+               
         }
+          //------------------------------------------------------------------------------------------------------
+          // SHOP - TRADE INTERFACE
+          //------------------------------------------------------------------------------------------------------
         if ((m == 3) && (statement) && (n == 2)){
             largeImage = map_SBIC;
             setBackground(map_SBIC);
@@ -200,109 +299,70 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
             statement_4 = true;
             statement_5 = true;
       }
-        if ((m == 4) && (statement_4 = true)){
-    Song.stop();
-    hit_tiles = hit_tiles_Arena_entering;
-    largeImage = map_Arena_entrance;
-    setBackground(map_Arena_entrance);
-    largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
-    if (statement_5){
-        System.out.println("check");
-    pos_x = -1358;
-    pos_y = -2320;
-    if (!(check_statement)){
-Song = Arena_Preparations;
-Song.playLoop();
-changeSongTrack();
-if (Song.isPlaying()){
-}
-if (!(Song.isPlaying())){
-Song = Arena_Preparations;
-Song.playLoop();
-changeSongTrack();
-}
-}
-} else if (!(statement_5)){    
-if (check_statement){
-Song.stop();
-Song = Arena_Battle;
-Song.playLoop();
-changeSongTrack();
-}
-}
-    statement_4 = false;
-    statement = true;
-    statement_2 = true;
-    statement_3 = true;
-    statement_5 = true;    
-}
-        if ((m == 5) && (statement_5 = true)){            
-    hit_tiles = hit_tiles_Arena_Open;    
-    largeImage = map_Arena_Open;    
-    setBackground(map_Arena_Open);    
-    largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);    
-//     addObject(new Objective_Arrow(), 412, 489);
-if (!(check_statement)){
-    check_statement = true;
-}
-    statement_5 = false;
-    statement = true;
-    statement_2 = true;
-    statement_3 = true;
-    statement_4 = true;
-}
+      //------------------------------------------------------------------------------------------------------
+      // ARENA - Doors Closed Phase. - Stair Entry Phase
+      //------------------------------------------------------------------------------------------------------
+        if ((m == 4) && (statement_4)){
+            Song.stop();
+        hit_tiles = hit_tiles_Arena_entering;
+        largeImage = map_Arena_entrance;
+        setBackground(map_Arena_entrance);
+        largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
+            if (statement_5){
+            System.out.println("check");
+            pos_x = -1358;
+            pos_y = -2320;
+            if (!(check_statement)){
+                Song = Arena_Preparations;
+                Song.playLoop();
+                changeSongTrack();
+                if (Song.isPlaying()){
+                }
+                if (!(Song.isPlaying())){
+                    Song = Arena_Preparations;
+                    Song.playLoop();
+                    changeSongTrack();
+                }
+            }
+        } else if (!(statement_5)){    
+            if (check_statement){
+                Song.stop();
+                Song = Arena_Battle;
+                Song.playLoop();
+                changeSongTrack();
+            }
+        }
+        statement_4 = false;
+        statement = true;
+        statement_2 = true;
+        statement_3 = true;
+        statement_5 = true;    
+    }
+   //------------------------------------------------------------------------------------------------------
+   // ARENA - Opened Doors Phase.
+   //------------------------------------------------------------------------------------------------------
+        if ((m == 5) && (statement_5)){            
+            hit_tiles = hit_tiles_Arena_Open;    
+        largeImage = map_Arena_Open;    
+        setBackground(map_Arena_Open);    
+        largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);    
+        
+        if (!(check_statement)){
+            check_statement = true;
+        }
+        statement_5 = false;
+        statement = true;
+        statement_2 = true;
+        statement_3 = true;
+        statement_4 = true;
+    }
     return 0;    
 }
 public int setDefaultForMap(int Map){
        largeImage.scale(largeImage.getWidth()/6,largeImage.getHeight()/6);
        return 0;
 }
-// public int shopMoveCursor(int CursorLocation){
-//        
-//        if (!(shopCursorDirtyFlag)){
-//            
-//             addObject(new Shop_Cursor(), 300, 250);
-//             // x:300
-//             // y:250
-//            shopCursorDirtyFlag = true;
-//            // making this boolean true - disables this if statement, making Shop_Cursor appear only once.
-//         }
-//         
-// //        if (CursorLocation == 1){
-// //            
-// //         } else if (CursorLocation == 2){
-// //            
-// //         } else if (CursorLocation == 3){
-// //             
-// //         } else if (CursorLocation == 4){
-// //             
-// //         } else if (CursorLocation == 5){
-// //             
-// //         } else if (CursorLocation == 6){
-// //             
-// //         } else if (CursorLocation == 7){
-// //             
-// //         } else if (CursorLocation == 8){
-// //             
-// //         } else if (CursorLocation == 9){
-// //             
-// //         } else if (CursorLocation == 10){
-// //             
-// //         } else if (CursorLocation == 11){
-// //             
-// //         } else if (CursorLocation == 12){
-// //             
-// //         } else if (CursorLocation == 13){
-// //             
-// //         } else if (CursorLocation == 14){
-// //             
-// //         }
-//         
-//        return 0;
-//        
-// }    
 
-//     
 public void setLocation(int xC, int yC){
 }
 public int getTileAt(int x, int y){

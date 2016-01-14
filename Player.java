@@ -2,6 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Player extends Actor
 {
+    
     String baseString = "";
     String left1;
     String left2;
@@ -89,11 +90,13 @@ public class Player extends Actor
        background x = (background)this.getWorld();
        level.scroll(10, 0);
        
-
        hero_x_px = -level.pos_x + getX()-50;
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
+       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+       
+
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(-10, 0);
       }
@@ -117,10 +120,12 @@ public class Player extends Actor
        
        background x = (background)this.getWorld();
        x.scroll(-10, 0);
+       
        hero_x_px = -level.pos_x + getX()+50;
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
+       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(10, 0);
         }
@@ -143,10 +148,13 @@ public class Player extends Actor
     {
        background x = (background)this.getWorld();
        x.scroll(0, 10);
+       
        hero_x_px = -level.pos_x + getX();
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
+       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, -10);
         }
@@ -169,10 +177,13 @@ public class Player extends Actor
     {   
        background x = (background)this.getWorld();
        x.scroll(0, -10);
+       
        hero_x_px = -level.pos_x + getX();
        hero_y_px = -level.pos_y + getY()+40;
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
+       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, 10);
         }
@@ -212,8 +223,7 @@ public class Player extends Actor
     }
     
     
-        if (Room == Lobby){
-     
+        if (Room == Lobby){     
 
         
   
@@ -483,6 +493,9 @@ if ((Room == Shop) && (windowPane)){
  }
  
 }
+
+
+
 public void Stats(){
     if (!(Game_Start_Instance)){
     background level = (background)this.getWorld();
