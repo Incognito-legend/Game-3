@@ -26,7 +26,7 @@ public class Player extends Actor
     int instance;
     
     int whichWalk = 0;
-    int Class = 4;
+    int Class;
     boolean dirtyFlag = true;
     boolean dirtyFlag1 = true;
     int Lobby = 1;
@@ -449,7 +449,7 @@ if ((Room == Shop) && (windowPane)){
     setImage(SBIC);
     level.addObject(new Tutorial_Guide(), 100, 100);
     level.addObject(new Trade_Instance(), 500, 300);
-    // first shop items trade interface row vvvvvvvvv
+    // first shop items trade interface row 
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 250);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 300);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 350);
@@ -457,7 +457,7 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 450);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 500);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 550);
-    // next row vvvvvvvvvv
+    // next row 
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 250);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 300);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 350);
@@ -468,7 +468,7 @@ if ((Room == Shop) && (windowPane)){
     //------------------------------------------------------------------
     level.addObject(new Shop_Welcome_Message(), 500, 50); 
     //------------------------------------------------------------------
-    // first shop items trade interface Text row vvvvvvvvv
+    // first shop items trade interface Text row 
     level.addObject(new Shop_option_1(), 300, 250);
     level.addObject(new Shop_option_2(), 300, 300);
     level.addObject(new Shop_option_3(), 300, 350);
@@ -476,15 +476,17 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Shop_option_5(), 300, 450);
     level.addObject(new Shop_option_6(), 300, 500);
     level.addObject(new Shop_option_7(), 300, 550);
-    // next Text row vvvvvvvvvv
+    // next Text row 
     level.addObject(new Shop_option_8(), 700, 250);
     level.addObject(new Shop_option_9(), 700, 300);
     level.addObject(new Shop_option_10(), 700, 350);
     level.addObject(new Shop_option_11(), 700, 400);
     level.addObject(new Shop_option_12(), 700, 450);
+    
+    level.addObject(new Shop_option_14(), 700, 550);
 
-    level.addObject(new Shop_Cursor(), 300, 250);
-
+    level.addObject(new Shop_Cursor_Images(), 310, 250);
+    
     level.setDefaultForMap(1);
     level.changeMap(3,2);  
     Shop_Check = true;

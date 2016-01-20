@@ -11,6 +11,7 @@ public class cursor extends Actor
     boolean cdf = false;
     int x;
     int y;
+    
 
 //  
 // public void act()

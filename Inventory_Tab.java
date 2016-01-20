@@ -15,10 +15,15 @@ public class Inventory_Tab extends Player
     
     boolean Inventory_Opened = false;
     boolean df = false;
+    static boolean invCheckThis = false;
+    static boolean check = false;
     int counter = 0;
+    int iM;
+    int iN;
+    int t = 0;
     public void act() 
     {
-         
+    background inventory = (background)this.getWorld();     
          animationActCounter = (animationActCounter + 1) % (imageCount * actsPerImage); // act counter that cycles for each complete cycle of images
          //         if (animationActCounter % actsPerImage == 0){ // if time to change image
              //         System.out.println("animationActCounter: " + animationActCounter + " imageCount: " + imageCount + " actsPerImage: " + actsPerImage + " imageNumber: " + imageNumber);
@@ -36,7 +41,39 @@ public class Inventory_Tab extends Player
     if ((!(df)) && (Inventory_Opened)){
      invTabImgClose();
     }
+     if ((invCheckThis) && (iM == 3) && (iN == 2)){
+        setImage("inventory_tab_closed.png");
+        getImage().setTransparency(t);
+        invCheckThis = false;
+        
+    }
+    
+    
 }
+
+void    setTransparency(int t){}
+
+public static int setMN(int m, int n){
+    if (!(check)){
+    if ((m == 3) && (n == 2)){
+        checkDF(true);
+    }
+}
+
+    return m & n;
+}
+
+
+public static boolean checkDF(boolean invCheck){
+   if (invCheck){
+       invCheckThis = true;
+    } else if (!(invCheck)){
+       invCheckThis = false;
+    }
+    return invCheck;
+}
+
+
 public void invTabImgOpen(){
     if (!(Inventory_Opened)){
     if (counter == 1){
@@ -61,6 +98,9 @@ public void invTabImgOpen(){
             counter = (counter + 1) % 8;
 }
 }
+
+
+
 public void invTabImgClose(){
     if (Inventory_Opened){
     if (counter == 1){
@@ -88,5 +128,9 @@ public void invTabImgClose(){
             counter = (counter + 1) % 8;
     }
 }
+
+
+
+
     }
 

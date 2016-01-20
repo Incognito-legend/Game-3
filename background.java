@@ -61,6 +61,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
     boolean check_statement = false;
     boolean Objective_Arrow_Statement = false;
     boolean shopCursorDirtyFlag = false;
+    boolean shop_check_df = true;
     int timer;
 
     
@@ -82,8 +83,8 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
         
         
         Date d = new Date();
-        
-        addObject(new Palladin(), 475, 300);
+        Class(getRandomNumberRange(1,5));
+        //addObject(new Palladin(), 475, 300);
         addObject(new cursor(),475,545);
         addObject(new Inventory_Tab(), 475, 545);
         
@@ -120,7 +121,8 @@ if (timer > 0)
     }
         /* change image back */;
     }
-    else if (Greenfoot.mouseClicked(getActor()))
+    else if (Greenfoot.mousePressed(getActor()))
+    //(Greenfoot.mouseClicked(getActor())) 
     {
         System.out.println("Click Test: " + Greenfoot.mouseClicked(getActor()));
         play();
@@ -128,6 +130,11 @@ if (timer > 0)
         timer = 2;
     }
 }
+static boolean mousePressed(java.lang.Object obj)
+     {
+// //True if the mouse has been pressed (changed from a non-pressed state to being pressed) on the given object.
+ return true;
+     }
 public void play()
     {
         //Greenfoot.playSound("E3.mp3");
@@ -162,28 +169,28 @@ public World getActor(){ return null; }
         if (Current_Class == 1){
     addObject(new hunter(), 475, 300);
     addObject(new Smoke_Effect(), 475, 300);
-    addObject(new Player_Portrait_Instance(), 120, 500);
-    addObject(new Player_Name_Panel(), 120, 100);
+    //addObject(new Player_Portrait_Instance(), 120, 500);
+    //addObject(new Player_Name_Panel(), 120, 100);
     }if (Current_Class == 2){   
     addObject(new Druid(), 475, 300);
     addObject(new Smoke_Effect(), 475, 300);
-    addObject(new PPI_Druid(), 120, 500);
-    addObject(new Player_Name_Panel(), 120, 100);
+    //addObject(new PPI_Druid(), 120, 500);
+    //addObject(new Player_Name_Panel(), 120, 100);
     }    if (Current_Class == 3){
     addObject(new Mage(), 475, 300);
     addObject(new Smoke_Effect(), 475, 300);
-    addObject(new PPI_Mage(), 120, 500);
-    addObject(new Player_Name_Panel(), 120, 100); 
+    //addObject(new PPI_Mage(), 120, 500);
+    //addObject(new Player_Name_Panel(), 120, 100); 
     }    if (Current_Class == 4){
     addObject(new Palladin(), 475, 300);    
     addObject(new Smoke_Effect(), 475, 300);            
-    addObject(new PPI_Paladin(), 120, 500);    
-    addObject(new Player_Name_Panel(), 120, 100); 
+    //addObject(new PPI_Paladin(), 120, 500);    
+    //addObject(new Player_Name_Panel(), 120, 100); 
     }    if (Current_Class == 5){    
     addObject(new Warrior(), 475, 300);    
     addObject(new Smoke_Effect(), 475, 300);        
-    addObject(new PPI_Warrior(), 120, 500);    
-    addObject(new Player_Name_Panel(), 120, 100);          
+    //addObject(new PPI_Warrior(), 120, 500);    
+    //addObject(new Player_Name_Panel(), 120, 100);          
     }    
     return 0;
 }
@@ -260,6 +267,8 @@ public World getActor(){ return null; }
         // SHOP - ROOM
         //------------------------------------------------------------------------------------------------------
         if ((m == 3) && (statement_3)){
+            
+            
             Song.stop();
             hit_tiles = hit_tiles_Shop;
             largeImage = map_Shop;
@@ -272,8 +281,9 @@ public World getActor(){ return null; }
                pos_x = -1202;
 
                pos_y = -1935;
+               //statement = true;
                
-        }else{
+        }   else    {
                 System.out.println("check2");
 
                pos_x = -1682;
@@ -284,21 +294,29 @@ public World getActor(){ return null; }
           //------------------------------------------------------------------------------------------------------
           // SHOP - TRADE INTERFACE
           //------------------------------------------------------------------------------------------------------
-        if ((m == 3) && (statement) && (n == 2)){
+        if (shop_check_df){
+         if ((m == 3) && (statement) && (n == 2)){
             largeImage = map_SBIC;
             setBackground(map_SBIC);
+            System.out.println("System.Check.setBackground(map_SBIC)");
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
             Song = Shop;
             Song.playLoop();
             changeSongTrack();
-            
-        }
             statement_3 = false;
             statement = true;
             statement_2 = true;
             statement_4 = true;
             statement_5 = true;
-      }
+            Inventory_Tab.setMN(3,2);
+            
+            Inventory_Tab.checkDF(true);
+            shop_check_df = false;
+         }
+        
+       }
+       
+     }
       //------------------------------------------------------------------------------------------------------
       // ARENA - Doors Closed Phase. - Stair Entry Phase
       //------------------------------------------------------------------------------------------------------
@@ -358,6 +376,9 @@ public World getActor(){ return null; }
     }
     return 0;    
 }
+
+
+
 public int setDefaultForMap(int Map){
        largeImage.scale(largeImage.getWidth()/6,largeImage.getHeight()/6);
        return 0;
