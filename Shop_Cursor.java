@@ -28,27 +28,33 @@ public class Shop_Cursor extends Interface_Ai
     String s16;
     String s17;
 
-boolean General_Synopsis = true;
+boolean General_Synopsis = true; 
+boolean Shop_Main_Menu = true;
+boolean timerCounter = true;
+boolean moveDF = false;
+boolean oS = false;
+//aka -> option selected = oS
 int y = 250;
 int x = 310;
 int sprite_counter = 0;
-boolean timerCounter = true;
 int timerCount = 0;
 int Shop_Option = 1;
-boolean moveDF = false;
-//int timer;
-//boolean checkImageTimerDFLAG = false;
+int oSC;
+//aka -> oSC = option selection choice
+
+
      public void act() 
+     
      {
          if (General_Synopsis){
-          //checkImageTimerDFLAG = true;   
+             if (Shop_Main_Menu){
              if (Greenfoot.isKeyDown("a")){
                  if (x == 710){
                     setLocation(310, getY());
                     x = getX();
                     y = getY();
                     moveDF = true;
-                    //System.out.println("x" + x + " y" + y);
+                    
                     }
                 }
              if (Greenfoot.isKeyDown("d")){
@@ -57,7 +63,7 @@ boolean moveDF = false;
                      x = getX();
                      y = getY();
                      moveDF = true;
-                     //System.out.println("x" + x + " y" + y);
+                     
                     }
                 }
              if (Greenfoot.isKeyDown("w")){
@@ -66,7 +72,7 @@ boolean moveDF = false;
                      x = getX();
                      y = getY();
                      moveDF = true;
-                     //System.out.println("x" + x + " y" + y);
+                    
                     }
                 }
              if (Greenfoot.isKeyDown("s")){
@@ -75,9 +81,10 @@ boolean moveDF = false;
                      x = getX();
                      y = getY();
                      moveDF = true;
-                     //System.out.println("x" + x + " y" + y);
+                     
                     }
                     }
+                    
                     if (moveDF){
                     if ((x == 310) && (y == 250)){
                     Shop_Option = 1;
@@ -126,11 +133,58 @@ boolean moveDF = false;
                     moveDF = false;
                 }
                                             
-                                                            
+                if ((Greenfoot.isKeyDown("space")) && (!(oS))){
+                  if (Shop_Option == 1){
+                    System.out.println("Spells");
+                    oSC = Shop_Option;
+                    }else if (Shop_Option == 2){
+                        System.out.println("Melee Weapons"); 
+                        oSC = Shop_Option;
+                        }else if (Shop_Option == 3){
+                            System.out.println("Ranged Weapons");
+                            oSC = Shop_Option; 
+                            }else if (Shop_Option == 4){
+                                System.out.println("Staves");
+                                oSC = Shop_Option; 
+                                }else if (Shop_Option == 5){
+                                    System.out.println("Relics");
+                                    oSC = Shop_Option; 
+                                    }else if (Shop_Option == 6){
+                                        System.out.println("Items");
+                                        oSC = Shop_Option; 
+                                        }else if (Shop_Option == 7){
+                                            System.out.println("Materials");
+                                            oSC = Shop_Option;
+                                            }else if (Shop_Option == 8){
+                                                System.out.println("Miscelaneous");
+                                                oSC = Shop_Option;
+                                                }else if (Shop_Option == 9){
+                                                    System.out.println("Enchanting");
+                                                    oSC = Shop_Option;
+                                                    }else if (Shop_Option == 10){
+                                                        System.out.println("Rare Goods");
+                                                        oSC = Shop_Option;
+                                                        }else if (Shop_Option == 11){
+                                                            System.out.println("Ammo");
+                                                            oSC = Shop_Option;
+                                                            }else if (Shop_Option == 12){
+                                                                System.out.println("Magic Skills");
+                                                                oSC = Shop_Option;
+                                                                }else if (Shop_Option == 13){
+                                                                    System.out.println("Unspecified (Unknown Selection)");
+                                                                    oSC = Shop_Option;
+                                                                    }else if (Shop_Option == 14){
+                                                                        System.out.println("Exit?");
+                                                                        oSC = Shop_Option;
+                                                                        }
+                  oS = true;                                                      
+                  
+                }
+                    
                     
         if (timerCounter){
             timerCount = 0;
-        if (sprite_counter == 1){
+                if (sprite_counter == 1){
                 setImage(s10);
                 } else if (sprite_counter == 2){
                 setImage(s11);
@@ -167,8 +221,9 @@ boolean moveDF = false;
                 } else if (sprite_counter == 18){
                 setImage(s10);
                 timerCounter = false;
-                }
-             sprite_counter = (sprite_counter + 1) % 19;
+               }
+               
+            sprite_counter = (sprite_counter + 1) % 19;
              
              
              
@@ -182,12 +237,19 @@ boolean moveDF = false;
                     
                     
             }
-            timerCount = (timerCount + 1) % 100;
+           timerCount = (timerCount + 1) % 100;
         }
-        }
+       }
     }
+}
         
-
+public static int getOptionSelection(int optNum, int roomNum){
+if ((optNum == 3) && (roomNum == 3)){
+    
+}
+    
+return optNum & roomNum;    
+}
     
 }    
 

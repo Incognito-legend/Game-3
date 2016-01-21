@@ -62,6 +62,7 @@ public class Player extends Actor
     boolean Shop_Check = false;
     boolean a = false;
     boolean Game_Start_Instance = false;
+    boolean Shop_Pan2 = false;
     public boolean Initialization = false;
     public void act() 
     {
@@ -490,9 +491,16 @@ if ((Room == Shop) && (windowPane)){
     level.setDefaultForMap(1);
     level.changeMap(3,2);  
     Shop_Check = true;
-}
+} else if ((Shop_Check) && (!(Shop_Pan2))){
+    if (Greenfoot.isKeyDown("space")){
+        Shop_Cursor.getOptionSelection(Shop,2);
+        
+//         if (){
+//         }
+    }
 
  }
+}
  
 }
 

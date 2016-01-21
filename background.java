@@ -88,10 +88,12 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
         addObject(new cursor(),475,545);
         addObject(new Inventory_Tab(), 475, 545);
         
-        largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);        
-        getBackground().drawImage(largeImage, -1400, -2045);
+                
+        
         Song = Lobby;
         changeSongTrack();
+        
+        
         
             Toolkit Tk = Toolkit.getDefaultToolkit();
                 /** The Cursor Point, where the cursor has to click from the left uppon corner of the Cursor Picture */
@@ -111,7 +113,14 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
                     
         
         
+        startImageRender();
 }
+public void startImageRender(){
+    largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
+    getBackground().drawImage(largeImage, -1400, -2045);
+    return;
+}
+    
 public void act(){
 if (timer > 0)
     {
@@ -267,7 +276,8 @@ public World getActor(){ return null; }
         // SHOP - ROOM
         //------------------------------------------------------------------------------------------------------
         if ((m == 3) && (statement_3)){
-            
+        
+        
             
             Song.stop();
             hit_tiles = hit_tiles_Shop;
@@ -308,9 +318,7 @@ public World getActor(){ return null; }
             statement_2 = true;
             statement_4 = true;
             statement_5 = true;
-            Inventory_Tab.setMN(3,2);
-            
-            Inventory_Tab.checkDF(true);
+            Inventory_Tab.shopMode();
             shop_check_df = false;
          }
         

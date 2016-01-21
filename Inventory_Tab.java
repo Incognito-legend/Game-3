@@ -18,18 +18,15 @@ public class Inventory_Tab extends Player
     static boolean invCheckThis = false;
     static boolean check = false;
     int counter = 0;
-    int iM;
-    int iN;
     int t = 0;
     public void act() 
     {
     background inventory = (background)this.getWorld();     
          animationActCounter = (animationActCounter + 1) % (imageCount * actsPerImage); // act counter that cycles for each complete cycle of images
-         //         if (animationActCounter % actsPerImage == 0){ // if time to change image
-             //         System.out.println("animationActCounter: " + animationActCounter + " imageCount: " + imageCount + " actsPerImage: " + actsPerImage + " imageNumber: " + imageNumber);
-             //        }
+         
+    if (!(check)){         
         if ((Greenfoot.isKeyDown("space")) && (!(Inventory_Opened)) && (!(df)) && (animationActCounter % actsPerImage == 0)){
-            //System.out.println("animationActCounter: " + animationActCounter + " imageCount: " + imageCount + " actsPerImage: " + actsPerImage + " imageNumber: " + imageNumber);
+            
             df = true;
         } else if ((Greenfoot.isKeyDown("space")) && (Inventory_Opened)){
             df = false;
@@ -41,8 +38,10 @@ public class Inventory_Tab extends Player
     if ((!(df)) && (Inventory_Opened)){
      invTabImgClose();
     }
-     if ((invCheckThis) && (iM == 3) && (iN == 2)){
+}
+     if ((invCheckThis)){
         setImage("inventory_tab_closed.png");
+        t = 0;
         getImage().setTransparency(t);
         invCheckThis = false;
         
@@ -53,24 +52,10 @@ public class Inventory_Tab extends Player
 
 void    setTransparency(int t){}
 
-public static int setMN(int m, int n){
-    if (!(check)){
-    if ((m == 3) && (n == 2)){
-        checkDF(true);
-    }
-}
-
-    return m & n;
-}
-
-
-public static boolean checkDF(boolean invCheck){
-   if (invCheck){
-       invCheckThis = true;
-    } else if (!(invCheck)){
-       invCheckThis = false;
-    }
-    return invCheck;
+public static void shopMode(){    
+    invCheckThis = true;
+    check = true;
+    return;
 }
 
 
