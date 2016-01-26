@@ -1,22 +1,23 @@
-// import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-// 
-// /**
-//  * Write a description of class Player_Room_Arena_Subclass_Doors_Info here.
-//  * 
-//  * @author (your name) 
-//  * @version (a version number or a date)
-//  */
-// public class Player_Room_Info extends Player
-// {
-//     boolean initialization = false;
-//     public void act() 
-//     {
-//         if (!(initialization))
-//         {
-//         System.out.println("System.Player.Room.Info/Initialized");
-//         initialization = true;
-//     }
-//     }
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Player_Room_Arena_Subclass_Doors_Info here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Player_Room_Info extends Player
+{
+    boolean initialization = false;
+    public void act() 
+    {
+        if (!(initialization))
+        {
+        System.out.println("System.Player.Room.Info/Initialized");
+        initialization = true;
+    }
+    }
+}
 //     public int Room(int Initialization_SN)
 
 //     {

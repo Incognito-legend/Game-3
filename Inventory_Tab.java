@@ -15,15 +15,23 @@ public class Inventory_Tab extends Player
     
     boolean Inventory_Opened = false;
     boolean df = false;
-    static boolean invCheckThis = false;
-    static boolean check = false;
+    static boolean invCheckThis;
+    static boolean check;
     int counter = 0;
     int t = 0;
+    static int optNum;
+    static int roomNum;
+    static int sStage = 0;
+    boolean dfcheck = false;
     public void act() 
     {
     background inventory = (background)this.getWorld();     
          animationActCounter = (animationActCounter + 1) % (imageCount * actsPerImage); // act counter that cycles for each complete cycle of images
-         
+if (!(dfcheck)){
+    invCheckThis = false;
+    check = false;
+    dfcheck = true;
+}
     if (!(check)){         
         if ((Greenfoot.isKeyDown("space")) && (!(Inventory_Opened)) && (!(df)) && (animationActCounter % actsPerImage == 0)){
             
@@ -38,23 +46,39 @@ public class Inventory_Tab extends Player
     if ((!(df)) && (Inventory_Opened)){
      invTabImgClose();
     }
-}
      if ((invCheckThis)){
         setImage("inventory_tab_closed.png");
-        t = 0;
+        
         getImage().setTransparency(t);
         invCheckThis = false;
         
     }
+}
+    
     
     
 }
 
-void    setTransparency(int t){}
+void setTransparency(int t){}
 
 public static void shopMode(){    
     invCheckThis = true;
-    check = true;
+    //System.out.println("Check void for continuous loop");
+    if (invCheckThis){
+        
+        check = true;
+        sStage = (sStage + 1);
+    }
+     if (sStage == 1){
+         
+       Shop_Cursor.getOptionSelection(optNum = 14, roomNum = 2);
+       
+        if ((optNum == 14) && (roomNum == 2)){
+            
+        }
+        
+     }
+    
     return;
 }
 

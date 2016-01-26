@@ -20,8 +20,10 @@ public class Player extends Actor
     String lastWayFacing = "s";
     
     String lastClassType = "Paladin";
-    int x = 512;
-    int y = 389;
+int x = 512;
+int y = 389;
+//        int x = 475;
+//        int y = 300;
     
     int instance;
     
@@ -95,7 +97,7 @@ public class Player extends Actor
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+       System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
        
 
       if (level.getTileAt (hero_x, hero_y) == 1){
@@ -113,7 +115,7 @@ public class Player extends Actor
         }
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "a";
-//         System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
+         //System.out.println("hero moved left, Tile: " + hero_x + ", " + hero_y);
 //         System.out.println(level.pos_x + ", " + level.pos_y);
     }
         else  if (Greenfoot.isKeyDown ("d"))
@@ -126,7 +128,7 @@ public class Player extends Actor
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+       System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(10, 0);
         }
@@ -142,7 +144,7 @@ public class Player extends Actor
         }
         whichWalk = (whichWalk + 1) % 4;
         lastWayFacing = "d";
-//         System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
+         //System.out.println("hero moved right, Tile: " + hero_x + ", " + hero_y);
 //         System.out.println(level.pos_x + ", " + level.pos_y);
     }
         else if (Greenfoot.isKeyDown("w"))
@@ -154,7 +156,7 @@ public class Player extends Actor
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+       System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
 
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, -10);
@@ -183,7 +185,8 @@ public class Player extends Actor
        hero_y_px = -level.pos_y + getY()+40;
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+       
+       System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
 
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, 10);
@@ -247,6 +250,7 @@ public class Player extends Actor
            //System.out.println("Welcome to the Blacksmith!");
            //Room = Blacksmith;
            //getbackground();
+           System.out.println("enter blacksmith check");
            Room = Blacksmith;
            level.setDefaultForMap(1);
            level.changeMap(2,1);
@@ -259,8 +263,10 @@ public class Player extends Actor
     }
        if (level.getTileAt(hero_x, hero_y) == 6 && (dirtyFlag1 == true)){
         //System.out.println("Welcome to the Shop!");
+        System.out.println("Shop Entry Check");
         Room = Shop;
         level.setDefaultForMap(1);
+        
         level.changeMap(3,1);
         dirtyFlag1 = false;
         
@@ -411,7 +417,7 @@ if ((Room == Shop) && (!(windowPane))){
     if ((level.getTileAt(hero_x, hero_y) == 12) && !(Shop_Goodbye)){
         
            //System.out.println("Goodbye!");
-          
+           System.out.println("leaving shop initial check");
            Room = Lobby;
            level.setDefaultForMap(2);
            level.changeMap(1,1);
@@ -439,7 +445,7 @@ if ((Room == Shop) && (!(windowPane))){
 }
 
 if ((Room == Shop) && (windowPane)){
-    
+System.out.println("check shop instance");    
     //setSpeed(50);
 
     
@@ -491,15 +497,13 @@ if ((Room == Shop) && (windowPane)){
     level.setDefaultForMap(1);
     level.changeMap(3,2);  
     Shop_Check = true;
-} else if ((Shop_Check) && (!(Shop_Pan2))){
-    if (Greenfoot.isKeyDown("space")){
-        Shop_Cursor.getOptionSelection(Shop,2);
-        
-//         if (){
-//         }
-    }
+}// else if ((Shop_Check) && (!(Shop_Pan2))){
+//     if (Greenfoot.isKeyDown("space")){
+//         Shop_Cursor.getOptionSelection(14,2);
+//         
+//     }
 
- }
+// }
 }
  
 }

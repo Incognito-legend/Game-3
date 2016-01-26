@@ -244,7 +244,7 @@ int oSC;
 }
         
 public static int getOptionSelection(int optNum, int roomNum){
-if ((optNum == 3) && (roomNum == 3)){
+if ((optNum == 14) && (roomNum == 3)){
     
 }
     
