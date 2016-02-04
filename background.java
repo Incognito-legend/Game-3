@@ -16,7 +16,7 @@ public class background extends World
     GreenfootImage map_Arena_entrance = new GreenfootImage("Arena_Variant-1.png");
     GreenfootImage map_Arena_Open = new GreenfootImage("Arena_Variant-2.png");
     GreenfootImage map_Valley = new GreenfootImage("Valley-temple.png");
-    
+    //GreenfootImage bImg = new GreenfootImage("menu background - resized.png");
     //GreenfootImage sMenu = new GreenfootImage("Start Menu.gif");
     
     int x;
@@ -48,7 +48,9 @@ GreenfootSound The_Ultimate_Tragedy = new GreenfootSound("050 - Final Farewell.w
 GreenfootSound Arena_Entrance = new GreenfootSound("086 - Arena Entrance.wav");
 GreenfootSound Arena_Preparations = new GreenfootSound("082 - Prepare to Charge.wav");    
 GreenfootSound Arena_Battle = new GreenfootSound("026 - Strike.wav");    
-GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");         
+GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
+GreenfootSound Game_Start = new GreenfootSound("001 - Opening ~ History Unveiled.wav");      
+GreenfootSound Game_Start_Menu = new GreenfootSound("002 - Fire Emblem Theme.wav");   
     boolean statement = true;
    
     boolean statement_2 = true;
@@ -62,18 +64,21 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
     boolean statement_6 = true;
     
     boolean statement_check = true;
+    boolean statement_check_df = false;
    
     boolean check_statement = false;
     boolean Objective_Arrow_Statement = false;
     boolean shopCursorDirtyFlag = false;
     boolean shop_check_df = true;
+    boolean scDF = true;
     int timer;
 
+    boolean GameStartScreen = false;
+    boolean GameLobbyStart = false;
     
-    
-
-    
-        
+    boolean GameStartScreenMusicCheck = false;
+    public static boolean sMSC = false;
+    public static boolean smscheck = false;    
             
     JPanel Pan = WorldHandler.getInstance().getWorldCanvas();  
     /** The new Cursor */
@@ -82,6 +87,7 @@ GreenfootSound Arena_Victory = new GreenfootSound("088 - Arena Victory.wav");
 GreenfootImage cImage = new GreenfootImage("Mouse_Cursor.png");    
 GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
     public background()
+    
     {    
         
         super(950, 600, 1, false);
@@ -90,15 +96,15 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
         
         Date d = new Date();
         //addObject(new Palladin(), 475, 300);
-        Class(getRandomNumberRange(1,5));
-        
-        addObject(new cursor(),475,545);
-        addObject(new Inventory_Tab(), 475, 545);
+//         Class(getRandomNumberRange(1,5));
+//         
+//         addObject(new cursor(),475,545);
+//         addObject(new Inventory_Tab(), 475, 545);
         
                 
         
-        Song = Lobby;
-        changeSongTrack();
+        //Song = Lobby;
+        //changeSongTrack();
         
         
         
@@ -125,14 +131,82 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
 }
 public void startImageRender(){
   
-  largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
-  getBackground().drawImage(largeImage, -1400, -2045);
+  map_SBIC.scale(map_SBIC.getWidth()*6,map_SBIC.getHeight()*6);
+  getBackground().drawImage(map_SBIC, -1400, -2045);
   
     
     return;
 }
+public static boolean startMenuSelect(boolean sMS){
+    if (!(smscheck)){
+    if (sMS){
+    sMSC = true;
+    
+    smscheck = true;
+    }
+}
+    return true;
+}
     
 public void act(){
+    if (sMSC){
+        //     addObject(new Trade_Instance(), 500, 300);
+//          
+//     addObject(new Menu_Background(), 475, 300);    
+//     // first shop items trade interface row 
+// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 250);
+//     addObject(new Trade_Inventory_Shop_Interface_LB(), 275, 300);
+// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 350);
+//     addObject(new Trade_Inventory_Shop_Interface_LB(), 275, 400);
+// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 450);
+//     addObject(new Trade_Inventory_Shop_Interface_LB(), 275, 500);
+// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 550);
+//     // next row 
+// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 250);
+//     addObject(new Trade_Inventory_Shop_Interface_LB(), 675, 300);
+// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 350);
+//     addObject(new Trade_Inventory_Shop_Interface_LB(), 675, 400);
+// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 450);
+//     addObject(new Trade_Inventory_Shop_Interface_LB(), 675, 500);
+// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 550);
+//     
+        Class(getRandomNumberRange(1,5));
+        
+        //addObject(new cursor(),475,545);
+        addObject(new Inventory_Tab(), 475, 545);
+        hit_tiles = hit_tiles_Lobby;
+            largeImage = map_Lobby;
+            //setBackground(map_Lobby);
+            largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
+            
+            getBackground().drawImage(largeImage, -1400, -2045);    
+Song.stop();        
+Song = Lobby;
+
+changeSongTrack();
+    sMSC = false;
+    }
+    if (!(GameStartScreen)){
+        
+        GameStartScreen = true;
+        addObject(new Start_Menu(),475,300);
+        
+    }
+        
+    if (!(GameStartScreenMusicCheck)){
+            Song = Game_Start_Menu;
+            changeSongTrack();
+            GameStartScreenMusicCheck = true;
+    }
+    
+    if (GameLobbyStart){
+        setBackground(largeImage);
+        Class(getRandomNumberRange(1,5));
+        
+        
+        addObject(new Inventory_Tab(), 475, 545);
+        GameLobbyStart = false;
+    }
 if (timer > 0)
     {
         timer--;
@@ -146,6 +220,11 @@ if (timer > 0)
     {
         //System.out.println("Click Test: " + Greenfoot.mouseClicked(getActor()));
         play();
+        
+        
+    
+        
+        
         //setImage("left.png");
         timer = 2;
         
@@ -305,7 +384,7 @@ public World getActor(){ return null; }
             largeImage = map_Shop;
             setBackground(map_Shop);
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
-
+        
             if (getRandomNumberRange(1,100) <= 50){
                System.out.println("check1");
 
@@ -322,7 +401,14 @@ public World getActor(){ return null; }
                pos_y = -1935;
 
         }
-            
+        statement_check = true;
+    
+    if (!(scDF)){
+        pos_x = -1442;
+        pos_y = -2500;
+        removeShopObjects(statement_check);
+        scDF = true;
+    }
           //------------------------------------------------------------------------------------------------------
           // SHOP - TRADE INTERFACE
           //------------------------------------------------------------------------------------------------------
@@ -350,19 +436,71 @@ public World getActor(){ return null; }
             
             
            
-                        //Inventory_Tab.shopMode();
+            //Inventory_Tab.shopMode();
             
             statement_check = false;
             
             
          }
-         if ((m == 3) && (!(statement_check)) && (n == 3)){
+         
+         if ((m == 3) && (!(statement_check))){
+              
              
              
+            
+            if (n == 3){
+//                 System.out.println("Spells: Here's a collection of _Spell Tomes_ I've gathered over the years!");
+                statement_check = true;
+                } else if (n == 4){
+//                     System.out.println("Melee Weapons: Swords, spears, axes... I've got all seek on sale here!"); 
+                    statement_check = true;
+                    } else if (n == 5){
+//                         System.out.println("Ranged Weapons: Bows, javelins, throwing axes, crossbows... whatever you need I've got it right here!"); 
+                        statement_check = true;
+                        } else if (n == 6){
+//                             System.out.println("Staves: I've gathered a few rare magical staves in stock for the right price of course!");
+                            statement_check = true;
+                            } else if (n == 7){
+//                                 System.out.println("Relics: These are very hard to come by, are you really that rich?");
+                                statement_check = true;
+                                } else if (n == 8){
+//                                     System.out.println("Items: I got a few things you might be interested in!");
+                                    statement_check = true;
+                                    } else if (n == 9){
+//                                         System.out.println("Materials: Don't go out into the fray without proper supplies! You'll catch a cold!");
+                                        statement_check = true;
+                                        } else if (n == 10){
+//                                             System.out.println("Miscelaneous: If you want them, I've got a few random things on sale that you could buy for your house.");
+                                            statement_check = true;
+                                            } else if (n == 11){
+//                                                 System.out.println("Enchanting: I have a few enchanting items for your gear, or - for the right price, I could enchant them?!");
+                                                statement_check = true;
+                                                } else if (n == 12){
+//                                                     System.out.println("Rare Goods: These are rare goods from across the desert and beyond, they don't come cheap pal!");
+                                                    statement_check = true;
+                                                    } else if (n == 13){
+//                                                         System.out.println("Ammo: All the arrows and bolts you need I've got right here!");
+                                                        statement_check = true;
+                                                        } else if (n == 14){
+//                                                             System.out.println("Magic Skills: I know a Grey cloaked Wizard who can teach you many magical skills!");
+                                                            statement_check = true;
+                                                            } else if (n == 15){
+//                                                                 System.out.println("Unspecified (Unknown Selection): Sorry...this hasn't arrived yet! It might be here when you come back some other time though!");
+                                                                statement_check = true;
+                                                                } else if (n == 16){
+//                                                                     System.out.println("Exit?: Thank you! Come again!");
+                                                                    statement_3 = true;
+                                                                    setDefaultForMap(1);
+                                                                    changeMap(3,1);                                                                    
+                                                                    
+                                                                    scDF = false;
+                                                                    statement_check = true;
+                                                                    }
+           //     
              
              
-         }
         
+    }
        
      
       //------------------------------------------------------------------------------------------------------
@@ -426,6 +564,10 @@ public World getActor(){ return null; }
 }
 
 
+public static boolean removeShopObjects(boolean removeObject){
+    
+    return removeObject;
+}
 
 public int setDefaultForMap(int Map){
        largeImage.scale(largeImage.getWidth()/6,largeImage.getHeight()/6);
@@ -460,6 +602,12 @@ public void changeSongTrack(){
     Song = Lobby;
     Song.play();
     }
+}
+    if ((Song == Game_Start_Menu)){
+    if (!(Song.isPlaying())){
+    Song = Game_Start_Menu;
+    Song.play();
+    }    
 }
     if ((Song == Inn)){
     if (!(Song.isPlaying())){

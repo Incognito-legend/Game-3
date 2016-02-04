@@ -8,12 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Shop_option_14 extends Shop
 {
-    /**
-     * Act - do whatever the Shop_option_14 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    boolean df = false;
     public void act() 
     {
+        background level = (background)this.getWorld();
+        if (!(df)){
         setImage("Shop_Exit[].png");
+        df = true;
+    }
+    if (background.removeShopObjects(true)){
+        level.removeObject(this);
     }    
+    
+}
 }

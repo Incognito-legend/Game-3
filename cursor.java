@@ -12,6 +12,7 @@ public class cursor extends Actor
     int x;
     int y;
     
+    
 
 //  
 // public void act()

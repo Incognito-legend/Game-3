@@ -11,8 +11,8 @@ public class Targeted_AI_Portrait_Instance extends Player_Interface
     int speed = 11;
     public void act() 
     {
-//             turnTowards(Player.getX(), Player.getY());
-//             move( speed );
+            
+         
     }
 //         public void scroll(int dx, int dy)
 //     {

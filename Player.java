@@ -66,6 +66,9 @@ int y = 389;
     boolean Game_Start_Instance = false;
     boolean Shop_Pan2 = false;
     public boolean Initialization = false;
+    public static int cSI; // 1 to 14; 14 = exit; // change shop interface = cSI;
+    public static boolean cSMI = false; // false = shop option is unselected; true = shop option has been selected; // change shop map instance = cSMI;
+    public static boolean fireWait = false;
     public void act() 
     {
     
@@ -89,6 +92,24 @@ int y = 389;
        }
         // Movement and controls section
   if (!(windowPane)){
+      
+      if (this instanceof Mage){
+          
+      if ((Greenfoot.isKeyDown ("1")) && (!(fireWait))){
+          
+          if (lastWayFacing == "a"){
+          level.addObject(new Fireball(), 275, 300);
+         } else if (lastWayFacing == "w"){
+           level.addObject(new Fireball(), 475, 100);
+         } else if (lastWayFacing == "s"){
+           level.addObject(new Fireball(), 475, 500);
+         } else if (lastWayFacing == "d"){
+           level.addObject(new Fireball(), 675, 300);
+         }
+        fireWait = true;
+      }
+    }
+    
       if (Greenfoot.isKeyDown ("a")){
        background x = (background)this.getWorld();
        level.scroll(10, 0);
@@ -97,7 +118,7 @@ int y = 389;
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-       System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+       //System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
        
 
       if (level.getTileAt (hero_x, hero_y) == 1){
@@ -128,7 +149,7 @@ int y = 389;
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-       System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+      // System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(10, 0);
         }
@@ -156,7 +177,7 @@ int y = 389;
        hero_y_px = -level.pos_y + getY();
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
-       System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+      // System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
 
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, -10);
@@ -186,7 +207,7 @@ int y = 389;
        hero_x = hero_x_px/96;
        hero_y = hero_y_px/96;
        
-       System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
+      // System.out.println("( hX_px: " + hero_x_px + ", hY_px: " + hero_y_px + " ) ( hX: " + hero_x + ", hY: " + hero_y + " )");
 
       if (level.getTileAt (hero_x, hero_y) == 1){
           level.scroll(0, 10);
@@ -445,7 +466,7 @@ if ((Room == Shop) && (!(windowPane))){
 }
 
 if ((Room == Shop) && (windowPane)){
-System.out.println("check shop instance");    
+//System.out.println("check shop instance");    
     //setSpeed(50);
 
     
@@ -495,19 +516,90 @@ System.out.println("check shop instance");
     level.addObject(new Shop_Cursor_Images(), 310, 250);
     
     level.setDefaultForMap(1);
-    level.changeMap(3,2);  
+    level.changeMap(3,2);
+    Shop_Pan2 = false;
     Shop_Check = true;
-}// else if ((Shop_Check) && (!(Shop_Pan2))){
-//     if (Greenfoot.isKeyDown("space")){
-//         Shop_Cursor.getOptionSelection(14,2);
-//         
-//     }
+}
+if ((Shop_Check) && (!(Shop_Pan2))){
+    setRoom();
+     if (Greenfoot.isKeyDown("space")){
+         //System.out.println("System.Check.getOptionSelection.14.3.initialization.complete");
+         //Shop_Cursor.getOptionSelection(3,14);
+         if (cSI == 3){
+                System.out.println("Spells: Here's a collection of _Spell Tomes_ I've gathered over the years!");
+                level.changeMap(3,3);
+                Shop_Pan2 = true;
+                } else if (cSI == 4){
+                    System.out.println("Melee Weapons: Swords, spears, axes... I've got all seek on sale here!"); 
+                    level.changeMap(3,4);
+                    Shop_Pan2 = true;
+                    } else if (cSI == 5){
+                        System.out.println("Ranged Weapons: Bows, javelins, throwing axes, crossbows... whatever you need I've got it right here!"); 
+                        level.changeMap(3,5);
+                        Shop_Pan2 = true;
+                        } else if (cSI == 6){
+                            System.out.println("Staves: I've gathered a few rare magical staves in stock for the right price of course!");
+                            level.changeMap(3,6);
+                            Shop_Pan2 = true;
+                            } else if (cSI == 7){
+                                System.out.println("Relics: These are very hard to come by, are you really that rich?");
+                                level.changeMap(3,7);
+                                Shop_Pan2 = true;
+                                } else if (cSI == 8){
+                                    System.out.println("Items: I got a few things you might be interested in!");
+                                    level.changeMap(3,8);
+                                    Shop_Pan2 = true;
+                                    } else if (cSI == 9){
+                                        System.out.println("Materials: Don't go out into the fray without proper supplies! You'll catch a cold!");
+                                        level.changeMap(3,9);
+                                        Shop_Pan2 = true;
+                                        } else if (cSI == 10){
+                                            System.out.println("Miscelaneous: If you want them, I've got a few random things on sale that you could buy for your house.");
+                                            level.changeMap(3,10);
+                                            Shop_Pan2 = true;
+                                            } else if (cSI == 11){
+                                                System.out.println("Enchanting: I have a few enchanting items for your gear, or - for the right price, I could enchant them?!");
+                                                level.changeMap(3,11);
+                                                Shop_Pan2 = true;
+                                                } else if (cSI == 12){
+                                                    System.out.println("Rare Goods: These are rare goods from across the desert and beyond, they don't come cheap pal!");
+                                                    level.changeMap(3,12);
+                                                    Shop_Pan2 = true;
+                                                    } else if (cSI == 13){
+                                                        System.out.println("Ammo: All the arrows and bolts you need I've got right here!");
+                                                        level.changeMap(3,13);
+                                                        Shop_Pan2 = true;
+                                                        } else if (cSI == 14){
+                                                            System.out.println("Magic Skills: I know a Grey cloaked Wizard who can teach you many magical skills!");
+                                                            level.changeMap(3,14);
+                                                            Shop_Pan2 = true;
+                                                            } else if (cSI == 15){
+                                                                System.out.println("Unspecified (Unknown Selection): Sorry...this hasn't arrived yet! It might be here when you come back some other time though!");
+                                                                level.changeMap(3,15);
+                                                                Shop_Pan2 = true;
+                                                                } else if (cSI == 16){
+                                                                    System.out.println("Exit?: Thank you! Come again!");
+                                                                    
+                                                                    level.changeMap(3,16);
+                                                                    Shop_Pan2 = true;
+                                                                    }
 
-// }
+            
+         
+         
+     }
+
+ }
 }
  
 }
 
+ public static void setRoom(){
+         
+         
+         cSMI = true;
+        
+ }
 
 
 public void Stats(){

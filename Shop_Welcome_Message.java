@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Shop_Welcome_Message extends Shop
 {
-    /**
-     * Act - do whatever the Shop_Welcome_Message wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    boolean df = false;
     public void act() 
     {
+        if (!(df)){
         setImage("Shop_Welcome_Message[].png");
+        df = true;
     }    
+}
 }

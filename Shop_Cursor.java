@@ -31,7 +31,7 @@ public class Shop_Cursor extends Interface_Ai
 boolean General_Synopsis = true; 
 boolean Shop_Main_Menu = true;
 boolean timerCounter = true;
-boolean moveDF = false;
+public static boolean moveDF = false;
 boolean oS = false;
 //aka -> option selected = oS
 int y = 250;
@@ -39,7 +39,7 @@ int x = 310;
 int sprite_counter = 0;
 int timerCount = 0;
 int Shop_Option = 1;
-int oSC;
+static int oSC;
 //aka -> oSC = option selection choice
 
 
@@ -177,6 +177,7 @@ int oSC;
                                                                         System.out.println("Exit?");
                                                                         oSC = Shop_Option;
                                                                         }
+                  Player.cSI = oSC + 2;                                                      
                   oS = true;                                                      
                   
                 }
@@ -243,13 +244,15 @@ int oSC;
     }
 }
         
-public static int getOptionSelection(int optNum, int roomNum){
-if ((optNum == 14) && (roomNum == 3)){
-    
-}
-    
-return optNum & roomNum;    
-}
+// public static int getOptionSelection(int optNum, int roomNum){
+// if ((optNum == 3) && (roomNum == oSC)){
+//     System.out.println("roomNum = " + roomNum);
+// Player.setRoom();
+// 
+// }
+//     
+// return optNum & roomNum;    
+// }
     
 }    
 
