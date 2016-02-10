@@ -58,7 +58,7 @@ public class Fireball extends Player
            setImage("fire21.png");
         }
         if(counter == 22) {
-        level.addObject(new BattleScene(), 475, 300);
+        //level.addObject(new BattleScene(), 475, 300);
         level.removeObject(this);   
         Player.fireWait = false;
         }

@@ -36,6 +36,7 @@ public class background extends World
     int width = 39;
     int height = 39;
     int track_num = 1;
+    
 GreenfootSound Song;
 GreenfootSound Lobby = new GreenfootSound("043 - Silent Ground.wav");
 GreenfootSound Inn = new GreenfootSound("044 - The Inn.wav");
@@ -75,7 +76,7 @@ GreenfootSound Game_Start_Menu = new GreenfootSound("002 - Fire Emblem Theme.wav
 
     boolean GameStartScreen = false;
     boolean GameLobbyStart = false;
-    
+    boolean sbicCheck = false;
     boolean GameStartScreenMusicCheck = false;
     public static boolean sMSC = false;
     public static boolean smscheck = false;    
@@ -91,6 +92,7 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
     {    
         
         super(950, 600, 1, false);
+        
         
         
         
@@ -126,14 +128,17 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
                      
         
         
-        startImageRender();
+        //startImageRender();
         
 }
+
 public void startImageRender(){
-  
+  if (!(sbicCheck)){
   map_SBIC.scale(map_SBIC.getWidth()*6,map_SBIC.getHeight()*6);
   getBackground().drawImage(map_SBIC, -1400, -2045);
+  sbicCheck = true;
   
+}
     
     return;
 }
@@ -150,30 +155,15 @@ public static boolean startMenuSelect(boolean sMS){
     
 public void act(){
     if (sMSC){
-        //     addObject(new Trade_Instance(), 500, 300);
-//          
-//     addObject(new Menu_Background(), 475, 300);    
-//     // first shop items trade interface row 
-// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 250);
-//     addObject(new Trade_Inventory_Shop_Interface_LB(), 275, 300);
-// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 350);
-//     addObject(new Trade_Inventory_Shop_Interface_LB(), 275, 400);
-// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 450);
-//     addObject(new Trade_Inventory_Shop_Interface_LB(), 275, 500);
-// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 550);
-//     // next row 
-// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 250);
-//     addObject(new Trade_Inventory_Shop_Interface_LB(), 675, 300);
-// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 350);
-//     addObject(new Trade_Inventory_Shop_Interface_LB(), 675, 400);
-// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 450);
-//     addObject(new Trade_Inventory_Shop_Interface_LB(), 675, 500);
-// //     addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 550);
-//     
-        Class(getRandomNumberRange(1,5));
-        
+ 
+//         Class(getRandomNumberRange(1,5));
+         Class(3);
         //addObject(new cursor(),475,545);
+        addObject(new invBackground(), 475, 545);
         addObject(new Inventory_Tab(), 475, 545);
+        
+        
+        
         hit_tiles = hit_tiles_Lobby;
             largeImage = map_Lobby;
             //setBackground(map_Lobby);
@@ -194,7 +184,7 @@ changeSongTrack();
     }
         
     if (!(GameStartScreenMusicCheck)){
-            Song = Game_Start_Menu;
+            Song = Game_Start;
             changeSongTrack();
             GameStartScreenMusicCheck = true;
     }
@@ -242,6 +232,9 @@ public void play()
         cursor_check = true;
         
         ChangeMouseImage(cImageClicked, x, y);
+        
+        
+        
         
         
     }
@@ -317,6 +310,7 @@ public World getActor(){ return null; }
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
           if ((!(statement_3)) && (statement) && (statement_2)){
               System.out.println("check1-shop to lobby");
+              
 
             pos_x = -1690;
             
@@ -425,6 +419,7 @@ public World getActor(){ return null; }
         }
          
          if ((m == 3) && (statement_check) && (n == 2)){
+             
             largeImage = map_SBIC;
             setBackground(map_SBIC);
             System.out.println("System.Check.setBackground(map_SBIC)");
@@ -603,9 +598,9 @@ public void changeSongTrack(){
     Song.play();
     }
 }
-    if ((Song == Game_Start_Menu)){
+    if ((Song == Game_Start)){
     if (!(Song.isPlaying())){
-    Song = Game_Start_Menu;
+    Song = Game_Start;
     Song.play();
     }    
 }

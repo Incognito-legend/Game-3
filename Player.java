@@ -60,6 +60,7 @@ int y = 389;
     int S_LocX = 0;
     // S_LocX = 0 means that the cursor is on the left side of the interface, 1 means its on the right side.
     int S_Object;
+    int cmC = 0;
     boolean Pl = false;
     boolean Shop_Check = false;
     boolean a = false;
@@ -69,6 +70,8 @@ int y = 389;
     public static int cSI; // 1 to 14; 14 = exit; // change shop interface = cSI;
     public static boolean cSMI = false; // false = shop option is unselected; true = shop option has been selected; // change shop map instance = cSMI;
     public static boolean fireWait = false;
+    public static boolean statsWait = false;
+    public static boolean aspectCheck = false;
     public void act() 
     {
     
@@ -94,6 +97,10 @@ int y = 389;
   if (!(windowPane)){
       
       if (this instanceof Mage){
+          if (!(aspectCheck)){
+          Magic.aspect(getRandomNumberRange(1,6), 1);
+          aspectCheck = true;
+        }
           
       if ((Greenfoot.isKeyDown ("1")) && (!(fireWait))){
           
@@ -108,6 +115,14 @@ int y = 389;
          }
         fireWait = true;
       }
+      
+      if ((Greenfoot.isKeyDown("escape")) && (!(statsWait))){
+          //         level.setDefaultForMap(1);
+          //         level.changeMap(3,2);
+        level.addObject(new Magic(), 475,300);
+        statsWait = true;
+        }
+        
     }
     
       if (Greenfoot.isKeyDown ("a")){
@@ -467,6 +482,7 @@ if ((Room == Shop) && (!(windowPane))){
 
 if ((Room == Shop) && (windowPane)){
 //System.out.println("check shop instance");    
+
     //setSpeed(50);
 
     
@@ -474,6 +490,7 @@ if ((Room == Shop) && (windowPane)){
     if (!(Shop_Check))
     {
         // 1 = shop, 2 = blacksmith, 3 = arena, (coming soon: 4 = home);
+    if (cmC == 200){    
     setImage(SBIC);
     level.addObject(new Tutorial_Guide(), 100, 100);
     level.addObject(new Trade_Instance(), 500, 300);
@@ -515,10 +532,19 @@ if ((Room == Shop) && (windowPane)){
 
     level.addObject(new Shop_Cursor_Images(), 310, 250);
     
-    level.setDefaultForMap(1);
-    level.changeMap(3,2);
+    
     Shop_Pan2 = false;
+    
+
+
+}
+    if (cmC == 300){
+    level.setDefaultForMap(1);
+    level.changeMap(3,2);    
+    
     Shop_Check = true;
+}
+cmC = (cmC + 1);
 }
 if ((Shop_Check) && (!(Shop_Pan2))){
     setRoom();
@@ -604,34 +630,35 @@ if ((Shop_Check) && (!(Shop_Pan2))){
 
 public void Stats(){
     if (!(Game_Start_Instance)){
+        
     background level = (background)this.getWorld();
     
     
-    int Affinity_ = (level.getRandomNumberRange(1,10));
+    int Affinity_ = (getRandomNumberRange(1,10));
     
     System.out.println("Affinity: " + Affinity_);
     
-    int Aid_ = (level.getRandomNumberRange(1,10));
+    int Aid_ = (getRandomNumberRange(1,10));
     
     System.out.println("Aid: " + Aid_);
     
-    int Attack_Speed_ = (level.getRandomNumberRange(1,10));
+    int Attack_Speed_ = (getRandomNumberRange(1,10));
     
     System.out.println("Attack Speed: " + Attack_Speed_);
     
-    int Constitution_ = (level.getRandomNumberRange(1,10));
+    int Constitution_ = (getRandomNumberRange(1,10));
     
     System.out.println("Constitution: " + Constitution_);
     
-    int Defense_ = (level.getRandomNumberRange(1,10));
+    int Defense_ = (getRandomNumberRange(1,10));
     
     System.out.println("Defense: " + Defense_);
     
-    int Hp_ = (level.getRandomNumberRange(1,10));
+    int Hp_ = (getRandomNumberRange(1,10));
     
     System.out.println("Hp: " + Hp_);
     
-    int Leadership_ = (level.getRandomNumberRange(1,10));
+    int Leadership_ = (getRandomNumberRange(1,10));
     
     System.out.println("Leadership: " + Leadership_);
     
@@ -639,11 +666,11 @@ public void Stats(){
     
     System.out.println("Level: " + Level_);
     
-    int Luck_ = (level.getRandomNumberRange(1,10));
+    int Luck_ = (getRandomNumberRange(1,10));
     
     System.out.println("Luck: " + Luck_);
     
-    int Magic_ = (level.getRandomNumberRange(1,10));
+    int Magic_ = (getRandomNumberRange(1,10));
     
     System.out.println("Magic: " + Magic_);
     
@@ -651,7 +678,7 @@ public void Stats(){
     
     System.out.println("Maximum Hp: " + Maximum_Hp_);
     
-    int Movement_ = (level.getRandomNumberRange(1,10));
+    int Movement_ = (getRandomNumberRange(1,10));
     
     System.out.println("Movement: " + Movement_);
     
@@ -659,39 +686,39 @@ public void Stats(){
     
     System.out.println("Movement_Star: " + Movement_Star_);
     
-    int Pursuit_Critical_Coefficient_ = (level.getRandomNumberRange(1,10));
+    int Pursuit_Critical_Coefficient_ = (getRandomNumberRange(1,10));
     
     System.out.println("PCC: " + Pursuit_Critical_Coefficient_);
     
-    int Relative_Power_ = (level.getRandomNumberRange(1,10));
+    int Relative_Power_ = (getRandomNumberRange(1,10));
     
     System.out.println("RP: " + Relative_Power_);
     
-    int Resistance_ = (level.getRandomNumberRange(1,10));
+    int Resistance_ = (getRandomNumberRange(1,10));
     
     System.out.println("Resistance: " + Resistance_);
     
-    int Skill_ = (level.getRandomNumberRange(1,10));
+    int Skill_ = (getRandomNumberRange(1,10));
     
     System.out.println("Skill: " + Skill_);
     
-    int Speed_ = (level.getRandomNumberRange(1,10));
+    int Speed_ = (getRandomNumberRange(1,10));
     
     System.out.println("Speed: " + Speed_);
     
-    int Strength_ = (level.getRandomNumberRange(1,10));
+    int Strength_ = (getRandomNumberRange(1,10));
     
     System.out.println("Strength: " + Strength_);
     
-    int Weapon_Level_ = (level.getRandomNumberRange(1,10));
+    int Weapon_Level_ = (getRandomNumberRange(1,10));
     
     System.out.println("Weapon Level: " + Weapon_Level_);
     
-    int Weapon_Rank_ = (level.getRandomNumberRange(1,10));
+    int Weapon_Rank_ = (getRandomNumberRange(1,10));
     
     System.out.println("Weapon Rank: " + Weapon_Rank_);
     
-    int Weight_ = (level.getRandomNumberRange(1,10));
+    int Weight_ = (getRandomNumberRange(1,10));
     
     System.out.println("Weight: " + Weight_);
     
@@ -715,10 +742,13 @@ if (!(Game_Start_Instance)){
 }
 return checkStart;
 }
-
-
-
+public int getRandomNumberRange(int start, int end){
+    int normal = Greenfoot.getRandomNumber(end-start+1);
+    return normal+start;
 }
+
+
+
 
 //-------------------------------------------------------------------------------
 
@@ -729,11 +759,13 @@ return checkStart;
 // //Get the most recently pressed key, since the last time this method was called.
 // }
 // 
-//  static void setSpeed(int speed){
-//      System.out.println("Speed =" + speed);
-//      //Set the speed of the execution.
-//  }
-
+ static void setSpeed(int speed){
+     
+     
+     System.out.println("Speed =" + speed);
+     //Set the speed of the execution.
+ }
+}
 // 
 // 
 // static void start(){

@@ -8,12 +8,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Fire_Magic extends Magic
 {
-    /**
-     * Act - do whatever the Fire_Magic wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+    
+    boolean magicStatsWindowCheck = false;
+    
+    int check = 1;
+     public void act() 
     {
-        // Add your action code here.
-    }    
+        background level = (background)this.getWorld();
+        if (!(magicStatsWindowCheck)){
+            setImage("Fire Aspect - Transparent Background.png");
+            GreenfootImage image = getImage();
+            image.scale(14*3, 14*3);
+            setImage(image);
+            
+            magicStatsWindowCheck = true;
+    }
+    if (check == 100){
+    
+    }
+    check = (check + 1) % 101;
+    } 
+    void setTransparency(int t){}
 }
