@@ -16,9 +16,9 @@ public class Shop_option_14 extends Shop
         setImage("Shop_Exit[].png");
         df = true;
     }
-    if (background.removeShopObjects(true)){
-        level.removeObject(this);
-    }    
+//     if (background.removeShopObjects(true)){
+//         level.removeObject(this);
+//     }    
     
 }
 }

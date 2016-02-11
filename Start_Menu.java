@@ -80,7 +80,7 @@ background.startMenuSelect(true);
 level.removeObject(this);
 }
 }
-void setTransparency(int t){}
+public void setTransparency(int t){}
 
 // public void fade(int f)
 //     {

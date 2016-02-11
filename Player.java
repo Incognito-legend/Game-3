@@ -117,8 +117,8 @@ int y = 389;
       }
       
       if ((Greenfoot.isKeyDown("escape")) && (!(statsWait))){
-          //         level.setDefaultForMap(1);
-          //         level.changeMap(3,2);
+        level.setDefaultForMap(1);
+        level.changeMap(3,2);
         level.addObject(new Magic(), 475,300);
         statsWait = true;
         }
@@ -490,6 +490,11 @@ if ((Room == Shop) && (windowPane)){
     if (!(Shop_Check))
     {
         // 1 = shop, 2 = blacksmith, 3 = arena, (coming soon: 4 = home);
+        if (cmC == 1){
+    level.addObject(new SBIC_Resize_Wx6_Hx6(), 475,300);
+    
+    
+}
     if (cmC == 200){    
     setImage(SBIC);
     level.addObject(new Tutorial_Guide(), 100, 100);
@@ -502,6 +507,8 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 450);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 500);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 550);
+}
+    if (cmC == 300){
     // next row 
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 250);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 300);
@@ -510,6 +517,8 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 450);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 500);
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 550);
+}
+if (cmC == 400){
     //------------------------------------------------------------------
     level.addObject(new Shop_Welcome_Message(), 500, 50); 
     //------------------------------------------------------------------
@@ -521,6 +530,8 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Shop_option_5(), 300, 450);
     level.addObject(new Shop_option_6(), 300, 500);
     level.addObject(new Shop_option_7(), 300, 550);
+}
+if (cmC == 500){
     // next Text row 
     level.addObject(new Shop_option_8(), 700, 250);
     level.addObject(new Shop_option_9(), 700, 300);
@@ -533,14 +544,14 @@ if ((Room == Shop) && (windowPane)){
     level.addObject(new Shop_Cursor_Images(), 310, 250);
     
     
+    
     Shop_Pan2 = false;
     
 
 
 }
-    if (cmC == 300){
-    level.setDefaultForMap(1);
-    level.changeMap(3,2);    
+    if (cmC == 600){
+    
     
     Shop_Check = true;
 }

@@ -128,7 +128,7 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
                      
         
         
-        //startImageRender();
+        startImageRender();
         
 }
 
@@ -178,9 +178,9 @@ changeSongTrack();
     }
     if (!(GameStartScreen)){
         
-        GameStartScreen = true;
-        addObject(new Start_Menu(),475,300);
         
+        addObject(new Start_Menu(),475,300);
+        GameStartScreen = true;
     }
         
     if (!(GameStartScreenMusicCheck)){
@@ -422,6 +422,7 @@ public World getActor(){ return null; }
              
             largeImage = map_SBIC;
             setBackground(map_SBIC);
+            
             System.out.println("System.Check.setBackground(map_SBIC)");
             largeImage.scale(largeImage.getWidth()*6,largeImage.getHeight()*6);
             Song = Shop;
