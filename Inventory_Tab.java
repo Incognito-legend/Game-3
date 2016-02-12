@@ -1,7 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * This is the inventory tab for the player, all items will be placed in this, and the following code in public void act(){...} will effect all items when picked up.
+ * This is the inventory tab for the player.
+ * All items picked up and/or bought will be stored/placed in this.
+ * The following code in public void act(){...} will effect all items when picked up.
  * 
  * @author Cameron Wilson
  * @version 1/12/2016, 11:11 AM.

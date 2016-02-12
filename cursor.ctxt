@@ -2,4 +2,6 @@
 comment0.target=cursor
 comment1.params=
 comment1.target=void\ act()
-numComments=2
+comment2.params=cdfCheck
+comment2.target=boolean\ DF_Check(boolean)
+numComments=3

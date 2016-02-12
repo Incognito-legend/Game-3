@@ -73,7 +73,8 @@ GreenfootSound Game_Start_Menu = new GreenfootSound("002 - Fire Emblem Theme.wav
     boolean shop_check_df = true;
     boolean scDF = true;
     int timer;
-
+    int cDS = 0; // countdownStart;
+    boolean cDSC = false; // countdownStartCheck;
     boolean GameStartScreen = false;
     boolean GameLobbyStart = false;
     boolean sbicCheck = false;
@@ -97,11 +98,7 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
         
         
         Date d = new Date();
-        //addObject(new Palladin(), 475, 300);
-//         Class(getRandomNumberRange(1,5));
-//         
-//         addObject(new cursor(),475,545);
-//         addObject(new Inventory_Tab(), 475, 545);
+
         
                 
         
@@ -128,8 +125,8 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
                      
         
         
-        startImageRender();
         
+        cDSC = true;
 }
 
 public void startImageRender(){
@@ -137,6 +134,7 @@ public void startImageRender(){
   map_SBIC.scale(map_SBIC.getWidth()*6,map_SBIC.getHeight()*6);
   getBackground().drawImage(map_SBIC, -1400, -2045);
   sbicCheck = true;
+  
   
 }
     
@@ -150,12 +148,19 @@ public static boolean startMenuSelect(boolean sMS){
     smscheck = true;
     }
 }
-    return true;
+    return sMS;
 }
     
 public void act(){
+    if (cDSC){
+        cDS = (cDS + 1);
+        if (cDS == 100){}
+    
+    
+    
+}
     if (sMSC){
- 
+        if
 //         Class(getRandomNumberRange(1,5));
          Class(3);
         //addObject(new cursor(),475,545);
@@ -177,7 +182,8 @@ changeSongTrack();
     sMSC = false;
     }
     if (!(GameStartScreen)){
-        
+        repaint();
+        Color.Begin();
         
         addObject(new Start_Menu(),475,300);
         GameStartScreen = true;
@@ -623,6 +629,13 @@ public void changeSongTrack(){
     Song.play();
 }
 }
+}
+
+public void repaint(){
+/**
+ * Repaints the world.
+ */
+
 }
 
 }

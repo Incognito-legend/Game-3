@@ -74,7 +74,7 @@ int y = 389;
     public static boolean aspectCheck = false;
     public void act() 
     {
-    
+        setSpeed(48);
     
         background level = (background)this.getWorld();
 
@@ -491,71 +491,85 @@ if ((Room == Shop) && (windowPane)){
     {
         // 1 = shop, 2 = blacksmith, 3 = arena, (coming soon: 4 = home);
         if (cmC == 1){
-    level.addObject(new SBIC_Resize_Wx6_Hx6(), 475,300);
+    level.addObject(new SBIC_Resize(), 475,300);
     
     
 }
-    if (cmC == 200){    
+       if (cmC == 20){    
     setImage(SBIC);
+} else if (cmC == 40){
     level.addObject(new Tutorial_Guide(), 100, 100);
+} else if (cmC == 60){ 
     level.addObject(new Trade_Instance(), 500, 300);
-    // first shop items trade interface row 
+} else if (cmC == 80){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 250);
+} else if (cmC == 100){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 300);
+} else if (cmC == 120){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 350);
+} else if (cmC == 140){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 400);
+} else if (cmC == 160){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 450);
+} else if (cmC == 180){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 500);
+} else if (cmC == 200){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 300, 550);
-}
-    if (cmC == 300){
-    // next row 
+} else if (cmC == 220){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 250);
+} else if (cmC == 240){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 300);
+} else if (cmC == 260){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 350);
+} else if (cmC == 280){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 400);
+} else if (cmC == 300){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 450);
+} else if (cmC == 320){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 500);
+} else if (cmC == 340){
     level.addObject(new Trade_Inventory_Shop_Interface_LB(), 700, 550);
-}
-if (cmC == 400){
-    //------------------------------------------------------------------
+} else if (cmC == 360){
     level.addObject(new Shop_Welcome_Message(), 500, 50); 
-    //------------------------------------------------------------------
-    // first shop items trade interface Text row 
+} else if (cmC == 380){
     level.addObject(new Shop_option_1(), 300, 250);
+} else if (cmC == 400){
     level.addObject(new Shop_option_2(), 300, 300);
-    level.addObject(new Shop_option_3(), 300, 350);
+} else if (cmC == 420){    
+    level.addObject(new Shop_option_3(), 300, 350); 
+} else if (cmC == 440){    
     level.addObject(new Shop_option_4(), 300, 400);
+} else if (cmC == 460){    
     level.addObject(new Shop_option_5(), 300, 450);
+} else if (cmC == 480){    
     level.addObject(new Shop_option_6(), 300, 500);
+} else if (cmC == 500){    
     level.addObject(new Shop_option_7(), 300, 550);
-}
-if (cmC == 500){
-    // next Text row 
+} else if (cmC == 520){    
     level.addObject(new Shop_option_8(), 700, 250);
+} else if (cmC == 540){    
     level.addObject(new Shop_option_9(), 700, 300);
+} else if (cmC == 560){    
     level.addObject(new Shop_option_10(), 700, 350);
+} else if (cmC == 580){    
     level.addObject(new Shop_option_11(), 700, 400);
+} else if (cmC == 600){    
     level.addObject(new Shop_option_12(), 700, 450);
-    
+} else if (cmC == 620){    
     level.addObject(new Shop_option_14(), 700, 550);
-
+} else if (cmC == 640){    
     level.addObject(new Shop_Cursor_Images(), 310, 250);
-    
-    
-    
+} else if (cmC == 660){
     Shop_Pan2 = false;
-    
-
-
-}
-    if (cmC == 600){
-    
-    
     Shop_Check = true;
 }
-cmC = (cmC + 1);
+
+    if (cmC < 660){
+    cmC = (cmC + 1);
+    
+    
+}
+
 }
 if ((Shop_Check) && (!(Shop_Pan2))){
     setRoom();

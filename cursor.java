@@ -11,38 +11,37 @@ public class cursor extends Actor
     boolean cdf = false;
     int x;
     int y;
-    
-    
-
-//  
-// public void act()
-// {
-//     if (timer > 0)
-//     {
-//         timer--;
-//         if (timer == 0) /* change image back */;
-//     }
-//     else if (Greenfoot.mouseClicked(this))
-//     {
-//         play();
-//         setImage("left.png");
-//         timer = 100;
-//     }
-// }
+    static boolean cdfCheckTwo = true;
     public void act() 
     {
         background wc = (background)this.getWorld();
         if (!(cdf)){
         wc.ChangeMouseImage(cImage, x, y);
         cdf = true;
-    }    
+    }
+    
+        if (Greenfoot.mouseClicked(this)){
+            
+             
+        
+        }
 
-
-
+        if (background.mousePressed(true)){
+            if(background.bcc){
+            DF_Check(true);
+        }
+            if (!(cdfCheckTwo)){
+        }
+    }
     
 
     
     
-}
-
+ }
+  public static boolean DF_Check(boolean cdfCheck){
+   if (cdfCheck){
+        cdfCheckTwo = false;
+   }
+    return cdfCheck;
+  }
 }

@@ -88,46 +88,46 @@ static int oSC;
                     if (moveDF){
                     if ((x == 310) && (y == 250)){
                     Shop_Option = 1;
-                    System.out.println(Shop_Option);
+                    
                     } else if ((x == 310) && (y == 300)){
                         Shop_Option = 2;
-                        System.out.println(Shop_Option);
+                        
                         } else if ((x == 310) && (y == 350)){
                             Shop_Option = 3;
-                            System.out.println(Shop_Option);
+                            
                             } else if ((x == 310) && (y == 400)){
                                 Shop_Option = 4;
-                                System.out.println(Shop_Option);
+                                
                                 } else if ((x == 310) && (y == 450)){
                                     Shop_Option = 5;
-                                    System.out.println(Shop_Option);
+                                    
                                     } else if ((x == 310) && (y == 500)){
                                         Shop_Option = 6;
-                                        System.out.println(Shop_Option);
+                                        
                                         } else if ((x == 310) && (y == 550)){
                                             Shop_Option = 7;
-                                            System.out.println(Shop_Option);
+                                            
                     } else if ((x == 710) && (y == 250)){
                         Shop_Option = 8;
-                        System.out.println(Shop_Option);
+                        
                         } else if ((x == 710) && (y == 300)){
                             Shop_Option = 9;
-                            System.out.println(Shop_Option);
+                            
                             } else if ((x == 710) && (y == 350)){
                                 Shop_Option = 10;
-                                System.out.println(Shop_Option);
+                                
                                 } else if ((x == 710) && (y == 400)){
                                     Shop_Option = 11;
-                                    System.out.println(Shop_Option);
+                                    
                                     } else if ((x == 710) && (y == 450)){
                                         Shop_Option = 12;
-                                        System.out.println(Shop_Option);
+                                        
                                         } else if ((x == 710) && (y == 500)){
                                             Shop_Option = 13;
-                                            System.out.println(Shop_Option);
+                                            
                                             } else if ((x == 710) && (y == 550)){
                                                 Shop_Option = 14;
-                                                System.out.println(Shop_Option);
+                                                
                                                 
                     }
                     moveDF = false;
