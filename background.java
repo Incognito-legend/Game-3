@@ -81,7 +81,7 @@ GreenfootSound Game_Start_Menu = new GreenfootSound("002 - Fire Emblem Theme.wav
     boolean GameStartScreenMusicCheck = false;
     public static boolean sMSC = false;
     public static boolean smscheck = false;    
-            
+    public static boolean bcc = false;        
     JPanel Pan = WorldHandler.getInstance().getWorldCanvas();  
     /** The new Cursor */
     Cursor NewCursor;
@@ -94,7 +94,7 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
         
         super(950, 600, 1, false);
         
-        
+        addObject(new Items(), 475, 300);
         
         
         Date d = new Date();
@@ -154,13 +154,17 @@ public static boolean startMenuSelect(boolean sMS){
 public void act(){
     if (cDSC){
         cDS = (cDS + 1);
-        if (cDS == 100){}
+        if (cDS == 100){
+            bcc = true;
+            
+            cDSC = false;
+        }
     
     
     
 }
     if (sMSC){
-        if
+//         if (bcc){
 //         Class(getRandomNumberRange(1,5));
          Class(3);
         //addObject(new cursor(),475,545);
@@ -180,10 +184,11 @@ Song = Lobby;
 
 changeSongTrack();
     sMSC = false;
+// }
     }
     if (!(GameStartScreen)){
-        repaint();
-        Color.Begin();
+        //repaint();
+        //Color.Begin();
         
         addObject(new Start_Menu(),475,300);
         GameStartScreen = true;

@@ -241,8 +241,10 @@ int y = 389;
         lastWayFacing = "s";
 //         System.out.println("hero moved down, Tile: " + hero_x + ", " + hero_y);
 //         System.out.println(level.pos_x + ", " + level.pos_y);
-    //end of Player movement
-    //Beginning of Artificial movement
+
+    // end of Player movement
+    
+    // Beginning of Artificial movement
     } 
         else 
     {
@@ -255,11 +257,7 @@ int y = 389;
         } else if (lastWayFacing.equals("d")) {
             setImage(right2);
         }
-//          if ((Room == Shop) && (windowPane)){
-//          level.setDefaultForMap(1);
-//          level.changeMap(3,2);
-//          setImage(SBIC);        
-//          }
+        // end of Artificial movement
     }
     
     
@@ -267,7 +265,7 @@ int y = 389;
 
         
   
-       //end of Artificial movement
+       
     // Tile Definitions
        if (level.getTileAt(hero_x, hero_y) == 3){
         System.out.println("You're at your house!");
@@ -307,22 +305,6 @@ int y = 389;
         dirtyFlag1 = false;
         
     }
-    //        if (Class == 1 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof hunter)){
-        //        dirtyFlag1 = true;
-        //        level.addObject(new hunter(), 512, 389);
-        //     }  else if (Class == 3 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof Mage)){
-            //        dirtyFlag1 = true;
-            //        level.addObject(new Mage(), 512, 389);
-            //     }  else if (Class == 4 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof Palladin)){
-                //        dirtyFlag1 = true;
-                //        level.addObject(new Palladin(), 512, 389);
-                //     }  else if (Class == 5 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof Warrior)){
-                    //        dirtyFlag1 = true;
-                    //        level.addObject(new Warrior(), 512, 389);
-                    //     }  else if (Class == 2 && (level.getTileAt(hero_x, hero_y) == 5) && dirtyFlag1 == false && (this instanceof Druid)){
-                        //        dirtyFlag1 = true;
-                        //        level.addObject(new Druid(), 512, 389);
-                        //     }
        if (level.getTileAt(hero_x, hero_y) == 7 && !(this instanceof hunter)){
         level.removeObject(this);
         System.out.println("You have chosen the [ Hunter ] !");
@@ -358,23 +340,6 @@ int y = 389;
         level.Class(5);
         Player_Stats = true;
     }
-
-//         if (!level.music.isPlaying()) {
-//         level.track_num++;
-//         
-//         if(level.track_num > 100) {
-//             level.track_num = 1;
-//         }
-//         
-//         if( level.track_num == 1) {
-//             
-//            level.music = new GreenfootSound("079 - Shattered Life.wav");
-//         } else if( level.track_num == 2)  {
-//             
-//            level.music = new GreenfootSound("043 - Silent Ground.wav");
-//         }
-//             level.music.play();
-//     }
 }
 
 

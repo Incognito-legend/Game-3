@@ -73,12 +73,6 @@ public static void shopMode(){
     }
      if (sStage == 1){
          
-//        Shop_Cursor.getOptionSelection(optNum = 14, roomNum = 2);
-       
-//         if ((optNum == 14) && (roomNum == 2)){
-//             
-//         }
-        
      }
     
     return;

@@ -11,7 +11,7 @@ public class cursor extends Actor
     boolean cdf = false;
     int x;
     int y;
-    static boolean cdfCheckTwo = true;
+    static boolean cdfCheckTwo;
     public void act() 
     {
         background wc = (background)this.getWorld();
@@ -28,9 +28,12 @@ public class cursor extends Actor
 
         if (background.mousePressed(true)){
             if(background.bcc){
-            DF_Check(true);
+            DF_Check(false);
         }
             if (!(cdfCheckTwo)){
+                
+        } else if (cdfCheckTwo){
+            
         }
     }
     
@@ -41,7 +44,9 @@ public class cursor extends Actor
   public static boolean DF_Check(boolean cdfCheck){
    if (cdfCheck){
         cdfCheckTwo = false;
-   }
+   } else if (!(cdfCheck)){
+        cdfCheckTwo = true;
+    }
     return cdfCheck;
   }
 }

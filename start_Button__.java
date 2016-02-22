@@ -8,7 +8,10 @@ public class start_Button__ extends Start_Menu
     {
         background level = (background)this.getWorld();
         
-        if ((background.smscheck) || (cursor.DF_Check(true))){
+//         if ((background.smscheck) || (cursor.DF_Check(true))){
+//             level.removeObject(this);
+//     }    
+ if (background.smscheck){
             level.removeObject(this);
     }    
 }
