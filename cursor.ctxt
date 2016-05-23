@@ -1,7 +1,6 @@
 #BlueJ class context
-comment0.target=cursor
-comment1.params=
-comment1.target=void\ act()
-comment2.params=cdfCheck
-comment2.target=boolean\ DF_Check(boolean)
-numComments=3
+comment0.params=
+comment0.target=void\ act()
+comment1.params=cdfCheck
+comment1.target=boolean\ DF_Check(boolean)
+numComments=2

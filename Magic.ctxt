@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=Magic
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Magic\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ act()
-comment2.params=type\ aspectRank
-comment2.target=int\ aspect(int,\ int)
-comment3.params=t
-comment3.target=void\ setTransparency(int)
-numComments=4
+comment0.params=
+comment0.target=void\ act()
+comment1.params=type\ aspectRank
+comment1.target=int\ aspect(int,\ int)
+comment2.params=t
+comment2.target=void\ setTransparency(int)
+numComments=3

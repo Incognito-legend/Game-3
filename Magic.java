@@ -20,6 +20,10 @@ public class Magic extends Symbols
      public void act() 
     {
         background level = (background)this.getWorld();
+        if ((Greenfoot.isKeyDown("escape")) && (Player.statsWait)){
+            level.removeObject(this);
+        }
+        
         if (!(magicStatsWindowCheck)){
             
             

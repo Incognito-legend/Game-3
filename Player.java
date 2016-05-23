@@ -72,6 +72,7 @@ int y = 389;
     public static boolean fireWait = false;
     public static boolean statsWait = false;
     public static boolean aspectCheck = false;
+    public static boolean statsWait_ = false;
     public void act() 
     {
         setSpeed(48);
@@ -116,12 +117,43 @@ int y = 389;
         fireWait = true;
       }
       
+      if ((Greenfoot.isKeyDown ("2")) && (!(fireWait))){
+          
+          if (lastWayFacing == "a"){
+          level.addObject(new Fimbulvatr(), 275, 300);
+         } else if (lastWayFacing == "w"){
+           level.addObject(new Fimbulvatr(), 475, 100);
+         } else if (lastWayFacing == "s"){
+           level.addObject(new Fimbulvatr(), 475, 500);
+         } else if (lastWayFacing == "d"){
+           level.addObject(new Fimbulvatr(), 675, 300);
+         }
+        fireWait = true;
+      }
+      
+      if ((Greenfoot.isKeyDown ("3")) && (!(fireWait))){
+          
+          if (lastWayFacing == "a"){
+          level.addObject(new Elfire(), 275, 300);
+         } else if (lastWayFacing == "w"){
+           level.addObject(new Elfire(), 475, 100);
+         } else if (lastWayFacing == "s"){
+           level.addObject(new Elfire(), 475, 500);
+         } else if (lastWayFacing == "d"){
+           level.addObject(new Elfire(), 675, 300);
+         }
+        fireWait = true;
+      }
+      
       if ((Greenfoot.isKeyDown("escape")) && (!(statsWait))){
         level.setDefaultForMap(1);
         level.changeMap(3,2);
         level.addObject(new Magic(), 475,300);
         statsWait = true;
+        statsWait_ = true;
         }
+        
+      
         
     }
     

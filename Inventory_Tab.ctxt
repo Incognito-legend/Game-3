@@ -1,14 +1,12 @@
 #BlueJ class context
-comment0.target=Inventory_Tab
-comment0.text=\r\n\ This\ is\ the\ inventory\ tab\ for\ the\ player.\r\n\ All\ items\ picked\ up\ and/or\ bought\ will\ be\ stored/placed\ in\ this.\r\n\ The\ following\ code\ in\ public\ void\ act(){...}\ will\ effect\ all\ items\ when\ picked\ up.\r\n\ \r\n\ @author\ Cameron\ Wilson\r\n\ @version\ 1/12/2016,\ 11\:11\ AM.\r\n
-comment1.params=
-comment1.target=void\ act()
-comment2.params=t
-comment2.target=void\ setTransparency(int)
+comment0.params=
+comment0.target=void\ act()
+comment1.params=t
+comment1.target=void\ setTransparency(int)
+comment2.params=
+comment2.target=void\ shopMode()
 comment3.params=
-comment3.target=void\ shopMode()
+comment3.target=void\ invTabImgOpen()
 comment4.params=
-comment4.target=void\ invTabImgOpen()
-comment5.params=
-comment5.target=void\ invTabImgClose()
-numComments=6
+comment4.target=void\ invTabImgClose()
+numComments=5

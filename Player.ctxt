@@ -1,15 +1,14 @@
 #BlueJ class context
-comment0.target=Player
+comment0.params=
+comment0.target=void\ act()
 comment1.params=
-comment1.target=void\ act()
+comment1.target=void\ setRoom()
 comment2.params=
-comment2.target=void\ setRoom()
-comment3.params=
-comment3.target=void\ Stats()
-comment4.params=checkStart
-comment4.target=boolean\ GameStart(boolean)
-comment5.params=start\ end
-comment5.target=int\ getRandomNumberRange(int,\ int)
-comment6.params=speed
-comment6.target=void\ setSpeed(int)
-numComments=7
+comment2.target=void\ Stats()
+comment3.params=checkStart
+comment3.target=boolean\ GameStart(boolean)
+comment4.params=start\ end
+comment4.target=int\ getRandomNumberRange(int,\ int)
+comment5.params=speed
+comment5.target=void\ setSpeed(int)
+numComments=6

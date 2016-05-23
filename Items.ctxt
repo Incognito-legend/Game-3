@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=Items
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Items\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.params=
+comment0.target=void\ act()
 comment1.params=
-comment1.target=void\ act()
-comment2.params=
-comment2.target=void\ Items()
-comment3.params=ItemData
-comment3.target=int\ getItemID(int)
-numComments=4
+comment1.target=void\ Items()
+comment2.params=ItemData
+comment2.target=int\ getItemID(int)
+numComments=3
