@@ -94,7 +94,7 @@ GreenfootImage cImageClicked = new GreenfootImage("Mouse_Cursor_Clicked.png");
         
         super(950, 600, 1, false);
         
-        addObject(new Items(), 475, 300);
+        addObject(new Items(), 575, 300);
         
         
         Date d = new Date();
