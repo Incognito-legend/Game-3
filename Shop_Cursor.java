@@ -27,7 +27,8 @@ public class Shop_Cursor extends Interface_Ai
     String s15;
     String s16;
     String s17;
-
+public static boolean spellsShopCheck = false;
+public static boolean setRoom = false;    
 boolean General_Synopsis = true; 
 boolean Shop_Main_Menu = true;
 boolean timerCounter = true;
@@ -137,51 +138,65 @@ static int oSC;
                   if (Shop_Option == 1){
                     System.out.println("Spells");
                     oSC = Shop_Option;
+                    oS = true;     
                     }else if (Shop_Option == 2){
                         System.out.println("Melee Weapons"); 
                         oSC = Shop_Option;
+                        oS = true;     
                         }else if (Shop_Option == 3){
                             System.out.println("Ranged Weapons");
                             oSC = Shop_Option; 
+                            oS = true;     
                             }else if (Shop_Option == 4){
                                 System.out.println("Staves");
                                 oSC = Shop_Option; 
+                                oS = true;     
                                 }else if (Shop_Option == 5){
                                     System.out.println("Relics");
                                     oSC = Shop_Option; 
+                                    oS = true;     
                                     }else if (Shop_Option == 6){
                                         System.out.println("Items");
-                                        oSC = Shop_Option; 
+                                        oSC = Shop_Option;
+                                        oS = true;     
                                         }else if (Shop_Option == 7){
                                             System.out.println("Materials");
                                             oSC = Shop_Option;
+                                            oS = true;     
                                             }else if (Shop_Option == 8){
                                                 System.out.println("Miscelaneous");
                                                 oSC = Shop_Option;
+                                                oS = true;     
                                                 }else if (Shop_Option == 9){
                                                     System.out.println("Enchanting");
                                                     oSC = Shop_Option;
+                                                    oS = true;                
                                                     }else if (Shop_Option == 10){
                                                         System.out.println("Rare Goods");
                                                         oSC = Shop_Option;
+                                                        oS = true;     
                                                         }else if (Shop_Option == 11){
                                                             System.out.println("Ammo");
                                                             oSC = Shop_Option;
+                                                            oS = true;     
                                                             }else if (Shop_Option == 12){
                                                                 System.out.println("Magic Skills");
                                                                 oSC = Shop_Option;
+                                                                oS = true;     
                                                                 }else if (Shop_Option == 13){
                                                                     System.out.println("Unspecified (Unknown Selection)");
                                                                     oSC = Shop_Option;
+                                                                    oS = true;     
                                                                     }else if (Shop_Option == 14){
                                                                         System.out.println("Exit?");
                                                                         oSC = Shop_Option;
+                                                                        oS = true;     
                                                                         }
-                  Player.cSI = oSC + 2;                                                      
-                  oS = true;                                                      
+                                                                     
                   
                 }
-                    
+                
+                if ((oS) && (!(setRoom))) { Player.cSI = oSC + 2; setRoom = true; }
                     
         if (timerCounter){
             timerCount = 0;

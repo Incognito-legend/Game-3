@@ -15,7 +15,11 @@ public class Shop extends Player
      */
     public void act() 
     {
-        // Add your action code here.
+        if (Shop_Cursor.spellsShopCheck) {
+            
+            
+            
+        }
     }
     
 }

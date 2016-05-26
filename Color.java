@@ -10,15 +10,15 @@ public class Color extends background
 {
     
 
-    /**
-     * Constructor for objects of class Color.
-     * 
-     */
+    public void act()
+    {
+        Begin();
+    }
     public static void Color()
     {
         
     }
-    public static void Begin(){
+    public void Begin(){
         int[] x = { 
                 50, 61, 83, 69, 71, 50, 29, 31, 17, 39
      };
@@ -27,6 +27,7 @@ public class Color extends background
         // Read one array element each time through the for loop
       for (int i = 0; i < x.length; i++) {
         drawRect(0, i*10, x[i], 8);
+        System.out.println("output check 1");
       }
                                              
     }

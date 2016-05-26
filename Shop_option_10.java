@@ -15,5 +15,11 @@ public class Shop_option_10 extends Shop
         setImage("Shop_option_10[].png");
         df = true;
     }    
+    background level = (background)this.getWorld();
+    if (Shop_Cursor.setRoom) {
+                
+            level.removeObject(this);
+            
+        }
 }
 }

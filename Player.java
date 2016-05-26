@@ -75,7 +75,7 @@ int y = 389;
     public static boolean statsWait_ = false;
     public void act() 
     {
-        setSpeed(48);
+//         setSpeed(48);
     
         background level = (background)this.getWorld();
 
@@ -576,6 +576,7 @@ if ((Shop_Check) && (!(Shop_Pan2))){
          if (cSI == 3){
                 System.out.println("Spells: Here's a collection of _Spell Tomes_ I've gathered over the years!");
                 level.changeMap(3,3);
+                Shop_Cursor.spellsShopCheck = true;
                 Shop_Pan2 = true;
                 } else if (cSI == 4){
                     System.out.println("Melee Weapons: Swords, spears, axes... I've got all seek on sale here!"); 
@@ -655,6 +656,7 @@ public void Stats(){
         
     background level = (background)this.getWorld();
     
+    System.out.println("-------------------------------------------------------------------------------------");
     
     int Affinity_ = (getRandomNumberRange(1,10));
     
@@ -744,6 +746,8 @@ public void Stats(){
     
     System.out.println("Weight: " + Weight_);
     
+    System.out.println("-------------------------------------------------------------------------------------");
+    
     Initialization = false;
     
     
@@ -781,12 +785,12 @@ public int getRandomNumberRange(int start, int end){
 // //Get the most recently pressed key, since the last time this method was called.
 // }
 // 
- static void setSpeed(int speed){
-     
-     
-     System.out.println("Speed =" + speed);
-     //Set the speed of the execution.
- }
+//  static void setSpeed(int speed){
+//      
+//      
+//      System.out.println("Speed =" + speed);
+//      //Set the speed of the execution.
+//  }
 }
 // 
 // 

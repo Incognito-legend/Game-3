@@ -11,14 +11,16 @@ public class Shop_option_14 extends Shop
     boolean df = false;
     public void act() 
     {
-        background level = (background)this.getWorld();
         if (!(df)){
         setImage("Shop_Exit[].png");
         df = true;
     }
-//     if (background.removeShopObjects(true)){
-//         level.removeObject(this);
-//     }    
-    
+    background level = (background)this.getWorld();
+    if (Shop_Cursor.setRoom) {
+                
+            level.removeObject(this);
+            
+        }
+
 }
 }
